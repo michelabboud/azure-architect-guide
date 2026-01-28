@@ -317,4 +317,4 @@ Always use DNS zone groups for automatic DNS record management instead of manual
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

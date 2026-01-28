@@ -835,4 +835,4 @@ redis-cli -h myredis.redis.cache.windows.net -p 6380 \
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

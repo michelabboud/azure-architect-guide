@@ -613,4 +613,4 @@ resource diagnosticsPolicy 'Microsoft.Authorization/policyDefinitions@2023-04-01
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

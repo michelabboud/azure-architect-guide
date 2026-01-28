@@ -436,4 +436,4 @@ resource vmInsights 'Microsoft.OperationsManagement/solutions@2015-11-01-preview
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

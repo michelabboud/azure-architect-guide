@@ -370,4 +370,4 @@ Focus your study time on Azure-specific services and terminology rather than cor
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

@@ -530,4 +530,4 @@ public async Task QueryLatency_ShouldMeetSLA(string storeType, int maxMs)
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

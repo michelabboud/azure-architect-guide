@@ -1656,4 +1656,4 @@ resource eventJob 'Microsoft.App/jobs@2024-03-01' = {
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

@@ -594,4 +594,4 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*
