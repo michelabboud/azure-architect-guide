@@ -15,6 +15,20 @@ This guide is designed for **AWS-experienced Cloud Architects** preparing for Az
 
 ## Chapter Contents
 
+| Chapter | Topic | Quick Sync | Deep Dive |
+|---------|-------|------------|-----------|
+| 00 | Foundation | [AWS-Azure Mapping](aws-azure-mapping.md) | [Azure Fundamentals](azure-fundamentals.md) |
+| 01 | Identity | [Quick Reference](../01-cloud-adoption-framework/quick-reference.md) | [Entra ID](../02-identity/README.md) |
+| 02 | Security | [Quick Reference](../03-security/quick-reference.md) | [Zero Trust](../03-security/README.md) |
+| 03 | Compliance | [Quick Reference](../04-compliance/quick-reference.md) | [Purview](../04-compliance/README.md) |
+| 04 | Observability | [Quick Reference](../16-observability/quick-reference.md) | [Azure Monitor](../16-observability/README.md) |
+| 05 | AI Platform | [Quick Reference](../14-ai-platform/quick-reference.md) | [AI Foundry](../14-ai-platform/README.md) |
+| 06 | IaC | [Quick Reference](../17-infrastructure-as-code/quick-reference.md) | [Bicep](../17-infrastructure-as-code/README.md) |
+| 07 | FinOps | [Quick Reference](../18-finops/quick-reference.md) | [Cost Management](../18-finops/README.md) |
+| 08 | Case Studies | — | [All Studies](../19-case-studies/README.md) |
+
+### Additional Resources
+
 | File | Description | Time |
 |------|-------------|------|
 | [Quick Reference](quick-reference.md) | AWS-Azure service mapping, terminology, CLI commands | 5-10 min |

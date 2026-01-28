@@ -104,15 +104,16 @@ COST OPTIMIZATION:
 
 ## Chapter Contents
 
-### Quick Reference
-- [Quick Reference](quick-reference.md) - Pattern decision matrix and cheat sheet
-
-### Deep Dive Topics
-1. [Reliability Patterns](01-reliability-patterns.md) - Circuit breaker, retry, bulkhead
-2. [Messaging Patterns](02-messaging-patterns.md) - Queues, pub/sub, saga
-3. [Data Patterns](03-data-patterns.md) - CQRS, event sourcing, sharding
-4. [Gateway Patterns](04-gateway-patterns.md) - API gateway, BFF, aggregation
-5. [Deployment Patterns](05-deployment-patterns.md) - Stamps, sidecar, strangler fig
+| File | Topic | Description |
+|------|-------|-------------|
+| [Quick Reference](quick-reference.md) | Cheat Sheet | Pattern decision matrix and quick commands |
+| [01-reliability-patterns.md](01-reliability-patterns.md) | Reliability | Circuit breaker, retry, bulkhead, health endpoint |
+| [02-messaging-patterns.md](02-messaging-patterns.md) | Messaging | Queues, pub/sub, saga, competing consumers |
+| [03-data-patterns.md](03-data-patterns.md) | Data | CQRS, event sourcing, sharding, cache-aside |
+| [04-gateway-patterns.md](04-gateway-patterns.md) | Gateway | API gateway, BFF, aggregation, routing |
+| [05-deployment-patterns.md](05-deployment-patterns.md) | Deployment | Stamps, sidecar, strangler fig, blue-green |
+| [case-studies.md](case-studies.md) | Case Studies | Real-world pattern implementations |
+| [extra-resources.md](extra-resources.md) | Resources | Official docs, videos, learning paths |
 
 ## Pattern Selection Guide
 

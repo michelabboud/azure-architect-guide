@@ -52,18 +52,18 @@ AWS Model:                              Azure Model:
 
 | AWS Service | Azure Equivalent | Key Differences | Deep Dive Link |
 |-------------|------------------|-----------------|----------------|
-| **Security Hub** | Microsoft Defender for Cloud | Defender is CNAPP + CSPM + CWPP combined | [Chapter 02](../02-security/02-defender-for-cloud.md) |
-| **GuardDuty** | Defender for Cloud (threat detection) | Part of unified Defender platform | [Chapter 02](../02-security/02-defender-for-cloud.md) |
-| **Inspector** | Defender for Cloud (vulnerability) | Integrated vulnerability scanning | [Chapter 02](../02-security/02-defender-for-cloud.md) |
-| **AWS WAF** | Azure WAF + Front Door | WAF integrated with Front Door/App Gateway | [Chapter 02](../02-security/03-network-security.md) |
-| **AWS Shield** | Azure DDoS Protection | Standard vs Advanced tiers similar | [Chapter 02](../02-security/03-network-security.md) |
-| **KMS** | Azure Key Vault | Key Vault includes secrets + certificates | [Chapter 02](../02-security/quick-reference.md) |
-| **Secrets Manager** | Azure Key Vault (secrets) | Combined in Key Vault | [Chapter 02](../02-security/quick-reference.md) |
-| **Certificate Manager** | Azure Key Vault (certificates) | Combined in Key Vault | [Chapter 02](../02-security/quick-reference.md) |
-| **AWS Config** | Azure Policy + Resource Graph | Policy for compliance, Graph for queries | [Chapter 03](../03-compliance/quick-reference.md) |
-| **CloudTrail** | Azure Activity Log + Entra Audit Logs | Split between resource and identity logs | [Chapter 04](../04-observability/quick-reference.md) |
-| **Macie** | Microsoft Purview (data discovery) | Purview is broader data governance | [Chapter 03](../03-compliance/01-purview-overview.md) |
-| **Verified Access** | Entra ID Conditional Access + App Proxy | Conditional Access is more comprehensive | [Chapter 01](../01-identity/02-conditional-access.md) |
+| **Security Hub** | Microsoft Defender for Cloud | Defender is CNAPP + CSPM + CWPP combined | [Chapter 03](../03-security/README.md) |
+| **GuardDuty** | Defender for Cloud (threat detection) | Part of unified Defender platform | [Chapter 03](../03-security/README.md) |
+| **Inspector** | Defender for Cloud (vulnerability) | Integrated vulnerability scanning | [Chapter 03](../03-security/README.md) |
+| **AWS WAF** | Azure WAF + Front Door | WAF integrated with Front Door/App Gateway | [Chapter 03](../03-security/README.md) |
+| **AWS Shield** | Azure DDoS Protection | Standard vs Advanced tiers similar | [Chapter 03](../03-security/README.md) |
+| **KMS** | Azure Key Vault | Key Vault includes secrets + certificates | [Chapter 03](../03-security/README.md) |
+| **Secrets Manager** | Azure Key Vault (secrets) | Combined in Key Vault | [Chapter 03](../03-security/README.md) |
+| **Certificate Manager** | Azure Key Vault (certificates) | Combined in Key Vault | [Chapter 03](../03-security/README.md) |
+| **AWS Config** | Azure Policy + Resource Graph | Policy for compliance, Graph for queries | [Chapter 04](../04-compliance/README.md) |
+| **CloudTrail** | Azure Activity Log + Entra Audit Logs | Split between resource and identity logs | [Chapter 16](../16-observability/README.md) |
+| **Macie** | Microsoft Purview (data discovery) | Purview is broader data governance | [Chapter 04](../04-compliance/README.md) |
+| **Verified Access** | Entra ID Conditional Access + App Proxy | Conditional Access is more comprehensive | [Chapter 02](../02-identity/README.md) |
 
 ### Security Stack Comparison
 
