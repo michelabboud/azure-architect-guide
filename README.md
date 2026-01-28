@@ -64,6 +64,15 @@ Each chapter includes:
 | [14](14-api-integration/README.md) | **API & Integration** | APIM, Service Bus, Event Grid, Logic Apps |
 | [15](15-databases/README.md) | **Databases** | Azure SQL, Cosmos DB, PostgreSQL, Redis |
 
+### Advanced Architecture
+
+| Chapter | Topic | Description |
+|---------|-------|-------------|
+| [16](16-architecture-styles/README.md) | **Architecture Styles** | N-Tier, Microservices, Event-Driven, Big Data |
+| [17](17-anti-patterns/README.md) | **Anti-Patterns** | Busy Database, Chatty I/O, Retry Storm, more |
+| [18](18-cloud-adoption-framework/README.md) | **Cloud Adoption Framework** | CAF phases, Landing Zones, governance |
+| [19](19-ai-ml-comprehensive/README.md) | **AI & Machine Learning** | AI agents, RAG, Azure OpenAI, Responsible AI |
+
 ---
 
 ## Quick Start Paths
@@ -87,6 +96,8 @@ Week 2: Services
 
 Week 3: Architecture
 ├── 09-design-patterns
+├── 16-architecture-styles
+├── 17-anti-patterns
 ├── 08-case-studies
 └── 09-certifications (AZ-305 prep)
 ```
@@ -110,9 +121,15 @@ Weeks 5-6: Data & Integration
 ├── API & Integration (14)
 └── Labs: Cosmos DB, Event Grid patterns
 
-Weeks 7-8: Architecture & Certification
+Weeks 7-8: Architecture & AI
+├── Architecture Styles (16)
+├── Anti-Patterns (17)
+├── Cloud Adoption Framework (18)
+├── AI & Machine Learning (19)
+└── Case Studies (08)
+
+Weeks 9-10: Certification Prep
 ├── Design Patterns (09)
-├── Case Studies (08)
 ├── Certifications (09-cert)
 └── Practice exams
 ```
