@@ -74,6 +74,19 @@
 
 ---
 
+## Chapter Contents
+
+| File | Topic | Description |
+|------|-------|-------------|
+| [Quick Reference](quick-reference.md) | Cheat Sheet | CLI commands, decision matrix, quick configs |
+| [01-application-gateway.md](01-application-gateway.md) | Application Gateway | L7 load balancing, WAF, SSL termination, path routing |
+| [02-load-balancer.md](02-load-balancer.md) | Azure Load Balancer | L4 load balancing, HA ports, health probes |
+| [03-front-door.md](03-front-door.md) | Azure Front Door | Global load balancing, CDN, WAF, anycast |
+| [case-studies.md](case-studies.md) | Case Studies | Real-world implementations and patterns |
+| [extra-resources.md](extra-resources.md) | Resources | Official docs, videos, learning paths |
+
+---
+
 ## Application Gateway Deep Dive
 
 ### Architecture
