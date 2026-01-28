@@ -314,3 +314,7 @@ Always use DNS zone groups for automatic DNS record management instead of manual
 *Continue to [Case Studies](case-studies.md)*
 
 *Back to [Network Security Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

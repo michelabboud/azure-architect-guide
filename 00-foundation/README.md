@@ -251,3 +251,7 @@ Here's how each chapter maps to key Cloud Architect skills:
 ---
 
 *Next: [AWS-Azure Service Mapping](aws-azure-mapping.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

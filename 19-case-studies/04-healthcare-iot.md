@@ -583,3 +583,7 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2023-01-01' = {
 *Continue to [Case Study 5: SaaS Multi-Tenant Architecture](05-saas-multitenant.md)*
 
 *Back to [Chapter 08: Case Studies](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

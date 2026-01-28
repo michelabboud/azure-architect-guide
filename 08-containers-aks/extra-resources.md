@@ -98,3 +98,7 @@
 ---
 
 *Back to [Chapter 13: Containers & AKS](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

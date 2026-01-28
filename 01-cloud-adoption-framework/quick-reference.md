@@ -371,3 +371,7 @@ output firewallPrivateIp string = firewall.properties.ipConfigurations[0].proper
 ---
 
 *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

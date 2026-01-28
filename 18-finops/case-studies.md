@@ -405,3 +405,7 @@ FINOPS SUCCESS FACTORS:
 ---
 
 *Back to [Chapter Overview](README.md)* | *Next Chapter: [Architecture Case Studies](../08-case-studies/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

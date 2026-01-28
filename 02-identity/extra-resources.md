@@ -82,3 +82,7 @@
 ---
 
 *Back to [Chapter 01: Identity](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

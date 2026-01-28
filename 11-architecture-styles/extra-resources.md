@@ -130,3 +130,7 @@
 ---
 
 *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

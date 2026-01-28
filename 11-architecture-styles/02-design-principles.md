@@ -482,3 +482,7 @@ Monolith ──► Strangler Fig ──► Microservices
 *Continue to [Technology Choices](03-technology-choices.md)*
 
 *Back to [Architecture Styles Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

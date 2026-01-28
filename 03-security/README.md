@@ -180,3 +180,7 @@ After completing this chapter:
 ---
 
 *Start with: [Quick Reference](quick-reference.md)* | *Or dive into: [Zero Trust](01-zero-trust.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

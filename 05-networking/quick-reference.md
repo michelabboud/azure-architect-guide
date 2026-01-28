@@ -356,3 +356,7 @@ az network vhub create --name hub-eastus --vwan my-vwan \
 ---
 
 *Deep Dive: [Virtual Networks](01-virtual-networks.md)* | *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

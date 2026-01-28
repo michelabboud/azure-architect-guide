@@ -82,3 +82,7 @@
 ---
 
 *Back to [Chapter 12: Load Balancing & CDN](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

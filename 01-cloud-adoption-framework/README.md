@@ -395,3 +395,7 @@ After completing this chapter, you will:
 *Continue to [CAF Overview](01-caf-overview.md)*
 
 *Back to [Main Guide](../README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

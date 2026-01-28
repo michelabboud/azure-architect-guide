@@ -606,3 +606,7 @@ public async Task AsyncOperations_ShouldNotDeadlock()
 *Back to [Anti-Patterns Overview](README.md)*
 
 *Previous: [Retry Storm](09-retry-storm.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

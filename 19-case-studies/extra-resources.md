@@ -144,3 +144,7 @@
 ---
 
 *Back to [Chapter 08: Case Studies](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

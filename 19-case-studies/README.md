@@ -153,3 +153,7 @@ After completing this chapter, you will be able to:
 *Continue to [Case Study 1: Global E-commerce Platform](01-global-ecommerce.md)*
 
 *Back to [Main Guide](../README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

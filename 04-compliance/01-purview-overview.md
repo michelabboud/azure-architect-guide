@@ -336,3 +336,7 @@ Source: Azure SQL Database
 ---
 
 *Next: [DLP Policies](02-dlp-policies.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

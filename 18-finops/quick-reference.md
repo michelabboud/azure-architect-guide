@@ -551,3 +551,7 @@ COST TOOL COMPARISON:
 ---
 
 *Next: [Cost Analysis & Visibility](01-cost-analysis.md)* | *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

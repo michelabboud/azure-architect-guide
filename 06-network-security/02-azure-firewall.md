@@ -363,3 +363,7 @@ AzureDiagnostics
 *Continue to [DDoS Protection](03-ddos-protection.md)*
 
 *Back to [Network Security Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

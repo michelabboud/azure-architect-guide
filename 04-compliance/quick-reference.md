@@ -278,3 +278,7 @@ OfficeActivity
 ---
 
 *Deep Dive: [Purview Overview](01-purview-overview.md)* | *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

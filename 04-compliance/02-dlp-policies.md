@@ -600,3 +600,7 @@ DEPLOYMENT BEST PRACTICES:
 ---
 
 *Next: [Information Protection](03-information-protection.md)* | *Back to [Purview Overview](01-purview-overview.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

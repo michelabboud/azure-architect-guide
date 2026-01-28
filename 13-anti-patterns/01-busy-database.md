@@ -418,3 +418,7 @@ private async Task<double> GetDatabaseCpuAsync()
 *Back to [Anti-Patterns Overview](README.md)*
 
 *Next: [Busy Front End](02-busy-frontend.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

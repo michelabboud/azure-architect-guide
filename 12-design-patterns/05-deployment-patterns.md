@@ -708,3 +708,7 @@ data:
 ---
 
 *Back to [Quick Reference](quick-reference.md)* | *Chapter Overview: [Design Patterns](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

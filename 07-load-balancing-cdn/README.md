@@ -337,3 +337,7 @@ az monitor autoscale rule create \
 ---
 
 *Next Chapter: [Containers & AKS](../13-containers-aks/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

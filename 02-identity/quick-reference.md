@@ -369,3 +369,7 @@ SigninLogs
 ---
 
 *Deep Dive: [Entra ID](01-entra-id.md)* | *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

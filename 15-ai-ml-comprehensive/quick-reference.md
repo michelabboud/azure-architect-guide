@@ -417,3 +417,7 @@ Show your reasoning at each step before providing the final answer.
 ---
 
 *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

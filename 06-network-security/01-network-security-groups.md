@@ -346,3 +346,7 @@ az network watcher test-ip-flow \
 *Continue to [Azure Firewall](02-azure-firewall.md)*
 
 *Back to [Network Security Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

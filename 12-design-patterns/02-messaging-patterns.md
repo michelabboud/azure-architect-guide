@@ -668,3 +668,7 @@ public class PriorityProcessor
 ---
 
 *Next: [Data Patterns](03-data-patterns.md)* | *Back to [Reliability Patterns](01-reliability-patterns.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

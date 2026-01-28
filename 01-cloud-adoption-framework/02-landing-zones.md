@@ -482,3 +482,7 @@ az deployment mg create \
 *Continue to [Governance](03-governance.md)*
 
 *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

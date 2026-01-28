@@ -224,3 +224,7 @@ Week 4: Gateway & Deployment
 ---
 
 *Next: [Quick Reference](quick-reference.md)* | *Back to [Chapter 07: FinOps](../07-finops/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

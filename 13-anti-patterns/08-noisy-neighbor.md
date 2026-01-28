@@ -616,3 +616,7 @@ public async Task NoisyTenant_ShouldNotAffectOthers()
 *Previous: [No Caching](07-no-caching.md)*
 
 *Next: [Retry Storm](09-retry-storm.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

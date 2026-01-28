@@ -484,3 +484,7 @@ When designing identity architecture, ask:
 ---
 
 *Back to: [Chapter Overview](README.md)* | *Next Chapter: [Security](../02-security/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

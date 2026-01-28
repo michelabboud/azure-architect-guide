@@ -97,3 +97,7 @@
 ---
 
 *Back to [API Integration Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

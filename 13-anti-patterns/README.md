@@ -226,3 +226,7 @@ After completing this chapter, you will:
 *Continue to [Busy Database](01-busy-database.md)*
 
 *Back to [Main Guide](../README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

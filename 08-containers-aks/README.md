@@ -397,3 +397,7 @@ az containerapp create \
 ---
 
 *Next Chapter: [API Gateway & Messaging](../14-api-integration/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

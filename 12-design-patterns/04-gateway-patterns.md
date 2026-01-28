@@ -591,3 +591,7 @@ resource privateEndpoint 'Microsoft.Network/privateEndpoints@2023-05-01' = {
 ---
 
 *Next: [Deployment Patterns](05-deployment-patterns.md)* | *Back to [Data Patterns](03-data-patterns.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

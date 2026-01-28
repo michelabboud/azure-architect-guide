@@ -553,3 +553,7 @@ PROCESS:
 ---
 
 *Next: [Budgets & Alerts](02-budgets-alerts.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

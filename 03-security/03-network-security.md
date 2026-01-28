@@ -660,3 +660,7 @@ az network bastion create \
 ---
 
 *Next: [Security Case Studies](case-studies.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

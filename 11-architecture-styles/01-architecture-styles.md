@@ -598,3 +598,7 @@ Designed for computationally intensive workloads requiring massive parallel proc
 *Continue to [Design Principles](02-design-principles.md)*
 
 *Back to [Architecture Styles Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

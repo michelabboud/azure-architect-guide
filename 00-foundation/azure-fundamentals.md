@@ -389,3 +389,7 @@ az vm list
 ---
 
 *Next: [Chapter 01: Identity](../01-identity/README.md)* | *Back to [Foundation Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

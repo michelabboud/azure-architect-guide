@@ -603,3 +603,7 @@ ALERTING BEST PRACTICES:
 ---
 
 *Next: [Case Studies](case-studies.md)* | *Back to [Application Insights](03-application-insights.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -112,3 +112,7 @@
 ---
 
 *Back to [Databases Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

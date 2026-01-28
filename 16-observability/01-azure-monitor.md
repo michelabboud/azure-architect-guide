@@ -568,3 +568,7 @@ AZURE MONITOR BEST PRACTICES:
 ---
 
 *Next: [Log Analytics & KQL](02-log-analytics-kql.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

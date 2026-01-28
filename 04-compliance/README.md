@@ -94,3 +94,7 @@ This chapter addresses these essential Cloud Architect skills:
 ---
 
 *Start with: [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

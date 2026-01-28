@@ -517,3 +517,7 @@ terraform output storage_account_id
 ---
 
 *Next: [Best Practices](03-best-practices.md)* | *Back to [Bicep](01-bicep.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

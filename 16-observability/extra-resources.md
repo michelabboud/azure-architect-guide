@@ -96,3 +96,7 @@
 ---
 
 *Back to [Chapter 04: Observability](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

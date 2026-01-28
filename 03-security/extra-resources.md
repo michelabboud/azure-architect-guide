@@ -94,3 +94,7 @@
 ---
 
 *Back to [Chapter 02: Security](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

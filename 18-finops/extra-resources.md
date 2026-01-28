@@ -107,3 +107,7 @@
 ---
 
 *Back to [Chapter 07: FinOps](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -987,3 +987,7 @@ IaC IMPLEMENTATION PRINCIPLES:
 ---
 
 *Back to [Chapter Overview](README.md)* | *Next Chapter: [FinOps & Cost Management](../07-finops/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

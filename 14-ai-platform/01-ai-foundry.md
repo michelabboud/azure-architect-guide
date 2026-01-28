@@ -521,3 +521,7 @@ AI FOUNDRY DEPLOYMENT OPTIONS:
 ---
 
 *Next: [Azure OpenAI Service](02-azure-openai.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

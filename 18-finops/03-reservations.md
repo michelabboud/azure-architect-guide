@@ -446,3 +446,7 @@ COMMITMENT PURCHASE STRATEGY:
 ---
 
 *Next: [Cost Optimization](04-optimization.md)* | *Back to [Budgets & Alerts](02-budgets-alerts.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

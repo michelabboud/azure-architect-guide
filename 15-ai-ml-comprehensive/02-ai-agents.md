@@ -406,3 +406,7 @@ public class MonitoredAgent
 *Continue to [Azure AI Services](03-ai-services.md)*
 
 *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

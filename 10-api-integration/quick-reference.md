@@ -427,3 +427,7 @@ resource queue 'Microsoft.ServiceBus/namespaces/queues@2022-10-01-preview' = {
 ---
 
 *Back to [API Integration Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

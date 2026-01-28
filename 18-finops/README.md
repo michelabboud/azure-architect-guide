@@ -314,3 +314,7 @@ LONG-TERM (This quarter):
 ---
 
 *Next: [Quick Reference](quick-reference.md)* | *Back to [Chapter 06: Infrastructure as Code](../06-infrastructure-as-code/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -113,3 +113,7 @@
 ---
 
 *Back to [Chapter 06: Infrastructure as Code](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

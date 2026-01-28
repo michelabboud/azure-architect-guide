@@ -614,3 +614,7 @@ public async Task CacheShouldReduceDatabaseLoad()
 *Previous: [Monolithic Persistence](06-monolithic-persistence.md)*
 
 *Next: [Noisy Neighbor](08-noisy-neighbor.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

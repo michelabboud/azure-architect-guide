@@ -630,3 +630,7 @@ For time-series data, combine:
 ---
 
 *Next: [Gateway Patterns](04-gateway-patterns.md)* | *Back to [Messaging Patterns](02-messaging-patterns.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

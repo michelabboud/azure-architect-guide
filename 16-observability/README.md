@@ -263,3 +263,7 @@ TYPICAL COSTS (approximate):
 ---
 
 *Next: [Quick Reference](quick-reference.md)* | *Back to [Chapter 03: Compliance](../03-compliance/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

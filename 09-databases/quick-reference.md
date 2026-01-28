@@ -417,3 +417,7 @@ ORDER BY rs.avg_cpu_time DESC;
 ---
 
 *Back to [Databases Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

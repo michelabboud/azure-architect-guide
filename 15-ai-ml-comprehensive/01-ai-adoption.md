@@ -369,3 +369,7 @@ by bin(timestamp, 1h), name
 *Continue to [AI Agents](02-ai-agents.md)*
 
 *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

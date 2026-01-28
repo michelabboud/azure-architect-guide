@@ -418,3 +418,7 @@ SecurityAlert
 ---
 
 *Deep Dive: [Zero Trust](01-zero-trust.md)* | *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
