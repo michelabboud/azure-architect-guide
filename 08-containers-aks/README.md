@@ -48,6 +48,17 @@
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
+## Chapter Contents
+
+| File | Topic | Description |
+|------|-------|-------------|
+| [quick-reference.md](quick-reference.md) | Quick Reference | CLI commands, kubectl cheat sheet, common operations |
+| [01-aks-architecture.md](01-aks-architecture.md) | AKS Core Architecture | Control plane, node pools, networking fundamentals |
+| [02-container-apps.md](02-container-apps.md) | Container Apps | Serverless containers, Dapr, KEDA scaling |
+| [03-aks-architecture-patterns.md](03-aks-architecture-patterns.md) | Architecture Patterns | Production patterns, anti-patterns, good vs bad designs |
+| [case-studies.md](case-studies.md) | Case Studies | Real-world AKS implementations |
+| [practice-questions.md](practice-questions.md) | Practice Questions | AZ-305 exam preparation |
+
 ## Decision Tree: Which Container Service?
 
 ```
