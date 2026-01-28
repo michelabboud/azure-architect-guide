@@ -492,3 +492,7 @@ public async Task GetCustomers_ShouldNotCauseMemorySpike()
 *Previous: [Chatty I/O](03-chatty-io.md)*
 
 *Next: [Improper Instantiation](05-improper-instantiation.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

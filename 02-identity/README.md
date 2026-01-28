@@ -153,3 +153,7 @@ After completing this chapter, you will be able to:
 ---
 
 *Start with: [Quick Reference](quick-reference.md)* | *Or dive into: [Entra ID](01-entra-id.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

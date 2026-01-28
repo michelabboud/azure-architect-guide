@@ -182,3 +182,7 @@ After completing this chapter, you will:
 *Continue to [AZ-305 Study Guide](az-305-study-guide.md)*
 
 *Back to [Main Guide](../README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -505,3 +505,7 @@ LEVEL 3: ADVANCED ZERO TRUST            LEVEL 4: OPTIMAL ZERO TRUST
 ---
 
 *Next: [Defender for Cloud](02-defender-for-cloud.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

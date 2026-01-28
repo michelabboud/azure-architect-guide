@@ -618,3 +618,7 @@ KQL & LOG ANALYTICS BEST PRACTICES:
 ---
 
 *Next: [Application Insights](03-application-insights.md)* | *Back to [Azure Monitor](01-azure-monitor.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

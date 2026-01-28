@@ -127,3 +127,7 @@
 ---
 
 *Back to [Chapter 09: Design Patterns](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

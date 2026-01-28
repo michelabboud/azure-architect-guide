@@ -521,3 +521,7 @@ BICEP BEST PRACTICES:
 ---
 
 *Next: [Terraform for Azure](02-terraform.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

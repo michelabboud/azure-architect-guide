@@ -685,3 +685,7 @@ APPLICATION INSIGHTS BEST PRACTICES:
 ---
 
 *Next: [Alerting & Automation](04-alerting.md)* | *Back to [Log Analytics & KQL](02-log-analytics-kql.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

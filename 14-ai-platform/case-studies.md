@@ -385,3 +385,7 @@ ENTERPRISE AI IMPLEMENTATION PRINCIPLES:
 ---
 
 *Back to [Chapter Overview](README.md)* | *Next Chapter: [Infrastructure as Code](../06-infrastructure-as-code/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

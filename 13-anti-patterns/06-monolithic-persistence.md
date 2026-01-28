@@ -527,3 +527,7 @@ public async Task QueryLatency_ShouldMeetSLA(string storeType, int maxMs)
 *Previous: [Improper Instantiation](05-improper-instantiation.md)*
 
 *Next: [No Caching](07-no-caching.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

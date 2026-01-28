@@ -214,9 +214,33 @@ Contributions welcome! Please submit issues or pull requests for:
 - New design patterns
 - Updated best practices
 
+---
+
+## Author & Credits
+
+**Author:** Michel Abboud
+
+**AI Assistance:** This guide was created with the assistance of Claude (Anthropic's AI assistant). In the spirit of full transparency, AI was used to help research, structure, and write the content throughout this repository.
+
+### Transparency Note
+
+This project demonstrates human-AI collaboration in creating educational content. The author provided direction, expertise, and review while AI assisted with research, writing, and organization. All content has been curated and verified for accuracy.
+
+---
+
 ## License
 
-MIT License - Use freely for learning and career development.
+This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for details.
+
+```
+Copyright 2026 Michel Abboud
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+```
 
 ---
 

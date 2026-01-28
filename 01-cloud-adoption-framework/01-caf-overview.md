@@ -433,3 +433,7 @@ resource vmInsights 'Microsoft.OperationsManagement/solutions@2015-11-01-preview
 *Continue to [Landing Zones](02-landing-zones.md)*
 
 *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

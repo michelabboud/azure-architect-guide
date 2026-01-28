@@ -409,3 +409,7 @@ AWS AI Stack:                          Azure AI Stack:
 ---
 
 *Next: [Azure Fundamentals](azure-fundamentals.md)* | *Back to [Foundation Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -496,3 +496,7 @@ public async Task BatchOperation_ShouldScaleLinearly()
 *Previous: [Busy Front End](02-busy-frontend.md)*
 
 *Next: [Extraneous Fetching](04-extraneous-fetching.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

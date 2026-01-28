@@ -282,3 +282,7 @@ RECOMMENDATION:
 ---
 
 *Next: [Quick Reference](quick-reference.md)* | *Back to [Chapter 05: AI Platform](../05-ai-platform/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

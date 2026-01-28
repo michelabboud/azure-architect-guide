@@ -286,3 +286,7 @@ After this chapter:
 ---
 
 *Start with: [Quick Reference](quick-reference.md)* | *Next: [Virtual Networks Deep Dive](01-virtual-networks.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

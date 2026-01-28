@@ -988,3 +988,7 @@ resource "azurerm_virtual_network_peering" "secondary_to_primary" {
 ---
 
 *Next: [Case Studies](case-studies.md)* | *Back to [Terraform](02-terraform.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

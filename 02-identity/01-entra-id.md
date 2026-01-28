@@ -464,3 +464,7 @@ az role assignment create \
 ---
 
 *Next: [Conditional Access](02-conditional-access.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

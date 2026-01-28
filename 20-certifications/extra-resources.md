@@ -148,3 +148,7 @@ Month 5-6:   AZ-500 or AZ-700
 ---
 
 *Back to [Certifications Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

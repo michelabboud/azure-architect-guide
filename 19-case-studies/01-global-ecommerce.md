@@ -373,3 +373,7 @@ WHERE i.currentStock - o.totalOrdered < i.reorderThreshold
 *Continue to [Case Study 2: Enterprise Data Platform](02-enterprise-data-platform.md)*
 
 *Back to [Chapter 08: Case Studies](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -521,3 +521,7 @@ if response.choices[0].message.tool_calls:
 ---
 
 *Next: [Azure AI Foundry](01-ai-foundry.md)* | *Back to [Chapter Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

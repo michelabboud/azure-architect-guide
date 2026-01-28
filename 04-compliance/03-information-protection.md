@@ -796,3 +796,7 @@ INFORMATION PROTECTION BEST PRACTICES:
 ---
 
 *Next: [Case Studies](case-studies.md)* | *Back to [DLP Policies](02-dlp-policies.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

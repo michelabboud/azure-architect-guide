@@ -518,3 +518,7 @@ test('should not have long tasks during operation', async ({ page }) => {
 *Previous: [Busy Database](01-busy-database.md)*
 
 *Next: [Chatty I/O](03-chatty-io.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

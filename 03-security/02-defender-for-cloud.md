@@ -352,3 +352,7 @@ SecurityResources
 ---
 
 *Next: [Network Security](03-network-security.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

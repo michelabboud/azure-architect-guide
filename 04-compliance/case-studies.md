@@ -703,3 +703,7 @@ COMPLIANCE ARCHITECTURE PRINCIPLES:
 ---
 
 *Back to [Chapter Overview](README.md)* | *Next Chapter: [Observability](../04-observability/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

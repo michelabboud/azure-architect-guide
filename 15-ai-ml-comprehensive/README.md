@@ -365,3 +365,7 @@ After completing this chapter, you will:
 *Continue to [AI Adoption Framework](01-ai-adoption.md)*
 
 *Back to [Main Guide](../README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

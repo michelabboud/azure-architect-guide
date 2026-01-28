@@ -653,3 +653,7 @@ public async Task MultipleClients_ShouldNotRetrySynchronously()
 *Previous: [Noisy Neighbor](08-noisy-neighbor.md)*
 
 *Next: [Synchronous I/O](10-synchronous-io.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

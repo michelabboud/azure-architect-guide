@@ -294,3 +294,7 @@ CONTENT SAFETY:
 ---
 
 *Next: [Quick Reference](quick-reference.md)* | *Back to [Chapter 04: Observability](../04-observability/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

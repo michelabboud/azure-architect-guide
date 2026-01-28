@@ -378,3 +378,7 @@ ONGOING:
 ---
 
 *Next: [Case Studies](case-studies.md)* | *Back to [Reservations](03-reservations.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

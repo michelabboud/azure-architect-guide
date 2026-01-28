@@ -401,3 +401,7 @@ COST OPTIMIZATION STRATEGIES:
 ---
 
 *Next: [Copilot Studio](03-copilot-studio.md)* | *Back to [AI Foundry](01-ai-foundry.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

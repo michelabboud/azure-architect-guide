@@ -99,3 +99,7 @@
 ---
 
 *Back to [Chapter 00: Foundation](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

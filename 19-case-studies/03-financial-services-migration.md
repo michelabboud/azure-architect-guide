@@ -610,3 +610,7 @@ resource diagnosticsPolicy 'Microsoft.Authorization/policyDefinitions@2023-04-01
 *Continue to [Case Study 4: Healthcare IoT Platform](04-healthcare-iot.md)*
 
 *Back to [Chapter 08: Case Studies](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -615,3 +615,7 @@ SANDBOX/TRAINING:
 ---
 
 *Next: [Reservations & Savings Plans](03-reservations.md)* | *Back to [Cost Analysis](01-cost-analysis.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

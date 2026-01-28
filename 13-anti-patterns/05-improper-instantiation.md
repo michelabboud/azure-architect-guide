@@ -528,3 +528,7 @@ public async Task Service_ShouldNotLeakMemory()
 *Previous: [Extraneous Fetching](04-extraneous-fetching.md)*
 
 *Next: [Monolithic Persistence](06-monolithic-persistence.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -97,3 +97,7 @@
 ---
 
 *Back to [Network Security Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

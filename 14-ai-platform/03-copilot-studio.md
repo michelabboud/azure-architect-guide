@@ -395,3 +395,7 @@ ENVIRONMENT ISOLATION:
 ---
 
 *Next: [Responsible AI](04-responsible-ai.md)* | *Back to [Azure OpenAI](02-azure-openai.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

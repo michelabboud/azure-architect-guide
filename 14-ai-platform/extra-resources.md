@@ -110,3 +110,7 @@
 ---
 
 *Back to [Chapter 05: AI Platform](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

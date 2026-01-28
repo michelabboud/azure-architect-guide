@@ -367,3 +367,7 @@ Focus your study time on Azure-specific services and terminology rather than cor
 *Continue to [AZ-104 Study Guide](az-104-study-guide.md)*
 
 *Back to [Certifications Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

@@ -96,3 +96,7 @@
 ---
 
 *Back to [Chapter 03: Compliance](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

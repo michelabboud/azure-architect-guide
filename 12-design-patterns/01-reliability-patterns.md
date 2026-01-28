@@ -640,3 +640,7 @@ services.AddHttpClient<IPaymentService, PaymentService>()
 ---
 
 *Next: [Messaging Patterns](02-messaging-patterns.md)* | *Back to [Quick Reference](quick-reference.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

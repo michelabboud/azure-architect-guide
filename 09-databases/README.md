@@ -254,3 +254,7 @@ After completing this chapter, you will:
 *Continue to [Quick Reference](quick-reference.md)*
 
 *Back to [Main Guide](../README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

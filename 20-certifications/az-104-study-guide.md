@@ -399,3 +399,7 @@ az backup protection backup-now \
 *Continue to [Certification Tips](certification-tips.md)*
 
 *Back to [Certifications Overview](README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*

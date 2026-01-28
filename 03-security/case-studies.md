@@ -529,3 +529,7 @@ az storage account update \
 ---
 
 *Back to: [Chapter Overview](README.md)* | *Next Chapter: [Compliance](../03-compliance/README.md)*
+
+---
+
+*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
