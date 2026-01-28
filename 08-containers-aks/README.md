@@ -396,7 +396,7 @@ az containerapp create \
 
 ---
 
-*Next Chapter: [API Gateway & Messaging](../14-api-integration/README.md)*
+*Next Chapter: [Databases](../09-databases/README.md)*
 
 ---
 

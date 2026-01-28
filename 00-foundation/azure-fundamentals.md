@@ -388,7 +388,7 @@ az vm list
 
 ---
 
-*Next: [Chapter 01: Identity](../01-identity/README.md)* | *Back to [Foundation Overview](README.md)*
+*Next: [Chapter 01: Cloud Adoption Framework](../01-cloud-adoption-framework/README.md)* | *Back to [Foundation Overview](README.md)*
 
 ---
 
