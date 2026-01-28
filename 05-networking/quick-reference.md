@@ -359,4 +359,4 @@ az network vhub create --name hub-eastus --vwan my-vwan \
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

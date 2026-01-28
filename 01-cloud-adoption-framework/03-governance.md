@@ -1510,4 +1510,4 @@ az lock delete --name "ProdLock" --resource-group "rg-prod"
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

@@ -508,4 +508,4 @@ LEVEL 3: ADVANCED ZERO TRUST            LEVEL 4: OPTIMAL ZERO TRUST
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

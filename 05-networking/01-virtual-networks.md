@@ -524,4 +524,4 @@ az network nic show-effective-route-table --resource-group myRG --name myNIC
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*

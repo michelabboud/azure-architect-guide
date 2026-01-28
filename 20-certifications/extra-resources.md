@@ -151,4 +151,4 @@ Month 5-6:   AZ-500 or AZ-700
 
 ---
 
-*Author: Michel Abboud | AI-Assisted Content | [License](../LICENSE)*
+*Author: Michel Abboud | AI-Assisted Content | [APACHE 2.0 License](../LICENSE)*
