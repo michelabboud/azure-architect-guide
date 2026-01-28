@@ -119,9 +119,9 @@ Managing the identity lifecycle:
 | STS AssumeRole | Managed Identity | No credential management needed |
 | Resource Policies | Conditional Access + RBAC | More granular in Azure |
 
-## Job Relevance: NICE Cloud Architect
+## Key Skills Covered
 
-This chapter directly addresses these job requirements:
+This chapter addresses these essential Cloud Architect skills:
 
 ✅ **Identity-first security (Entra ID + Conditional Access)**
 - Design enterprise identity architecture

@@ -2,7 +2,7 @@
 
 ## Purpose of This Guide
 
-This guide is designed for **AWS-experienced Cloud Architects** preparing for Azure-focused roles, specifically targeting positions like the **NICE Cloud Architect (Req 8959)** that require:
+This guide is designed for **AWS-experienced Cloud Architects** preparing for Azure-focused roles that require:
 
 - Azure reference architecture ownership
 - AI-in-the-enterprise (Azure AI Foundry + Copilot Studio)
@@ -234,11 +234,11 @@ azure-architect-guide/
 
 ---
 
-## Job Requirements Mapping
+## Skills Coverage Mapping
 
-Here's how each chapter maps to the NICE Cloud Architect requirements:
+Here's how each chapter maps to key Cloud Architect skills:
 
-| Job Requirement | Primary Chapter | Supporting Chapters |
+| Skill Area | Primary Chapter | Supporting Chapters |
 |-----------------|-----------------|---------------------|
 | Azure reference architecture | 06, 08 | All |
 | AI-in-the-enterprise (Foundry/Copilot) | 05 | 01, 02, 03 |

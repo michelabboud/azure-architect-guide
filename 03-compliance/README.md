@@ -77,9 +77,9 @@ Governance                Network Security          DLP Policies
 | [03 - Information Protection](03-information-protection.md) | Labels and encryption | 25 min |
 | [Case Studies](case-studies.md) | Compliance scenarios | 20 min |
 
-## Job Relevance: NICE Cloud Architect
+## Key Skills Covered
 
-This chapter addresses:
+This chapter addresses these essential Cloud Architect skills:
 
 ✅ **Security + Compliance (Defender/Purview)**
 - Configure data classification

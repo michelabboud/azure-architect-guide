@@ -152,9 +152,9 @@ Applied to Azure:
                           └─────────────────────┘
 ```
 
-## Job Relevance: NICE Cloud Architect
+## Key Skills Covered
 
-This chapter addresses:
+This chapter addresses these essential Cloud Architect skills:
 
 ✅ **Zero Trust + Governance**
 - Design and implement Zero Trust architecture
