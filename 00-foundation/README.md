@@ -62,18 +62,18 @@ Based on the job requirements and Azure's architecture model, follow this sequen
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                     COMPREHENSIVE LEARNING PATH                          │
+│                     COMPREHENSIVE LEARNING PATH                         │
 ├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
+│                                                                         │
 │  WEEK 1-2: FOUNDATION & STRATEGY                                        │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
-│  │  Chapter 00: Foundation (this chapter)                            │   │
-│  │  Chapter 01: Cloud Adoption Framework                             │   │
+│  │  Chapter 00: Foundation (this chapter)                           │   │
+│  │  Chapter 01: Cloud Adoption Framework                            │   │
 │  │  • Azure fundamentals, resource hierarchy                        │   │
 │  │  • CAF phases, Landing Zones                                     │   │
 │  │  WHY FIRST: Understand Azure's organizational model              │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
-│                              ↓                                           │
+│                              ↓                                          │
 │  WEEK 3-4: IDENTITY & SECURITY                                          │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
 │  │  Chapter 02: Identity (Entra ID, RBAC)                           │   │
@@ -81,7 +81,7 @@ Based on the job requirements and Azure's architecture model, follow this sequen
 │  │  Chapter 04: Compliance (Purview, DLP)                           │   │
 │  │  WHY HERE: Identity-first approach is core to Azure              │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
-│                              ↓                                           │
+│                              ↓                                          │
 │  WEEK 5-6: NETWORKING                                                   │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
 │  │  Chapter 05: Networking (VNets, VPN, ExpressRoute)               │   │
@@ -89,7 +89,7 @@ Based on the job requirements and Azure's architecture model, follow this sequen
 │  │  Chapter 07: Load Balancing & CDN (App GW, Front Door)           │   │
 │  │  WHY HERE: Network foundation for all workloads                  │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
-│                              ↓                                           │
+│                              ↓                                          │
 │  WEEK 7-8: COMPUTE, DATA & INTEGRATION                                  │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
 │  │  Chapter 08: Containers & AKS                                    │   │
@@ -97,7 +97,7 @@ Based on the job requirements and Azure's architecture model, follow this sequen
 │  │  Chapter 10: API & Integration (APIM, Service Bus)               │   │
 │  │  WHY HERE: Core services for application workloads               │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
-│                              ↓                                           │
+│                              ↓                                          │
 │  WEEK 9-10: ARCHITECTURE & PATTERNS                                     │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
 │  │  Chapter 11: Architecture Styles (N-Tier, Microservices)         │   │
@@ -105,7 +105,7 @@ Based on the job requirements and Azure's architecture model, follow this sequen
 │  │  Chapter 13: Anti-Patterns (Performance issues)                  │   │
 │  │  WHY HERE: Apply knowledge to real architectures                 │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
-│                              ↓                                           │
+│                              ↓                                          │
 │  WEEK 11-12: AI, OPERATIONS & CERTIFICATION                             │
 │  ┌──────────────────────────────────────────────────────────────────┐   │
 │  │  Chapter 14-15: AI Platform (Azure OpenAI, ML)                   │   │
@@ -115,7 +115,7 @@ Based on the job requirements and Azure's architecture model, follow this sequen
 │  │  Chapter 19-20: Case Studies & Certifications                    │   │
 │  │  WHY LAST: Operational excellence and exam preparation           │   │
 │  └──────────────────────────────────────────────────────────────────┘   │
-│                                                                          │
+│                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
