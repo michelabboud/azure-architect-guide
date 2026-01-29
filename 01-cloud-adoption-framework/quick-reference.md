@@ -256,65 +256,65 @@ output firewallPrivateIp string = firewall.properties.ipConfigurations[0].proper
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    MIGRATION STRATEGY DECISION TREE                          │
+│                    MIGRATION STRATEGY DECISION TREE                         │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Is the application still needed?                                          │
-│   │                                                                          │
+│   │                                                                         │
 │   ├── No ──────────────────────────────────────────────► RETIRE             │
-│   │                                                                          │
+│   │                                                                         │
 │   └── Yes ──► Is there a SaaS alternative?                                  │
-│               │                                                              │
+│               │                                                             │
 │               ├── Yes ──► Does SaaS meet requirements?                      │
-│               │           │                                                  │
+│               │           │                                                 │
 │               │           ├── Yes ────────────────────► REPLACE (SaaS)      │
 │               │           └── No ──► Continue                               │
-│               │                                                              │
+│               │                                                             │
 │               └── No ──► Continue                                           │
-│                          │                                                   │
-│                          ▼                                                   │
+│                          │                                                  │
+│                          ▼                                                  │
 │   Does it need significant modernization?                                   │
-│   │                                                                          │
+│   │                                                                         │
 │   ├── Yes ──► Can you afford to rebuild?                                    │
-│   │           │                                                              │
+│   │           │                                                             │
 │   │           ├── Yes ──► Business case for rebuild?                        │
-│   │           │           │                                                  │
+│   │           │           │                                                 │
 │   │           │           ├── Yes ────────────────────► REBUILD             │
 │   │           │           └── No ──────────────────────► REARCHITECT        │
-│   │           │                                                              │
+│   │           │                                                             │
 │   │           └── No ────────────────────────────────► REARCHITECT          │
-│   │                                                                          │
+│   │                                                                         │
 │   └── No ──► Can it benefit from PaaS?                                      │
-│              │                                                               │
+│              │                                                              │
 │              ├── Yes ─────────────────────────────────► REFACTOR (PaaS)     │
-│              │                                                               │
+│              │                                                              │
 │              └── No ──────────────────────────────────► REHOST (IaaS)       │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    SUBSCRIPTION DESIGN DECISION TREE                         │
+│                    SUBSCRIPTION DESIGN DECISION TREE                        │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Does the workload need isolation?                                         │
-│   │                                                                          │
+│   │                                                                         │
 │   ├── Yes (Security/Compliance) ─────► Dedicated subscription               │
-│   │                                                                          │
+│   │                                                                         │
 │   └── No ──► Is it production?                                              │
-│              │                                                               │
+│              │                                                              │
 │              ├── Yes ──► Is it a large application?                         │
-│              │           │                                                   │
+│              │           │                                                  │
 │              │           ├── Yes ─────────────► Dedicated subscription      │
-│              │           │                                                   │
+│              │           │                                                  │
 │              │           └── No ──► Can share with similar workloads?       │
-│              │                      │                                        │
+│              │                      │                                       │
 │              │                      ├── Yes ──► Shared prod subscription    │
 │              │                      └── No ───► Dedicated subscription      │
-│              │                                                               │
+│              │                                                              │
 │              └── No (Dev/Test) ──► Sandbox subscription                     │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
