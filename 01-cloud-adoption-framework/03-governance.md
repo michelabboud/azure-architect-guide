@@ -28,47 +28,47 @@ Management Groups are the backbone of Azure governance. They provide a hierarchi
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    MANAGEMENT GROUP ARCHITECTURE                             │
+│                    MANAGEMENT GROUP ARCHITECTURE                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Tenant Root Group (/)                                                     │
 │   │                                                                         │
-│   └── Contoso (Top-level MG)                ← Enterprise-wide policies     │
+│   └── Contoso (Top-level MG)                ← Enterprise-wide policies      │
 │       │                                                                     │
-│       ├── Platform                          ← Central IT managed           │
+│       ├── Platform                          ← Central IT managed            │
 │       │   │                                                                 │
-│       │   ├── Identity                      ← AD DS, DNS                   │
-│       │   │   └── [sub-identity-prod]                                      │
+│       │   ├── Identity                      ← AD DS, DNS                    │
+│       │   │   └── [sub-identity-prod]                                       │
 │       │   │                                                                 │
-│       │   ├── Management                    ← Monitoring, automation       │
-│       │   │   └── [sub-management-prod]                                    │
+│       │   ├── Management                    ← Monitoring, automation        │
+│       │   │   └── [sub-management-prod]                                     │
 │       │   │                                                                 │
-│       │   └── Connectivity                  ← Hub networking               │
-│       │       └── [sub-connectivity-prod]                                  │
+│       │   └── Connectivity                  ← Hub networking                │
+│       │       └── [sub-connectivity-prod]                                   │
 │       │                                                                     │
-│       ├── Landing Zones                     ← Workload subscriptions       │
+│       ├── Landing Zones                     ← Workload subscriptions        │
 │       │   │                                                                 │
-│       │   ├── Corp                          ← Internal applications        │
-│       │   │   ├── [sub-hr-prod]                                            │
-│       │   │   ├── [sub-finance-prod]                                       │
-│       │   │   └── [sub-erp-prod]                                           │
+│       │   ├── Corp                          ← Internal applications         │
+│       │   │   ├── [sub-hr-prod]                                             │
+│       │   │   ├── [sub-finance-prod]                                        │
+│       │   │   └── [sub-erp-prod]                                            │
 │       │   │                                                                 │
-│       │   └── Online                        ← Internet-facing apps         │
-│       │       ├── [sub-web-prod]                                           │
-│       │       └── [sub-api-prod]                                           │
+│       │   └── Online                        ← Internet-facing apps          │
+│       │       ├── [sub-web-prod]                                            │
+│       │       └── [sub-api-prod]                                            │
 │       │                                                                     │
-│       ├── Sandbox                           ← Experimentation              │
-│       │   └── [sub-sandbox-001]             ← Limited connectivity        │
+│       ├── Sandbox                           ← Experimentation               │
+│       │   └── [sub-sandbox-001]             ← Limited connectivity          │
 │       │                                                                     │
-│       └── Decommissioned                    ← Retired subscriptions        │
-│           └── [sub-legacy-001]              ← Read-only, scheduled delete  │
+│       └── Decommissioned                    ← Retired subscriptions         │
+│           └── [sub-legacy-001]              ← Read-only, scheduled delete   │
 │                                                                             │
 │   POLICY INHERITANCE:                                                       │
 │   ────────────────────                                                      │
-│   Tenant Root → Contoso → Platform → Specific MG → Subscription → RG       │
+│   Tenant Root → Contoso → Platform → Specific MG → Subscription → RG        │
 │                                                                             │
-│   Policies applied at parent AUTOMATICALLY apply to all children           │
-│   Cannot be overridden at lower levels (unlike AWS SCPs which can be)      │
+│   Policies applied at parent AUTOMATICALLY apply to all children            │
+│   Cannot be overridden at lower levels (unlike AWS SCPs which can be)       │
 │                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -269,48 +269,48 @@ Azure Policy is the enforcement engine for governance. It evaluates resources ag
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         AZURE POLICY EFFECTS                                 │
+│                         AZURE POLICY EFFECTS                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   PREVENTIVE EFFECTS (Block bad configurations)                             │
 │   ──────────────────────────────────────────────                            │
-│                                                                              │
+│                                                                             │
 │   Deny         → Blocks resource creation/modification                      │
 │                  "You cannot create a storage account without HTTPS"        │
-│                                                                              │
-│   DenyAction   → Blocks specific actions (e.g., delete)                    │
+│                                                                             │
+│   DenyAction   → Blocks specific actions (e.g., delete)                     │
 │                  "You cannot delete resources with this tag"                │
-│                                                                              │
+│                                                                             │
 │   DETECTIVE EFFECTS (Find non-compliance)                                   │
 │   ────────────────────────────────────────                                  │
-│                                                                              │
+│                                                                             │
 │   Audit        → Logs non-compliant resources                               │
 │                  "Flag VMs without backup enabled"                          │
-│                                                                              │
-│   AuditIfNotExists → Checks for related resources                          │
+│                                                                             │
+│   AuditIfNotExists → Checks for related resources                           │
 │                      "Audit VMs without diagnostic settings"                │
-│                                                                              │
+│                                                                             │
 │   CORRECTIVE EFFECTS (Auto-remediate)                                       │
 │   ────────────────────────────────────                                      │
-│                                                                              │
-│   DeployIfNotExists → Creates missing related resources                    │
-│                       "Deploy diagnostic settings to all VMs"              │
-│                                                                              │
+│                                                                             │
+│   DeployIfNotExists → Creates missing related resources                     │
+│                       "Deploy diagnostic settings to all VMs"               │
+│                                                                             │
 │   Modify       → Changes existing resource properties                       │
 │                  "Add required tags to resources"                           │
-│                                                                              │
+│                                                                             │
 │   Append       → Adds properties during creation                            │
 │                  "Append security rules to NSGs"                            │
-│                                                                              │
+│                                                                             │
 │   INFORMATIONAL EFFECTS                                                     │
 │   ──────────────────────                                                    │
-│                                                                              │
+│                                                                             │
 │   Disabled     → Policy exists but not evaluated                            │
 │                  Useful for testing or temporary bypass                     │
-│                                                                              │
+│                                                                             │
 │   Manual       → Requires manual attestation                                │
 │                  "Confirm SOC 2 compliance annually"                        │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -581,40 +581,40 @@ Tags are metadata attached to resources that enable cost management, automation,
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         TAGGING STRATEGY                                     │
+│                         TAGGING STRATEGY                                    │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   REQUIRED TAGS (Enforced by Policy)                                        │
 │   ──────────────────────────────────                                        │
-│                                                                              │
+│                                                                             │
 │   Tag Name        │ Purpose                  │ Example Values               │
-│   ────────────────┼──────────────────────────┼─────────────────────────────  │
+│   ────────────────┼──────────────────────────┼───────────────────────────── │
 │   Environment     │ Lifecycle stage          │ prod, staging, dev, test     │
 │   CostCenter      │ Billing attribution      │ CC-12345, IT-001             │
 │   Owner           │ Responsible person/team  │ john.doe@contoso.com         │
 │   Application     │ Workload identification  │ CRM, ERP, WebStore           │
 │   BusinessUnit    │ Department               │ Finance, HR, Engineering     │
-│                                                                              │
+│                                                                             │
 │   RECOMMENDED TAGS (Encouraged but not enforced)                            │
 │   ──────────────────────────────────────────────                            │
-│                                                                              │
+│                                                                             │
 │   Tag Name        │ Purpose                  │ Example Values               │
-│   ────────────────┼──────────────────────────┼─────────────────────────────  │
+│   ────────────────┼──────────────────────────┼───────────────────────────── │
 │   DataClass       │ Data sensitivity         │ Public, Internal, Confid     │
 │   Criticality     │ Business importance      │ High, Medium, Low            │
 │   CreatedBy       │ Who created resource     │ Terraform, Manual, Pipeline  │
 │   CreatedDate     │ When created             │ 2024-01-15                   │
 │   Project         │ Project code             │ PRJ-2024-001                 │
-│                                                                              │
+│                                                                             │
 │   OPERATIONAL TAGS (System/automation use)                                  │
 │   ─────────────────────────────────────────                                 │
-│                                                                              │
+│                                                                             │
 │   Tag Name        │ Purpose                  │ Example Values               │
-│   ────────────────┼──────────────────────────┼─────────────────────────────  │
+│   ────────────────┼──────────────────────────┼───────────────────────────── │
 │   AutoShutdown    │ Schedule VM shutdown     │ true, false                  │
 │   MaintenanceWin  │ Patching window          │ Sunday-02:00-06:00           │
 │   BackupPolicy    │ Backup configuration     │ Daily, Weekly, None          │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -624,20 +624,20 @@ Unlike AWS, Azure tags do NOT automatically inherit from parent scopes:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    TAG INHERITANCE (OR LACK THEREOF)                         │
+│                    TAG INHERITANCE (OR LACK THEREOF)                        │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   AWS BEHAVIOR:                      AZURE BEHAVIOR:                        │
 │   ─────────────                      ───────────────                        │
-│                                                                              │
-│   Account Tags                       Subscription Tags                       │
+│                                                                             │
+│   Account Tags                       Subscription Tags                      │
 │   └── Environment: Prod              └── Environment: Prod                  │
 │       │                                  │                                  │
-│       └── Resource (inherits)            └── Resource (does NOT inherit)   │
+│       └── Resource (inherits)            └── Resource (does NOT inherit)    │
 │           Environment: Prod                  Environment: <missing>         │
-│                                                                              │
+│                                                                             │
 │   SOLUTION: Use Azure Policy to inherit tags from Resource Group            │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -751,28 +751,28 @@ Cost Management is critical for governance—without cost visibility, cloud spen
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    COST MANAGEMENT ARCHITECTURE                              │
+│                    COST MANAGEMENT ARCHITECTURE                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                        ┌─────────────────────────┐                          │
 │                        │    Azure Cost           │                          │
 │                        │    Management           │                          │
 │                        └───────────┬─────────────┘                          │
-│                                    │                                         │
+│                                    │                                        │
 │         ┌──────────────────────────┼──────────────────────────┐             │
 │         │                          │                          │             │
 │         ▼                          ▼                          ▼             │
-│   ┌───────────────┐        ┌───────────────┐        ┌───────────────┐      │
-│   │ Cost Analysis │        │   Budgets     │        │   Exports     │      │
-│   │               │        │               │        │               │      │
-│   │ • View costs  │        │ • Thresholds  │        │ • CSV/Parquet │      │
-│   │ • Group by    │        │ • Alerts      │        │ • Storage     │      │
-│   │   - Tag       │        │ • Actions     │        │ • Power BI    │      │
-│   │   - Resource  │        │               │        │               │      │
-│   │   - Service   │        │               │        │               │      │
-│   └───────────────┘        └───────────────┘        └───────────────┘      │
-│                                    │                                         │
-│                                    ▼                                         │
+│   ┌───────────────┐        ┌───────────────┐        ┌───────────────┐       │
+│   │ Cost Analysis │        │   Budgets     │        │   Exports     │       │
+│   │               │        │               │        │               │       │
+│   │ • View costs  │        │ • Thresholds  │        │ • CSV/Parquet │       │
+│   │ • Group by    │        │ • Alerts      │        │ • Storage     │       │
+│   │   - Tag       │        │ • Actions     │        │ • Power BI    │       │
+│   │   - Resource  │        │               │        │               │       │
+│   │   - Service   │        │               │        │               │       │
+│   └───────────────┘        └───────────────┘        └───────────────┘       │
+│                                    │                                        │
+│                                    ▼                                        │
 │                        ┌─────────────────────────┐                          │
 │                        │    Action Groups        │                          │
 │                        │                         │                          │
@@ -782,12 +782,12 @@ Cost Management is critical for governance—without cost visibility, cloud spen
 │                        │ • Azure Function        │                          │
 │                        │ • Webhook               │                          │
 │                        └─────────────────────────┘                          │
-│                                                                              │
+│                                                                             │
 │   HIERARCHY:                                                                │
 │   ──────────                                                                │
 │   Management Group → Subscription → Resource Group → Resource               │
 │   Costs roll up through hierarchy for consolidated views                    │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -887,32 +887,32 @@ resource budget 'Microsoft.Consumption/budgets@2023-05-01' = {
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    COST ALLOCATION STRATEGIES                                │
+│                    COST ALLOCATION STRATEGIES                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   1. TAG-BASED ALLOCATION                                                   │
 │   ───────────────────────                                                   │
 │   Resources tagged → Costs grouped by tag → Charge to cost center           │
-│                                                                              │
+│                                                                             │
 │   CostCenter: CC-Finance  ────► All costs rolled to Finance team            │
 │   CostCenter: CC-HR       ────► All costs rolled to HR team                 │
-│                                                                              │
+│                                                                             │
 │   2. SHARED SERVICES ALLOCATION                                             │
 │   ──────────────────────────────                                            │
 │   Hub networking, monitoring → Split across landing zones                   │
-│                                                                              │
+│                                                                             │
 │   Hub VNet ($10K/month)                                                     │
-│   ├── Corp LZ (60% traffic) ────► $6K charged to Corp                      │
-│   ├── Online LZ (35% traffic) ──► $3.5K charged to Online                  │
-│   └── Sandbox (5% traffic) ─────► $0.5K charged to Sandbox                 │
-│                                                                              │
+│   ├── Corp LZ (60% traffic) ────► $6K charged to Corp                       │
+│   ├── Online LZ (35% traffic) ──► $3.5K charged to Online                   │
+│   └── Sandbox (5% traffic) ─────► $0.5K charged to Sandbox                  │
+│                                                                             │
 │   3. SHOWBACK vs CHARGEBACK                                                 │
 │   ─────────────────────────                                                 │
-│   Showback: "Here's what you used" (informational)                         │
-│   Chargeback: "Here's your invoice" (actual billing)                       │
-│                                                                              │
-│   Most orgs start with showback → move to chargeback as FinOps matures     │
-│                                                                              │
+│   Showback: "Here's what you used" (informational)                          │
+│   Chargeback: "Here's your invoice" (actual billing)                        │
+│                                                                             │
+│   Most orgs start with showback → move to chargeback as FinOps matures      │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -952,48 +952,48 @@ A security baseline defines the minimum security controls that must be in place 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    AZURE SECURITY BASELINE                                   │
+│                    AZURE SECURITY BASELINE                                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   IDENTITY                                                                  │
 │   ────────                                                                  │
-│   □ MFA enforced for all users                                             │
+│   □ MFA enforced for all users                                              │
 │   □ Conditional Access policies configured                                  │
-│   □ PIM enabled for admin roles                                            │
-│   □ Service principals have minimal permissions                            │
-│   □ Managed Identities used (no stored credentials)                        │
-│                                                                              │
+│   □ PIM enabled for admin roles                                             │
+│   □ Service principals have minimal permissions                             │
+│   □ Managed Identities used (no stored credentials)                         │
+│                                                                             │
 │   NETWORK                                                                   │
 │   ───────                                                                   │
-│   □ No public IPs without justification                                    │
-│   □ NSGs on all subnets                                                    │
-│   □ Private Endpoints for PaaS services                                    │
-│   □ Azure Firewall or NVA for egress filtering                            │
-│   □ DDoS Protection on public workloads                                    │
-│                                                                              │
+│   □ No public IPs without justification                                     │
+│   □ NSGs on all subnets                                                     │
+│   □ Private Endpoints for PaaS services                                     │
+│   □ Azure Firewall or NVA for egress filtering                              │
+│   □ DDoS Protection on public workloads                                     │
+│                                                                             │
 │   DATA                                                                      │
 │   ────                                                                      │
-│   □ Encryption at rest (default enabled)                                   │
-│   □ Encryption in transit (TLS 1.2+)                                       │
-│   □ Customer-managed keys for sensitive data                               │
-│   □ Soft delete enabled on storage/Key Vault                               │
-│   □ Data classification and labeling                                       │
-│                                                                              │
+│   □ Encryption at rest (default enabled)                                    │
+│   □ Encryption in transit (TLS 1.2+)                                        │
+│   □ Customer-managed keys for sensitive data                                │
+│   □ Soft delete enabled on storage/Key Vault                                │
+│   □ Data classification and labeling                                        │
+│                                                                             │
 │   COMPUTE                                                                   │
 │   ───────                                                                   │
-│   □ Defender for Cloud enabled                                             │
+│   □ Defender for Cloud enabled                                              │
 │   □ Vulnerability scanning configured                                       │
-│   □ Update management enabled                                              │
-│   □ Just-in-time VM access configured                                      │
-│   □ Antimalware deployed                                                   │
-│                                                                              │
+│   □ Update management enabled                                               │
+│   □ Just-in-time VM access configured                                       │
+│   □ Antimalware deployed                                                    │
+│                                                                             │
 │   LOGGING                                                                   │
 │   ───────                                                                   │
-│   □ Diagnostic settings on all resources                                   │
-│   □ Activity logs sent to Log Analytics                                    │
-│   □ Retention period: 90+ days                                             │
-│   □ Sentinel enabled for SIEM                                              │
-│                                                                              │
+│   □ Diagnostic settings on all resources                                    │
+│   □ Activity logs sent to Log Analytics                                     │
+│   □ Retention period: 90+ days                                              │
+│   □ Sentinel enabled for SIEM                                               │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1110,52 +1110,52 @@ Compliance ensures your Azure environment meets regulatory requirements (GDPR, H
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    COMPLIANCE MANAGEMENT                                     │
+│                    COMPLIANCE MANAGEMENT                                    │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                     ┌──────────────────────────────┐                        │
 │                     │    REGULATORY REQUIREMENTS   │                        │
 │                     │                              │                        │
-│                     │  • GDPR     • SOC 2         │                        │
-│                     │  • HIPAA    • PCI DSS       │                        │
-│                     │  • ISO 27001 • FedRAMP      │                        │
+│                     │  • GDPR     • SOC 2         │                         │
+│                     │  • HIPAA    • PCI DSS       │                         │
+│                     │  • ISO 27001 • FedRAMP      │                         │
 │                     └──────────────┬───────────────┘                        │
-│                                    │                                         │
-│                                    ▼                                         │
-│   ┌────────────────────────────────────────────────────────────────────┐   │
-│   │                  AZURE COMPLIANCE TOOLS                             │   │
-│   │                                                                     │   │
-│   │   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐   │   │
-│   │   │ Regulatory      │  │  Azure Policy   │  │   Microsoft     │   │   │
-│   │   │ Compliance      │  │  Compliance     │  │   Purview       │   │   │
-│   │   │ Dashboard       │  │  (Built-in      │  │   (Data         │   │   │
-│   │   │                 │  │   initiatives)  │  │    Governance)  │   │   │
-│   │   │ • Audit reports │  │ • NIST 800-53  │  │ • Data catalog  │   │   │
-│   │   │ • Certifications│  │ • CIS          │  │ • Sensitivity   │   │   │
-│   │   │ • Shared resp.  │  │ • Azure CIS    │  │   labels        │   │   │
-│   │   │                 │  │ • ISO 27001    │  │ • DLP policies  │   │   │
-│   │   └─────────────────┘  └─────────────────┘  └─────────────────┘   │   │
-│   │                                                                     │   │
-│   │   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐   │   │
-│   │   │ Defender for    │  │  Azure         │  │   Export &      │   │   │
-│   │   │ Cloud           │  │  Blueprints    │  │   Reporting     │   │   │
-│   │   │                 │  │  (deprecated   │  │                 │   │   │
-│   │   │ • Secure score  │  │   but still    │  │ • Compliance    │   │   │
-│   │   │ • Recommends    │  │   used)        │  │   reports       │   │   │
-│   │   │ • Compliance    │  │                │  │ • Audit logs    │   │   │
-│   │   │   dashboard     │  │                │  │ • Evidence      │   │   │
-│   │   └─────────────────┘  └─────────────────┘  └─────────────────┘   │   │
-│   │                                                                     │   │
-│   └────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                    │                                        │
+│                                    ▼                                        │
+│   ┌────────────────────────────────────────────────────────────────────┐    │
+│   │                  AZURE COMPLIANCE TOOLS                            │    │
+│   │                                                                    │    │
+│   │   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐    │    │
+│   │   │ Regulatory      │  │  Azure Policy   │  │   Microsoft     │    │    │
+│   │   │ Compliance      │  │  Compliance     │  │   Purview       │    │    │
+│   │   │ Dashboard       │  │  (Built-in      │  │   (Data         │    │    │
+│   │   │                 │  │   initiatives)  │  │    Governance)  │    │    │
+│   │   │ • Audit reports │  │ • NIST 800-53   │  │ • Data catalog  │    │    │
+│   │   │ • Certifications│  │ • CIS           │  │ • Sensitivity   │    │    │
+│   │   │ • Shared resp.  │  │ • Azure CIS     │  │   labels        │    │    │
+│   │   │                 │  │ • ISO 27001     │  │ • DLP policies  │    │    │
+│   │   └─────────────────┘  └─────────────────┘  └─────────────────┘    │    │
+│   │                                                                    │    │
+│   │   ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐    │    │
+│   │   │ Defender for    │  │  Azure          │  │   Export &      │    │    │
+│   │   │ Cloud           │  │  Blueprints     │  │   Reporting     │    │    │
+│   │   │                 │  │  (deprecated    │  │                 │    │    │
+│   │   │ • Secure score  │  │   but still     │  │ • Compliance    │    │    │
+│   │   │ • Recommends    │  │   used)         │  │   reports       │    │    │
+│   │   │ • Compliance    │  │                 │  │ • Audit logs    │    │    │
+│   │   │   dashboard     │  │                 │  │ • Evidence      │    │    │
+│   │   └─────────────────┘  └─────────────────┘  └─────────────────┘    │    │
+│   │                                                                    │    │
+│   └────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
 │   WORKFLOW:                                                                 │
 │   ─────────                                                                 │
-│   1. Map regulations to Azure Policy initiatives                           │
-│   2. Assign initiatives to management groups                               │
-│   3. Monitor compliance through dashboards                                 │
-│   4. Remediate non-compliant resources                                     │
-│   5. Generate audit evidence                                               │
-│                                                                              │
+│   1. Map regulations to Azure Policy initiatives                            │
+│   2. Assign initiatives to management groups                                │
+│   3. Monitor compliance through dashboards                                  │
+│   4. Remediate non-compliant resources                                      │
+│   5. Generate audit evidence                                                │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1220,43 +1220,43 @@ Resource Locks prevent accidental deletion or modification of critical resources
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         RESOURCE LOCKS                                       │
+│                         RESOURCE LOCKS                                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   LOCK TYPES:                                                               │
 │   ───────────                                                               │
-│                                                                              │
+│                                                                             │
 │   CanNotDelete (Delete Lock)                                                │
 │   ──────────────────────────                                                │
 │   • Resource CAN be read and modified                                       │
 │   • Resource CANNOT be deleted                                              │
 │   • Use for: Production databases, critical storage accounts                │
-│                                                                              │
+│                                                                             │
 │   ReadOnly (Read-Only Lock)                                                 │
 │   ─────────────────────────                                                 │
 │   • Resource CAN be read                                                    │
 │   • Resource CANNOT be modified or deleted                                  │
 │   • Use for: Compliance evidence, archived resources                        │
-│   • WARNING: May break some operations (e.g., storage account keys)        │
-│                                                                              │
+│   • WARNING: May break some operations (e.g., storage account keys)         │
+│                                                                             │
 │   LOCK INHERITANCE:                                                         │
 │   ─────────────────                                                         │
-│                                                                              │
+│                                                                             │
 │   Subscription Lock                                                         │
-│   └── Applies to ALL resource groups and resources                         │
-│                                                                              │
+│   └── Applies to ALL resource groups and resources                          │
+│                                                                             │
 │   Resource Group Lock                                                       │
-│   └── Applies to ALL resources in that RG                                  │
-│                                                                              │
+│   └── Applies to ALL resources in that RG                                   │
+│                                                                             │
 │   Resource Lock                                                             │
-│   └── Applies to THAT resource only                                        │
-│                                                                              │
+│   └── Applies to THAT resource only                                         │
+│                                                                             │
 │   PERMISSIONS:                                                              │
 │   ────────────                                                              │
 │   Creating/deleting locks requires:                                         │
-│   • Microsoft.Authorization/locks/* (Owner role has this)                  │
-│   • Even resource owners can't delete locked resources without lock access │
-│                                                                              │
+│   • Microsoft.Authorization/locks/* (Owner role has this)                   │
+│   • Even resource owners can't delete locked resources without lock access  │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -1356,9 +1356,9 @@ Get-AzResourceGroup | Where-Object { $_.ResourceGroupName -like "*-prod-*" } | F
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    GOVERNANCE MATURITY LEVELS                                │
+│                    GOVERNANCE MATURITY LEVELS                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   LEVEL 1: INITIAL                                                          │
 │   ────────────────                                                          │
 │   □ No management group hierarchy                                           │
@@ -1367,35 +1367,35 @@ Get-AzResourceGroup | Where-Object { $_.ResourceGroupName -like "*-prod-*" } | F
 │   □ No Azure Policy                                                         │
 │   □ Cost management not configured                                          │
 │   Status: Chaos. Cloud spending unknown. Security posture unknown.          │
-│                                                                              │
+│                                                                             │
 │   LEVEL 2: DEVELOPING                                                       │
 │   ───────────────────                                                       │
 │   □ Basic management groups exist                                           │
-│   □ Some tagging in place (not enforced)                                   │
+│   □ Some tagging in place (not enforced)                                    │
 │   □ Audit-only policies assigned                                            │
 │   □ Budget alerts configured                                                │
-│   □ Defender for Cloud enabled (free tier)                                 │
+│   □ Defender for Cloud enabled (free tier)                                  │
 │   Status: Visibility improving. Still reactive.                             │
-│                                                                              │
+│                                                                             │
 │   LEVEL 3: DEFINED                                                          │
 │   ─────────────────                                                         │
 │   □ Full management group hierarchy                                         │
-│   □ Tagging enforced via policy                                            │
+│   □ Tagging enforced via policy                                             │
 │   □ Security baseline policies enforced                                     │
 │   □ Compliance initiatives assigned                                         │
 │   □ Resource locks on critical resources                                    │
 │   □ Cost allocation by cost center                                          │
 │   Status: Proactive governance. Compliance measurable.                      │
-│                                                                              │
+│                                                                             │
 │   LEVEL 4: MANAGED                                                          │
 │   ─────────────────                                                         │
 │   □ Subscription vending automated                                          │
 │   □ Policy remediation automated                                            │
 │   □ Compliance reports generated automatically                              │
-│   □ FinOps practices in place (showback/chargeback)                        │
+│   □ FinOps practices in place (showback/chargeback)                         │
 │   □ Security posture continuously monitored                                 │
 │   Status: Governance is automated. Teams self-service.                      │
-│                                                                              │
+│                                                                             │
 │   LEVEL 5: OPTIMIZING                                                       │
 │   ────────────────────                                                      │
 │   □ AI-driven cost optimization                                             │
@@ -1404,7 +1404,7 @@ Get-AzResourceGroup | Where-Object { $_.ResourceGroupName -like "*-prod-*" } | F
 │   □ Continuous compliance validation                                        │
 │   □ Zero-touch governance                                                   │
 │   Status: Governance enables innovation. Security and cost optimized.       │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
