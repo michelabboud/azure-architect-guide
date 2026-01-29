@@ -4,20 +4,20 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    AZURE NETWORK SECURITY LAYERS                             │
+│                    AZURE NETWORK SECURITY LAYERS                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│                              INTERNET                                        │
-│                                  │                                           │
-│  LAYER 1: EDGE PROTECTION        │                                           │
-│  ────────────────────────        ▼                                           │
+│                                                                             │
+│                              INTERNET                                       │
+│                                  │                                          │
+│  LAYER 1: EDGE PROTECTION        │                                          │
+│  ────────────────────────        ▼                                          │
 │                    ┌─────────────────────────────┐                          │
 │                    │    Azure DDoS Protection    │                          │
 │                    │    (Volumetric attacks)     │                          │
 │                    └─────────────┬───────────────┘                          │
-│                                  │                                           │
-│  LAYER 2: APPLICATION PROTECTION │                                           │
-│  ────────────────────────────────▼                                           │
+│                                  │                                          │
+│  LAYER 2: APPLICATION PROTECTION │                                          │
+│  ────────────────────────────────▼                                          │
 │                    ┌─────────────────────────────┐                          │
 │                    │    Azure Front Door         │                          │
 │                    │    + WAF (L7 attacks)       │                          │
@@ -25,29 +25,29 @@
 │                    │    Application Gateway      │                          │
 │                    │    + WAF                    │                          │
 │                    └─────────────┬───────────────┘                          │
-│                                  │                                           │
-│  LAYER 3: PERIMETER PROTECTION   │                                           │
-│  ────────────────────────────────▼                                           │
+│                                  │                                          │
+│  LAYER 3: PERIMETER PROTECTION   │                                          │
+│  ────────────────────────────────▼                                          │
 │                    ┌─────────────────────────────┐                          │
 │                    │    Azure Firewall           │                          │
 │                    │    (L3-L7 filtering)        │                          │
 │                    │    OR NVA (Palo Alto, etc.) │                          │
 │                    └─────────────┬───────────────┘                          │
-│                                  │                                           │
-│  LAYER 4: MICROSEGMENTATION      │                                           │
-│  ────────────────────────────────▼                                           │
+│                                  │                                          │
+│  LAYER 4: MICROSEGMENTATION      │                                          │
+│  ────────────────────────────────▼                                          │
 │                    ┌─────────────────────────────┐                          │
 │                    │    Network Security Groups  │                          │
 │                    │    (Subnet/NIC level)       │                          │
 │                    └─────────────┬───────────────┘                          │
-│                                  │                                           │
-│  LAYER 5: PRIVATE CONNECTIVITY   │                                           │
-│  ────────────────────────────────▼                                           │
+│                                  │                                          │
+│  LAYER 5: PRIVATE CONNECTIVITY   │                                          │
+│  ────────────────────────────────▼                                          │
 │                    ┌─────────────────────────────┐                          │
 │                    │    Private Endpoints        │                          │
 │                    │    (No public exposure)     │                          │
 │                    └─────────────────────────────┘                          │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -72,41 +72,41 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    NSG RULE PROCESSING                                       │
+│                    NSG RULE PROCESSING                                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  INBOUND TRAFFIC:                                                           │
 │  ────────────────                                                           │
-│                                                                              │
-│  Traffic arrives → NSG evaluates rules by PRIORITY (lowest number first)   │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────┐    │
-│  │ Priority │ Name              │ Action │ Source      │ Dest Port   │    │
-│  ├──────────┼───────────────────┼────────┼─────────────┼─────────────┤    │
-│  │ 100      │ AllowHTTPS        │ Allow  │ Internet    │ 443         │    │
-│  │ 200      │ AllowSSHFromMgmt  │ Allow  │ 10.0.0.0/24 │ 22          │    │
-│  │ 300      │ DenyAllInbound    │ Deny   │ Any         │ Any         │    │
-│  │ 65000    │ AllowVnetInBound  │ Allow  │ VNet        │ Any         │ ←──┤
-│  │ 65001    │ AllowAzureLB      │ Allow  │ AzureLB     │ Any         │    │ DEFAULT
-│  │ 65500    │ DenyAllInBound    │ Deny   │ Any         │ Any         │ ←──┤ RULES
+│                                                                             │
+│  Traffic arrives → NSG evaluates rules by PRIORITY (lowest number first)    │
+│                                                                             │
+│  ┌────────────────────────────────────────────────────────────────────┐     │
+│  │ Priority │ Name              │ Action │ Source      │ Dest Port    │     │
+│  ├──────────┼───────────────────┼────────┼─────────────┼──────────────┤     │
+│  │ 100      │ AllowHTTPS        │ Allow  │ Internet    │ 443          │    │
+│  │ 200      │ AllowSSHFromMgmt  │ Allow  │ 10.0.0.0/24 │ 22           │    │
+│  │ 300      │ DenyAllInbound    │ Deny   │ Any         │ Any          │    │
+│  │ 65000    │ AllowVnetInBound  │ Allow  │ VNet        │ Any          │ ←──┤
+│  │ 65001    │ AllowAzureLB      │ Allow  │ AzureLB     │ Any          │    │ DEFAULT
+│  │ 65500    │ DenyAllInBound    │ Deny   │ Any         │ Any          │ ←──┤ RULES
 │  └────────────────────────────────────────────────────────────────────┘    │
-│                                                                              │
-│  First matching rule wins!                                                  │
-│                                                                              │
-│  OUTBOUND TRAFFIC:                                                          │
-│  ─────────────────                                                          │
-│                                                                              │
+│                                                                            │
+│  First matching rule wins!                                                 │
+│                                                                            │
+│  OUTBOUND TRAFFIC:                                                         │
+│  ─────────────────                                                         │
+│                                                                            │
 │  ┌────────────────────────────────────────────────────────────────────┐    │
-│  │ Priority │ Name               │ Action │ Dest          │ Port     │    │
-│  ├──────────┼────────────────────┼────────┼───────────────┼──────────┤    │
-│  │ 100      │ AllowStorageOut    │ Allow  │ Storage       │ 443      │    │
-│  │ 200      │ AllowSQLOut        │ Allow  │ Sql           │ 1433     │    │
-│  │ 300      │ DenyInternetOut    │ Deny   │ Internet      │ Any      │    │
-│  │ 65000    │ AllowVnetOutBound  │ Allow  │ VNet          │ Any      │ ←──┤
-│  │ 65001    │ AllowInternetOut   │ Allow  │ Internet      │ Any      │    │ DEFAULT
-│  │ 65500    │ DenyAllOutBound    │ Deny   │ Any           │ Any      │ ←──┤ RULES
+│  │ Priority │ Name               │ Action │ Dest          │ Port      │    │
+│  ├──────────┼────────────────────┼────────┼───────────────┼───────────┤    │
+│  │ 100      │ AllowStorageOut    │ Allow  │ Storage       │ 443       │    │
+│  │ 200      │ AllowSQLOut        │ Allow  │ Sql           │ 1433      │    │
+│  │ 300      │ DenyInternetOut    │ Deny   │ Internet      │ Any       │    │
+│  │ 65000    │ AllowVnetOutBound  │ Allow  │ VNet          │ Any       │ ←──┤
+│  │ 65001    │ AllowInternetOut   │ Allow  │ Internet      │ Any       │    │ DEFAULT
+│  │ 65500    │ DenyAllOutBound    │ Deny   │ Any           │ Any       │ ←──┤ RULES
 │  └────────────────────────────────────────────────────────────────────┘    │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -151,28 +151,28 @@ Service tags are Azure-managed IP address groups that automatically update.
 # GOOD: --source-address-prefixes AzureCloud
 
 Common Service Tags:
-┌──────────────────────────┬──────────────────────────────────────────────────┐
-│ Service Tag              │ What it includes                                 │
-├──────────────────────────┼──────────────────────────────────────────────────┤
-│ VirtualNetwork           │ VNet address space + peered VNets + on-prem     │
-│ AzureLoadBalancer        │ Azure LB health probes                          │
-│ Internet                 │ Public internet (excludes VNet)                 │
-│ AzureCloud               │ All Azure datacenter IPs                        │
-│ AzureCloud.EastUS        │ Azure IPs in East US region                     │
-│ Storage                  │ Azure Storage service IPs                       │
-│ Storage.EastUS           │ Storage IPs in East US                          │
-│ Sql                      │ Azure SQL service IPs                           │
-│ AzureActiveDirectory     │ Entra ID endpoints                              │
-│ AzureMonitor             │ Azure Monitor endpoints                         │
-│ AzureKeyVault            │ Key Vault endpoints                             │
-│ EventHub                 │ Event Hub endpoints                             │
-│ ServiceBus               │ Service Bus endpoints                           │
-│ AzureContainerRegistry   │ ACR endpoints                                   │
-│ MicrosoftContainerRegistry│ MCR (Microsoft images)                         │
-│ AzureKubernetesService   │ AKS management IPs                              │
-│ GatewayManager           │ VPN/ExpressRoute Gateway management             │
-│ AzureBastion             │ Bastion service IPs                             │
-└──────────────────────────┴──────────────────────────────────────────────────┘
+┌────────────────────────────┬──────────────────────────────────────────────────┐
+│ Service Tag                │ What it includes                                 │
+├────────────────────────────┼──────────────────────────────────────────────────┤
+│ VirtualNetwork             │ VNet address space + peered VNets + on-prem      │
+│ AzureLoadBalancer          │ Azure LB health probes                           │
+│ Internet                   │ Public internet (excludes VNet)                  │
+│ AzureCloud                 │ All Azure datacenter IPs                         │
+│ AzureCloud.EastUS          │ Azure IPs in East US region                      │
+│ Storage                    │ Azure Storage service IPs                        │
+│ Storage.EastUS             │ Storage IPs in East US                           │
+│ Sql                        │ Azure SQL service IPs                            │
+│ AzureActiveDirectory       │ Entra ID endpoints                               │
+│ AzureMonitor               │ Azure Monitor endpoints                          │
+│ AzureKeyVault              │ Key Vault endpoints                              │
+│ EventHub                   │ Event Hub endpoints                              │
+│ ServiceBus                 │ Service Bus endpoints                            │
+│ AzureContainerRegistry     │ ACR endpoints                                    │
+│ MicrosoftContainerRegistry │ MCR (Microsoft images)                           │
+│ AzureKubernetesService     │ AKS management IPs                               │
+│ GatewayManager             │ VPN/ExpressRoute Gateway management              │
+│ AzureBastion               │ Bastion service IPs                              │
+└────────────────────────────┴──────────────────────────────────────────────────┘
 ```
 
 ### Application Security Groups (ASGs)
@@ -192,20 +192,20 @@ Problem: Must update IPs when          Benefit: Just add VM to ASG
          VMs change                             Rule auto-applies
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                                                                              │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │  ASG: WebServers                     ASG: AppServers                │   │
-│  │  ┌─────┐ ┌─────┐ ┌─────┐            ┌─────┐ ┌─────┐                │   │
-│  │  │Web1 │ │Web2 │ │Web3 │    ────►   │App1 │ │App2 │                │   │
-│  │  └─────┘ └─────┘ └─────┘    8080    └─────┘ └─────┘                │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
-│  NSG Rule: Allow TCP/8080 from ASG-WebServers to ASG-AppServers            │
-│                                                                              │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │  ASG: WebServers                     ASG: AppServers                │    │
+│  │  ┌─────┐ ┌─────┐ ┌─────┐            ┌─────┐ ┌─────┐                 │    │
+│  │  │Web1 │ │Web2 │ │Web3 │    ────►   │App1 │ │App2 │                 │    │
+│  │  └─────┘ └─────┘ └─────┘    8080    └─────┘ └─────┘                 │    │
+│  └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│  NSG Rule: Allow TCP/8080 from ASG-WebServers to ASG-AppServers             │
+│                                                                             │
 │  When you add Web4:                                                         │
-│  1. Attach Web4's NIC to ASG-WebServers                                    │
-│  2. Rule automatically applies (no NSG change needed)                      │
-│                                                                              │
+│  1. Attach Web4's NIC to ASG-WebServers                                     │
+│  2. Rule automatically applies (no NSG change needed)                       │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -231,52 +231,52 @@ Problem: Must update IPs when          Benefit: Just add VM to ASG
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    AZURE FIREWALL ARCHITECTURE                               │
+│                    AZURE FIREWALL ARCHITECTURE                              │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│                              INTERNET                                        │
-│                                  │                                           │
+│                                                                             │
+│                              INTERNET                                       │
+│                                  │                                          │
 │                    ┌─────────────┴─────────────┐                            │
-│                    │    Azure Firewall          │                            │
-│                    │    Public IP               │                            │
+│                    │    Azure Firewall          │                           │
+│                    │    Public IP               │                           │
 │                    └─────────────┬─────────────┘                            │
-│                                  │                                           │
+│                                  │                                          │
 │  ┌───────────────────────────────┴───────────────────────────────────────┐  │
-│  │                       HUB VNET                                         │  │
+│  │                       HUB VNET                                        │  │
 │  │  ┌─────────────────────────────────────────────────────────────────┐  │  │
-│  │  │              AzureFirewallSubnet (min /26)                       │  │  │
-│  │  │                                                                  │  │  │
+│  │  │              AzureFirewallSubnet (min /26)                      │  │  │
+│  │  │                                                                 │  │  │
 │  │  │  ┌───────────────────────────────────────────────────────────┐  │  │  │
 │  │  │  │                 AZURE FIREWALL                            │  │  │  │
-│  │  │  │                                                            │  │  │  │
+│  │  │  │                                                           │  │  │  │
 │  │  │  │  RULE COLLECTIONS (processed in order):                   │  │  │  │
-│  │  │  │                                                            │  │  │  │
+│  │  │  │                                                           │  │  │  │
 │  │  │  │  1. NAT Rules (DNAT - inbound)                            │  │  │  │
 │  │  │  │     └─ Public IP:443 → Internal LB:443                    │  │  │  │
-│  │  │  │                                                            │  │  │  │
+│  │  │  │                                                           │  │  │  │
 │  │  │  │  2. Network Rules (L3/L4)                                 │  │  │  │
-│  │  │  │     └─ Allow 10.1.0.0/16 → 10.2.0.0/16 : 1433            │  │  │  │
+│  │  │  │     └─ Allow 10.1.0.0/16 → 10.2.0.0/16 : 1433             │  │  │  │
 │  │  │  │     └─ Allow * → SQL (service tag) : 1433                 │  │  │  │
-│  │  │  │                                                            │  │  │  │
+│  │  │  │                                                           │  │  │  │
 │  │  │  │  3. Application Rules (L7 - FQDN)                         │  │  │  │
 │  │  │  │     └─ Allow *.microsoft.com : HTTPS                      │  │  │  │
 │  │  │  │     └─ Allow github.com : HTTPS                           │  │  │  │
 │  │  │  │     └─ Deny * (implicit)                                  │  │  │  │
-│  │  │  │                                                            │  │  │  │
+│  │  │  │                                                           │  │  │  │
 │  │  │  └───────────────────────────────────────────────────────────┘  │  │  │
 │  │  └─────────────────────────────────────────────────────────────────┘  │  │
-│  └────────────────────────────────────────────────────────────────────────┘  │
-│                                         │                                    │
+│  └───────────────────────────────────────────────────────────────────────┘  │
+│                                         │                                   │
 │            ┌────────────────────────────┼────────────────────────────┐      │
 │            │ (VNet Peering + UDR)       │                            │      │
 │            ▼                            ▼                            ▼      │
-│  ┌─────────────────┐          ┌─────────────────┐          ┌─────────────┐ │
-│  │   SPOKE 1       │          │   SPOKE 2       │          │   SPOKE 3   │ │
-│  │   Route Table:  │          │   Route Table:  │          │             │ │
-│  │   0.0.0.0/0 →   │          │   0.0.0.0/0 →   │          │             │ │
-│  │   Firewall IP   │          │   Firewall IP   │          │             │ │
-│  └─────────────────┘          └─────────────────┘          └─────────────┘ │
-│                                                                              │
+│  ┌─────────────────┐          ┌─────────────────┐          ┌─────────────┐  │
+│  │   SPOKE 1       │          │   SPOKE 2       │          │   SPOKE 3   │  │
+│  │   Route Table:  │          │   Route Table:  │          │             │  │
+│  │   0.0.0.0/0 →   │          │   0.0.0.0/0 →   │          │             │  │
+│  │   Firewall IP   │          │   Firewall IP   │          │             │  │
+│  └─────────────────┘          └─────────────────┘          └─────────────┘  │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -358,48 +358,48 @@ az network firewall network-rule create \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    WAF DEPLOYMENT OPTIONS                                    │
+│                    WAF DEPLOYMENT OPTIONS                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  OPTION 1: Application Gateway + WAF v2                                     │
 │  ───────────────────────────────────────                                    │
 │  • Regional (single region)                                                 │
 │  • Behind Azure Front Door or standalone                                    │
-│  • Best for: Traditional web apps, internal apps                           │
-│                                                                              │
-│  OPTION 2: Azure Front Door + WAF                                          │
+│  • Best for: Traditional web apps, internal apps                            │
+│                                                                             │
+│  OPTION 2: Azure Front Door + WAF                                           │
 │  ─────────────────────────────────                                          │
 │  • Global (all edge locations)                                              │
 │  • DDoS protection included                                                 │
-│  • Best for: Global apps, CDN + security                                   │
-│                                                                              │
-│  OPTION 3: Azure CDN + WAF                                                 │
+│  • Best for: Global apps, CDN + security                                    │
+│                                                                             │
+│  OPTION 3: Azure CDN + WAF                                                  │
 │  ──────────────────────────                                                 │
-│  • CDN with WAF (Microsoft tier)                                           │
-│  • Best for: Static content with basic protection                          │
-│                                                                              │
-│                                                                              │
+│  • CDN with WAF (Microsoft tier)                                            │
+│  • Best for: Static content with basic protection                           │
+│                                                                             │
+│                                                                             │
 │  WAF RULE SETS:                                                             │
-│  ┌────────────────────────────────────────────────────────────────────────┐│
-│  │ OWASP Core Rule Set (CRS)                                              ││
-│  │ • CRS 3.2 (default, recommended)                                       ││
-│  │ • CRS 3.1, 3.0, 2.2.9 (legacy)                                         ││
-│  │                                                                         ││
-│  │ Protects against:                                                       ││
-│  │ • SQL Injection                                                         ││
-│  │ • Cross-Site Scripting (XSS)                                           ││
-│  │ • Command Injection                                                     ││
-│  │ • Local File Inclusion                                                  ││
-│  │ • Remote Code Execution                                                 ││
-│  │ • Protocol violations                                                   ││
-│  │ • And more...                                                           ││
-│  └────────────────────────────────────────────────────────────────────────┘│
-│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐ │
+│  │ OWASP Core Rule Set (CRS)                                              │ │
+│  │ • CRS 3.2 (default, recommended)                                       │ │
+│  │ • CRS 3.1, 3.0, 2.2.9 (legacy)                                         │ │
+│  │                                                                        │ │
+│  │ Protects against:                                                      │ │ 
+│  │ • SQL Injection                                                        │ │
+│  │ • Cross-Site Scripting (XSS)                                           │ │
+│  │ • Command Injection                                                    │ │
+│  │ • Local File Inclusion                                                 │ │
+│  │ • Remote Code Execution                                                │ │
+│  │ • Protocol violations                                                  │ │
+│  │ • And more...                                                          │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
 │  BOT PROTECTION (Add-on):                                                   │
 │  • Good bots (search engines) - Allow                                       │
-│  • Bad bots (scrapers, attacks) - Block                                    │
-│  • Unknown bots - Challenge (CAPTCHA)                                      │
-│                                                                              │
+│  • Bad bots (scrapers, attacks) - Block                                     │
+│  • Unknown bots - Challenge (CAPTCHA)                                       │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -492,37 +492,37 @@ az network application-gateway waf-policy update \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    DDOS PROTECTION TIERS                                     │
+│                    DDOS PROTECTION TIERS                                    │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  BASIC (Free - Always On):                                                  │
 │  ─────────────────────────                                                  │
-│  • Enabled by default for all Azure services                               │
-│  • Protects against common network-layer attacks                           │
+│  • Enabled by default for all Azure services                                │
+│  • Protects against common network-layer attacks                            │
 │  • No configuration needed                                                  │
-│  • No SLA, no telemetry, no alerting                                       │
-│                                                                              │
+│  • No SLA, no telemetry, no alerting                                        │
+│                                                                             │
 │  STANDARD ($2,944/month + overage):                                         │
 │  ──────────────────────────────────                                         │
-│  • Tuned specifically for your Azure resources                             │
-│  • Real-time metrics and alerts                                            │
-│  • Attack mitigation reports                                               │
-│  • DDoS Rapid Response (DRR) team access                                   │
-│  • Cost protection (credit for scale-out during attack)                    │
-│  • Covers up to 100 public IPs                                             │
+│  • Tuned specifically for your Azure resources                              │
+│  • Real-time metrics and alerts                                             │
+│  • Attack mitigation reports                                                │
+│  • DDoS Rapid Response (DRR) team access                                    │
+│  • Cost protection (credit for scale-out during attack)                     │
+│  • Covers up to 100 public IPs                                              │
 │  • SLA: 99.99%                                                              │
-│                                                                              │
+│                                                                             │
 │  WHAT IT PROTECTS:                                                          │
-│  ┌────────────────────────────────────────────────────────────────────────┐│
-│  │ Attack Type              │ Basic │ Standard │                          ││
-│  ├──────────────────────────┼───────┼──────────┤                          ││
-│  │ Volumetric (floods)      │  ✓    │    ✓     │ UDP, ICMP, TCP flood    ││
-│  │ Protocol attacks         │  ✓    │    ✓     │ SYN flood, Ping of Death││
-│  │ Application layer (L7)   │  ✗    │    ✗*    │ Use WAF for L7          ││
-│  └────────────────────────────────────────────────────────────────────────┘│
-│                                                                              │
-│  * DDoS Standard protects the network layer; WAF protects application layer│
-│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐ │
+│  │ Attack Type              │ Basic │ Standard │                          │ │
+│  ├──────────────────────────┼───────┼──────────┤                          │ │
+│  │ Volumetric (floods)      │  ✓    │    ✓     │ UDP, ICMP, TCP flood    │ │
+│  │ Protocol attacks         │  ✓    │    ✓     │ SYN flood, Ping of Death│ │
+│  │ Application layer (L7)   │  ✗    │    ✗*    │ Use WAF for L7          │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                                                             │
+│  * DDoS Standard protects the network layer; WAF protects application layer │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -551,44 +551,44 @@ az network vnet update \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    AZURE BASTION ARCHITECTURE                                │
+│                    AZURE BASTION ARCHITECTURE                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  WITHOUT BASTION:                      WITH BASTION:                        │
 │  ────────────────                      ─────────────                        │
-│                                                                              │
-│  User → Internet → Public IP → VM      User → Browser → Bastion → VM       │
-│         (SSH/RDP exposed!)                    (HTTPS only, no public IP)   │
-│                                                                              │
-│                                                                              │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │                          VNET                                        │   │
-│  │                                                                      │   │
-│  │  ┌───────────────────────────────────────────────────────────────┐  │   │
-│  │  │              AzureBastionSubnet (min /26)                      │  │   │
-│  │  │                                                                 │  │   │
-│  │  │  ┌─────────────────────────────────────────────────────────┐  │  │   │
-│  │  │  │              AZURE BASTION                               │  │  │   │
-│  │  │  │              (Managed PaaS)                              │  │  │   │
-│  │  │  │                                                          │  │  │   │
-│  │  │  │  • Browser-based RDP/SSH (HTML5)                        │  │  │   │
-│  │  │  │  • No public IP on VMs needed                           │  │  │   │
-│  │  │  │  • Integrated with Entra ID                             │  │  │   │
-│  │  │  │  • Session recording (Premium)                          │  │  │   │
-│  │  │  │  • Copy/paste control                                   │  │  │   │
-│  │  │  └─────────────────────────────────────────────────────────┘  │  │   │
-│  │  └───────────────────────────────────────────────────────────────┘  │   │
-│  │                                │                                    │   │
-│  │                    Connects via private IP                          │   │
-│  │                                │                                    │   │
-│  │  ┌──────────────────────┐  ┌──────────────────────┐                │   │
-│  │  │        VM 1          │  │        VM 2          │                │   │
-│  │  │  (No public IP)      │  │  (No public IP)      │                │   │
-│  │  │  Private: 10.0.1.10  │  │  Private: 10.0.1.11  │                │   │
-│  │  └──────────────────────┘  └──────────────────────┘                │   │
-│  │                                                                      │   │
-│  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
+│  User → Internet → Public IP → VM      User → Browser → Bastion → VM        │
+│         (SSH/RDP exposed!)                    (HTTPS only, no public IP)    │
+│                                                                             │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │                          VNET                                       │    │
+│  │                                                                     │    │
+│  │  ┌───────────────────────────────────────────────────────────────┐  │    │
+│  │  │              AzureBastionSubnet (min /26)                     │  │    │
+│  │  │                                                               │  │    │
+│  │  │  ┌─────────────────────────────────────────────────────────┐  │  │    │
+│  │  │  │              AZURE BASTION                              │  │  │    │
+│  │  │  │              (Managed PaaS)                             │  │  │    │
+│  │  │  │                                                         │  │  │    │
+│  │  │  │  • Browser-based RDP/SSH (HTML5)                        │  │  │    │
+│  │  │  │  • No public IP on VMs needed                           │  │  │    │
+│  │  │  │  • Integrated with Entra ID                             │  │  │    │
+│  │  │  │  • Session recording (Premium)                          │  │  │    │
+│  │  │  │  • Copy/paste control                                   │  │  │    │
+│  │  │  └─────────────────────────────────────────────────────────┘  │  │    │
+│  │  └───────────────────────────────────────────────────────────────┘  │    │
+│  │                                │                                    │    │
+│  │                    Connects via private IP                          │    │
+│  │                                │                                    │    │
+│  │  ┌──────────────────────┐  ┌──────────────────────┐                 │    │
+│  │  │        VM 1          │  │        VM 2          │                 │    │
+│  │  │  (No public IP)      │  │  (No public IP)      │                 │    │
+│  │  │  Private: 10.0.1.10  │  │  Private: 10.0.1.11  │                 │    │
+│  │  └──────────────────────┘  └──────────────────────┘                 │    │
+│  │                                                                     │    │
+│  └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
