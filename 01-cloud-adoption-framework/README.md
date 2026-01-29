@@ -43,45 +43,45 @@ The Microsoft Cloud Adoption Framework (CAF) is a comprehensive methodology for 
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    CLOUD ADOPTION FRAMEWORK LIFECYCLE                        │
+│                    CLOUD ADOPTION FRAMEWORK LIFECYCLE                       │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                           ┌───────────────┐                                 │
 │                           │   STRATEGY    │                                 │
 │                           │ Define motives│                                 │
 │                           │ Business goals│                                 │
 │                           └───────┬───────┘                                 │
-│                                   │                                          │
-│                                   ▼                                          │
+│                                   │                                         │
+│                                   ▼                                         │
 │                           ┌───────────────┐                                 │
 │                           │     PLAN      │                                 │
 │                           │ Digital estate│                                 │
 │                           │ Skills, team  │                                 │
 │                           └───────┬───────┘                                 │
-│                                   │                                          │
-│                                   ▼                                          │
+│                                   │                                         │
+│                                   ▼                                         │
 │                           ┌───────────────┐                                 │
 │                           │    READY      │                                 │
 │                           │ Landing zones │                                 │
 │                           │ Foundation    │                                 │
 │                           └───────┬───────┘                                 │
-│                                   │                                          │
+│                                   │                                         │
 │                    ┌──────────────┼──────────────┐                          │
 │                    ▼              ▼              ▼                          │
 │             ┌───────────┐  ┌───────────┐  ┌───────────┐                     │
 │             │  MIGRATE  │  │  INNOVATE │  │  SECURE   │                     │
 │             │ Lift/shift│  │ New apps  │  │ Zero Trust│                     │
 │             └─────┬─────┘  └─────┬─────┘  └─────┬─────┘                     │
-│                   │              │              │                            │
-│                   └──────────────┼──────────────┘                            │
-│                                  │                                           │
+│                   │              │              │                           │
+│                   └──────────────┼──────────────┘                           │
+│                                  │                                          │
 │                    ┌─────────────┼─────────────┐                            │
 │                    ▼             ▼             ▼                            │
 │             ┌───────────┐ ┌───────────┐ ┌───────────┐                       │
 │             │  GOVERN   │ │  MANAGE   │ │  ORGANIZE │                       │
 │             │ Policies  │ │ Operations│ │   Teams   │                       │
 │             └───────────┘ └───────────┘ └───────────┘                       │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -99,9 +99,9 @@ Define motivations and business outcomes for cloud adoption.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         STRATEGY CONSIDERATIONS                              │
+│                         STRATEGY CONSIDERATIONS                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Business Drivers                     Technical Drivers                    │
 │   ────────────────                     ─────────────────                    │
 │   • Cost reduction                     • End of support (Windows 2012)      │
@@ -109,13 +109,13 @@ Define motivations and business outcomes for cloud adoption.
 │   • Market expansion                   • Security compliance                │
 │   • M&A integration                    • Scalability requirements           │
 │   • Competitive pressure               • Modernization needs                │
-│                                                                              │
+│                                                                             │
 │   Key Questions:                                                            │
 │   1. Why are we moving to the cloud?                                        │
 │   2. What business outcomes do we expect?                                   │
 │   3. How will we measure success?                                           │
 │   4. What is our risk tolerance?                                            │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -145,39 +145,39 @@ Prepare your Azure environment with Landing Zones.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         AZURE LANDING ZONES                                  │
+│                         AZURE LANDING ZONES                                 │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   ┌─────────────────────────────────────────────────────────────────────┐   │
-│   │                    Tenant Root Group                                 │   │
-│   │                                                                      │   │
+│   │                    Tenant Root Group                                │   │
+│   │                                                                     │   │
 │   │   ┌─────────────────────────────────────────────────────────────┐   │   │
-│   │   │              Platform (Central IT)                           │   │   │
-│   │   │                                                              │   │   │
-│   │   │   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │   │   │
-│   │   │   │ Management  │  │ Connectivity│  │  Identity   │        │   │   │
-│   │   │   │             │  │             │  │             │        │   │   │
-│   │   │   │ • Log       │  │ • Hub VNet  │  │ • Entra ID  │        │   │   │
-│   │   │   │   Analytics │  │ • ExpressR  │  │ • Domain    │        │   │   │
-│   │   │   │ • Automation│  │ • Firewall  │  │   Services  │        │   │   │
-│   │   │   │ • Monitor   │  │ • DNS       │  │ • PIM       │        │   │   │
-│   │   │   └─────────────┘  └─────────────┘  └─────────────┘        │   │   │
+│   │   │              Platform (Central IT)                          │   │   │
+│   │   │                                                             │   │   │
+│   │   │   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │   │   │
+│   │   │   │ Management  │  │ Connectivity│  │  Identity   │         │   │   │
+│   │   │   │             │  │             │  │             │         │   │   │
+│   │   │   │ • Log       │  │ • Hub VNet  │  │ • Entra ID  │         │   │   │
+│   │   │   │   Analytics │  │ • ExpressR  │  │ • Domain    │         │   │   │
+│   │   │   │ • Automation│  │ • Firewall  │  │   Services  │         │   │   │
+│   │   │   │ • Monitor   │  │ • DNS       │  │ • PIM       │         │   │   │
+│   │   │   └─────────────┘  └─────────────┘  └─────────────┘         │   │   │
 │   │   └─────────────────────────────────────────────────────────────┘   │   │
-│   │                                                                      │   │
+│   │                                                                     │   │
 │   │   ┌─────────────────────────────────────────────────────────────┐   │   │
-│   │   │              Landing Zones (Workloads)                       │   │   │
-│   │   │                                                              │   │   │
-│   │   │   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │   │   │
-│   │   │   │    Corp     │  │   Online    │  │  Sandbox    │        │   │   │
-│   │   │   │             │  │             │  │             │        │   │   │
-│   │   │   │ Internal    │  │ Internet-   │  │ Dev/Test    │        │   │   │
-│   │   │   │ workloads   │  │ facing apps │  │ experiments │        │   │   │
-│   │   │   └─────────────┘  └─────────────┘  └─────────────┘        │   │   │
-│   │   │                                                              │   │   │
+│   │   │              Landing Zones (Workloads)                      │   │   │
+│   │   │                                                             │   │   │
+│   │   │   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │   │   │
+│   │   │   │    Corp     │  │   Online    │  │  Sandbox    │         │   │   │
+│   │   │   │             │  │             │  │             │         │   │   │
+│   │   │   │ Internal    │  │ Internet-   │  │ Dev/Test    │         │   │   │
+│   │   │   │ workloads   │  │ facing apps │  │ experiments │         │   │   │
+│   │   │   └─────────────┘  └─────────────┘  └─────────────┘         │   │   │
+│   │   │                                                             │   │   │
 │   │   └─────────────────────────────────────────────────────────────┘   │   │
-│   │                                                                      │   │
+│   │                                                                     │   │
 │   └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -189,34 +189,34 @@ Execute migration using proven patterns.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         MIGRATION WAVES                                      │
+│                         MIGRATION WAVES                                     │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Wave 0: Foundation                                                        │
 │   ├── Landing zone deployment                                               │
 │   ├── Network connectivity                                                  │
 │   └── Identity integration                                                  │
-│                                                                              │
+│                                                                             │
 │   Wave 1: Quick Wins                                                        │
 │   ├── Simple VMs (no dependencies)                                          │
 │   ├── Dev/test environments                                                 │
 │   └── Non-critical workloads                                                │
-│                                                                              │
+│                                                                             │
 │   Wave 2: Business Systems                                                  │
 │   ├── Line-of-business apps                                                 │
 │   ├── Databases (SQL migration)                                             │
 │   └── File servers                                                          │
-│                                                                              │
+│                                                                             │
 │   Wave 3: Complex/Critical                                                  │
 │   ├── ERP systems                                                           │
 │   ├── Legacy applications                                                   │
 │   └── High-availability workloads                                           │
-│                                                                              │
+│                                                                             │
 │   Wave 4: Optimization                                                      │
 │   ├── Modernization projects                                                │
 │   ├── Performance tuning                                                    │
 │   └── Cost optimization                                                     │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -244,24 +244,24 @@ Implement Zero Trust security model.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         DEFENSE IN DEPTH                                     │
+│                         DEFENSE IN DEPTH                                    │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   ┌─────────────────────────────────────────────────────────────────────┐   │
-│   │                        Identity                                      │   │
+│   │                        Identity                                     │   │
 │   │   Entra ID • Conditional Access • PIM • MFA                         │   │
 │   │   ┌─────────────────────────────────────────────────────────────┐   │   │
-│   │   │                     Perimeter                                │   │   │
+│   │   │                     Perimeter                               │   │   │
 │   │   │   DDoS Protection • Azure Firewall • WAF                    │   │   │
 │   │   │   ┌─────────────────────────────────────────────────────┐   │   │   │
-│   │   │   │                    Network                           │   │   │   │
-│   │   │   │   NSGs • Private Link • Service Endpoints            │   │   │   │
+│   │   │   │                    Network                          │   │   │   │
+│   │   │   │   NSGs • Private Link • Service Endpoints           │   │   │   │
 │   │   │   │   ┌─────────────────────────────────────────────┐   │   │   │   │
-│   │   │   │   │              Compute                         │   │   │   │   │
-│   │   │   │   │   VMs • Containers • Functions               │   │   │   │   │
+│   │   │   │   │              Compute                        │   │   │   │   │
+│   │   │   │   │   VMs • Containers • Functions              │   │   │   │   │
 │   │   │   │   │   ┌─────────────────────────────────────┐   │   │   │   │   │
 │   │   │   │   │   │          Application                │   │   │   │   │   │
-│   │   │   │   │   │   Code • Dependencies • Config     │   │   │   │   │   │
+│   │   │   │   │   │   Code • Dependencies • Config      │   │   │   │   │   │
 │   │   │   │   │   │   ┌─────────────────────────────┐   │   │   │   │   │   │
 │   │   │   │   │   │   │         Data                │   │   │   │   │   │   │
 │   │   │   │   │   │   │  Encryption • Classification│   │   │   │   │   │   │
@@ -271,7 +271,7 @@ Implement Zero Trust security model.
 │   │   │   └─────────────────────────────────────────────────────┘   │   │   │
 │   │   └─────────────────────────────────────────────────────────────┘   │   │
 │   └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -297,34 +297,34 @@ Operate cloud workloads.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         OPERATIONS MANAGEMENT                                │
+│                         OPERATIONS MANAGEMENT                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Inventory & Visibility                                                    │
 │   ├── Azure Resource Graph                                                  │
 │   ├── Service Health                                                        │
 │   └── Azure Monitor                                                         │
-│                                                                              │
+│                                                                             │
 │   Operational Compliance                                                    │
 │   ├── Update Management                                                     │
 │   ├── Azure Automation                                                      │
 │   └── Azure Policy                                                          │
-│                                                                              │
+│                                                                             │
 │   Protect & Recover                                                         │
 │   ├── Azure Backup                                                          │
 │   ├── Azure Site Recovery                                                   │
 │   └── Disaster Recovery                                                     │
-│                                                                              │
+│                                                                             │
 │   Platform Operations                                                       │
 │   ├── Azure Lighthouse                                                      │
 │   ├── Azure Arc                                                             │
 │   └── Cost Management                                                       │
-│                                                                              │
+│                                                                             │
 │   Workload Operations                                                       │
 │   ├── Application Insights                                                  │
 │   ├── Log Analytics                                                         │
-│   └── Workbooks & Dashboards                                               │
-│                                                                              │
+│   └── Workbooks & Dashboards                                                │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -347,35 +347,35 @@ Azure Landing Zones have 8 design areas:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    LANDING ZONE IMPLEMENTATION OPTIONS                       │
+│                    LANDING ZONE IMPLEMENTATION OPTIONS                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Option 1: Start Small                                                     │
 │   ─────────────────────                                                     │
 │   • Single subscription                                                     │
 │   • Basic networking                                                        │
 │   • Manual governance                                                       │
-│   • Best for: Small teams, POCs                                            │
-│                                                                              │
+│   • Best for: Small teams, POCs                                             │
+│                                                                             │
 │   Option 2: Enterprise-Scale (CAF Foundation)                               │
 │   ───────────────────────────────────────────                               │
 │   • Management group hierarchy                                              │
 │   • Hub-spoke networking                                                    │
 │   • Azure Policy guardrails                                                 │
 │   • Best for: Growing organizations                                         │
-│                                                                              │
+│                                                                             │
 │   Option 3: Azure Landing Zone Accelerator                                  │
 │   ───────────────────────────────────────────                               │
 │   • Full reference architecture                                             │
 │   • Automated deployment                                                    │
 │   • Enterprise governance                                                   │
 │   • Best for: Large enterprises                                             │
-│                                                                              │
+│                                                                             │
 │   AWS Comparison:                                                           │
-│   • Option 1 ≈ AWS Account + basic VPC                                     │
-│   • Option 2 ≈ AWS Organizations + Control Tower basics                    │
-│   • Option 3 ≈ Full Control Tower + Landing Zone                           │
-│                                                                              │
+│   • Option 1 ≈ AWS Account + basic VPC                                      │
+│   • Option 2 ≈ AWS Organizations + Control Tower basics                     │
+│   • Option 3 ≈ Full Control Tower + Landing Zone                            │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
