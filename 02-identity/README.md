@@ -48,25 +48,25 @@ The cloud identity and access management service. Not just a directory—it's th
 ```
 Entra ID Components:
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        ENTRA ID TENANT                               │
+│                        ENTRA ID TENANT                              │
 ├─────────────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌────────────┐ │
-│  │   Users     │  │   Groups    │  │    Apps     │  │  Devices   │ │
-│  │             │  │             │  │             │  │            │ │
-│  │ • Internal  │  │ • Security  │  │ • Enterprise│  │ • Managed  │ │
-│  │ • Guest     │  │ • M365      │  │ • App Reg   │  │ • BYOD     │ │
-│  │ • Service   │  │ • Dynamic   │  │ • Service   │  │ • Compliant│ │
-│  │   Principals│  │             │  │   Principals│  │            │ │
-│  └─────────────┘  └─────────────┘  └─────────────┘  └────────────┘ │
-│                                                                      │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐ │
+│  │   Users     │  │   Groups    │  │    Apps     │  │  Devices    │ │
+│  │             │  │             │  │             │  │             │ │
+│  │ • Internal  │  │ • Security  │  │ • Enterprise│  │ • Managed   │ │
+│  │ • Guest     │  │ • M365      │  │ • App Reg   │  │ • BYOD      │ │
+│  │ • Service   │  │ • Dynamic   │  │ • Service   │  │ • Compliant │ │
+│  │   Principals│  │             │  │   Principals│  │             │ │
+│  └─────────────┘  └─────────────┘  └─────────────┘  └─────────────┘ │
+│                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐    │
-│  │                    CONDITIONAL ACCESS                        │    │
-│  │  Policies that determine IF authentication should succeed    │    │
+│  │                    CONDITIONAL ACCESS                       │    │
+│  │  Policies that determine IF authentication should succeed   │    │
 │  └─────────────────────────────────────────────────────────────┘    │
-│                                                                      │
+│                                                                     │
 │  ┌─────────────────────────────────────────────────────────────┐    │
-│  │                       GOVERNANCE                             │    │
-│  │  • Access Reviews  • Entitlement Management  • Lifecycle     │    │
+│  │                       GOVERNANCE                            │    │
+│  │  • Access Reviews  • Entitlement Management  • Lifecycle    │    │
 │  └─────────────────────────────────────────────────────────────┘    │
 └─────────────────────────────────────────────────────────────────────┘
 ```
@@ -95,15 +95,15 @@ IF:                              THEN:
 Managing the identity lifecycle:
 
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│   Joiner    │ →  │    Mover    │ →  │   Leaver    │ →  │   Review    │
-├─────────────┤    ├─────────────┤    ├─────────────┤    ├─────────────┤
-│ • Provision │    │ • Update    │    │ • Deprovision│   │ • Access    │
-│   accounts  │    │   access    │    │   accounts  │    │   reviews   │
-│ • Assign    │    │ • Role      │    │ • Revoke    │    │ • Recertify │
-│   initial   │    │   changes   │    │   access    │    │ • Remove    │
-│   access    │    │             │    │             │    │   unused    │
-└─────────────┘    └─────────────┘    └─────────────┘    └─────────────┘
+┌─────────────┐    ┌─────────────┐    ┌───────────────┐    ┌─────────────┐
+│   Joiner    │ →  │    Mover    │ →  │   Leaver      │ →  │   Review    │
+├─────────────┤    ├─────────────┤    ├───────────────┤    ├─────────────┤
+│ • Provision │    │ • Update    │    │ • Deprovision │    │ • Access    │
+│   accounts  │    │   access    │    │   accounts    │    │   reviews   │
+│ • Assign    │    │ • Role      │    │ • Revoke      │    │ • Recertify │
+│   initial   │    │   changes   │    │   access      │    │ • Remove    │
+│   access    │    │             │    │               │    │   unused    │
+└─────────────┘    └─────────────┘    └───────────────┘    └─────────────┘
 ```
 
 ## AWS to Azure Identity Mapping
