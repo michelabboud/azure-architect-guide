@@ -8,40 +8,40 @@ Azure Landing Zones provide a scalable, secure foundation for your cloud environ
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                  AZURE LANDING ZONE ARCHITECTURE                             │
+│                  AZURE LANDING ZONE ARCHITECTURE                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                        ┌─────────────────────────────────────┐              │
-│                        │        AZURE AD TENANT             │              │
-│                        │   • Entra ID (Identity)            │              │
-│                        │   • Conditional Access             │              │
-│                        │   • PIM for Just-in-Time           │              │
+│                        │        AZURE AD TENANT              │              │
+│                        │   • Entra ID (Identity)             │              │
+│                        │   • Conditional Access              │              │
+│                        │   • PIM for Just-in-Time            │              │
 │                        └─────────────────────────────────────┘              │
-│                                       │                                      │
+│                                       │                                     │
 │                        ┌──────────────┴──────────────┐                      │
-│                        │    Management Groups         │                      │
-│                        │  (Policy Inheritance)        │                      │
+│                        │    Management Groups        │                      │
+│                        │  (Policy Inheritance)       │                      │
 │                        └──────────────┬──────────────┘                      │
-│                                       │                                      │
+│                                       │                                     │
 │          ┌────────────────────────────┼────────────────────────────┐        │
 │          │                            │                            │        │
 │          ▼                            ▼                            ▼        │
-│   ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐  │
-│   │    PLATFORM     │       │  LANDING ZONES  │       │    SANDBOX      │  │
-│   │                 │       │                 │       │                 │  │
-│   │  ┌───────────┐  │       │  ┌───────────┐  │       │  Dev/Test       │  │
-│   │  │Management │  │       │  │   Corp    │  │       │  Experiments    │  │
-│   │  │• Monitor  │  │       │  │ Internal  │  │       │  POCs           │  │
-│   │  │• Backup   │  │       │  │ workloads │  │       │                 │  │
-│   │  │• Security │  │       │  └───────────┘  │       │  No prod data   │  │
-│   │  └───────────┘  │       │                 │       │  Limited access │  │
-│   │                 │       │  ┌───────────┐  │       │                 │  │
-│   │  ┌───────────┐  │       │  │  Online   │  │       └─────────────────┘  │
-│   │  │Connectiv. │  │       │  │ Internet- │  │                            │
-│   │  │• Hub VNet │  │       │  │ facing    │  │                            │
-│   │  │• Firewall │  │       │  └───────────┘  │                            │
-│   │  │• ExpressR │  │       │                 │                            │
-│   │  └───────────┘  │       └─────────────────┘                            │
+│   ┌─────────────────┐       ┌─────────────────┐       ┌─────────────────┐   │
+│   │    PLATFORM     │       │  LANDING ZONES  │       │    SANDBOX      │   │
+│   │                 │       │                 │       │                 │   │
+│   │  ┌───────────┐  │       │  ┌───────────┐  │       │  Dev/Test       │   │
+│   │  │Management │  │       │  │   Corp    │  │       │  Experiments    │   │
+│   │  │• Monitor  │  │       │  │ Internal  │  │       │  POCs           │   │
+│   │  │• Backup   │  │       │  │ workloads │  │       │                 │   │
+│   │  │• Security │  │       │  └───────────┘  │       │  No prod data   │   │
+│   │  └───────────┘  │       │                 │       │  Limited access │   │
+│   │                 │       │  ┌───────────┐  │       │                 │   │
+│   │  ┌───────────┐  │       │  │  Online   │  │       └─────────────────┘   │
+│   │  │Connectiv. │  │       │  │ Internet- │  │                             │
+│   │  │• Hub VNet │  │       │  │ facing    │  │                             │
+│   │  │• Firewall │  │       │  └───────────┘  │                             │
+│   │  │• ExpressR │  │       │                 │                             │
+│   │  └───────────┘  │       └─────────────────┘                             │
 │   │                 │                                                       │
 │   │  ┌───────────┐  │                                                       │
 │   │  │ Identity  │  │                                                       │
@@ -50,7 +50,7 @@ Azure Landing Zones provide a scalable, secure foundation for your cloud environ
 │   │  └───────────┘  │                                                       │
 │   │                 │                                                       │
 │   └─────────────────┘                                                       │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -80,42 +80,42 @@ az billing department list --account-name <ea-account>
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                       IDENTITY ARCHITECTURE                                  │
+│                       IDENTITY ARCHITECTURE                                 │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   ┌─────────────────────────────────────────────────────────────────────┐   │
-│   │                        ENTRA ID                                      │   │
-│   │                                                                      │   │
-│   │   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                │   │
-│   │   │   Users     │  │   Groups    │  │    Apps     │                │   │
-│   │   │             │  │             │  │             │                │   │
-│   │   │ • Employees │  │ • Security  │  │ • SaaS      │                │   │
-│   │   │ • Guests    │  │ • M365      │  │ • Custom    │                │   │
-│   │   │ • Service   │  │ • Dynamic   │  │ • Legacy    │                │   │
-│   │   └─────────────┘  └─────────────┘  └─────────────┘                │   │
-│   │                                                                      │   │
+│   │                        ENTRA ID                                     │   │
+│   │                                                                     │   │
+│   │   ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                 │   │
+│   │   │   Users     │  │   Groups    │  │    Apps     │                 │   │
+│   │   │             │  │             │  │             │                 │   │
+│   │   │ • Employees │  │ • Security  │  │ • SaaS      │                 │   │
+│   │   │ • Guests    │  │ • M365      │  │ • Custom    │                 │   │
+│   │   │ • Service   │  │ • Dynamic   │  │ • Legacy    │                 │   │
+│   │   └─────────────┘  └─────────────┘  └─────────────┘                 │   │
+│   │                                                                     │   │
 │   │   ┌───────────────────────────────────────────────────────────────┐ │   │
-│   │   │                  CONDITIONAL ACCESS                            │ │   │
+│   │   │                  CONDITIONAL ACCESS                           │ │   │
 │   │   │  • MFA Requirements                                           │ │   │
 │   │   │  • Device Compliance                                          │ │   │
 │   │   │  • Location-based Access                                      │ │   │
 │   │   │  • Risk-based Access                                          │ │   │
 │   │   └───────────────────────────────────────────────────────────────┘ │   │
-│   │                                                                      │   │
+│   │                                                                     │   │
 │   └──────────────────────────────┬──────────────────────────────────────┘   │
 │                                  │                                          │
-│              ┌───────────────────┴───────────────────┐                     │
+│              ┌───────────────────┴───────────────────┐                      │
 │              │                                        │                     │
 │              ▼                                        ▼                     │
-│   ┌─────────────────────────┐           ┌─────────────────────────┐        │
-│   │   AZURE RBAC            │           │   ON-PREMISES AD        │        │
-│   │                         │           │                         │        │
-│   │ • Management Groups     │  Sync via │ • Domain Services       │        │
-│   │ • Subscriptions         │  ◄─────►  │ • Legacy Apps           │        │
-│   │ • Resource Groups       │ AD Connect│ • File Servers          │        │
-│   │ • Resources             │           │                         │        │
-│   └─────────────────────────┘           └─────────────────────────┘        │
-│                                                                              │
+│   ┌─────────────────────────┐           ┌─────────────────────────┐         │
+│   │   AZURE RBAC            │           │   ON-PREMISES AD        │         │
+│   │                         │           │                         │         │
+│   │ • Management Groups     │  Sync via │ • Domain Services       │         │
+│   │ • Subscriptions         │  ◄─────►  │ • Legacy Apps           │         │
+│   │ • Resource Groups       │ AD Connect│ • File Servers          │         │
+│   │ • Resources             │           │                         │         │
+│   └─────────────────────────┘           └─────────────────────────┘         │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -146,38 +146,38 @@ az role definition create --role-definition '{
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    SUBSCRIPTION STRATEGIES                                   │
+│                    SUBSCRIPTION STRATEGIES                                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Strategy 1: Application-Centric                                           │
 │   ─────────────────────────────────                                         │
 │   • One subscription per application/workload                               │
 │   • Clear cost attribution                                                  │
 │   • Independent RBAC                                                        │
 │   • Best for: Large enterprises with many applications                      │
-│                                                                              │
-│   ┌───────────────┐  ┌───────────────┐  ┌───────────────┐                  │
-│   │  CRM-Prod     │  │  ERP-Prod     │  │  Web-Prod     │                  │
-│   │  Subscription │  │  Subscription │  │  Subscription │                  │
-│   └───────────────┘  └───────────────┘  └───────────────┘                  │
-│                                                                              │
+│                                                                             │
+│   ┌───────────────┐  ┌───────────────┐  ┌───────────────┐                   │
+│   │  CRM-Prod     │  │  ERP-Prod     │  │  Web-Prod     │                   │
+│   │  Subscription │  │  Subscription │  │  Subscription │                   │
+│   └───────────────┘  └───────────────┘  └───────────────┘                   │
+│                                                                             │
 │   Strategy 2: Environment-Based                                             │
 │   ─────────────────────────────────                                         │
 │   • Subscriptions by environment (prod, dev, test)                          │
 │   • Simpler management                                                      │
 │   • Best for: Smaller organizations                                         │
-│                                                                              │
-│   ┌───────────────┐  ┌───────────────┐  ┌───────────────┐                  │
-│   │  Production   │  │  Development  │  │     Test      │                  │
-│   │  Subscription │  │  Subscription │  │  Subscription │                  │
-│   └───────────────┘  └───────────────┘  └───────────────┘                  │
-│                                                                              │
+│                                                                             │
+│   ┌───────────────┐  ┌───────────────┐  ┌───────────────┐                   │
+│   │  Production   │  │  Development  │  │     Test      │                   │
+│   │  Subscription │  │  Subscription │  │  Subscription │                   │
+│   └───────────────┘  └───────────────┘  └───────────────┘                   │
+│                                                                             │
 │   Strategy 3: Hybrid                                                        │
 │   ────────────────────                                                      │
 │   • Platform subscriptions (dedicated)                                      │
 │   • Workload subscriptions (application + environment)                      │
 │   • Best for: Most enterprise scenarios                                     │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -201,9 +201,9 @@ Key Vault        | kv-<workload>-<env>           | kv-crm-prod
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                       HUB-SPOKE NETWORK TOPOLOGY                             │
+│                       HUB-SPOKE NETWORK TOPOLOGY                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                           ┌─────────────────────────────────┐               │
 │                           │         ON-PREMISES             │               │
 │                           │    ┌───────────────────┐        │               │
@@ -211,11 +211,11 @@ Key Vault        | kv-<workload>-<env>           | kv-crm-prod
 │                           │    │   10.0.0.0/8      │        │               │
 │                           │    └─────────┬─────────┘        │               │
 │                           └──────────────┼──────────────────┘               │
-│                                          │                                   │
+│                                          │                                  │
 │                              ExpressRoute / S2S VPN                         │
-│                                          │                                   │
+│                                          │                                  │
 │   ┌──────────────────────────────────────┼──────────────────────────────┐   │
-│   │                                      │           AZURE               │   │
+│   │                                      │           AZURE              │   │
 │   │                           ┌──────────┴──────────┐                   │   │
 │   │                           │        HUB          │                   │   │
 │   │                           │    10.100.0.0/16    │                   │   │
@@ -237,17 +237,17 @@ Key Vault        | kv-<workload>-<env>           | kv-crm-prod
 │   │              ┌───────────────────────┼───────────────────────┐      │   │
 │   │              │ VNet Peering          │           VNet Peering│      │   │
 │   │              │                       │                       │      │   │
-│   │    ┌─────────┴─────────┐   ┌────────┴────────┐   ┌─────────┴─────┐ │   │
-│   │    │    SPOKE: Corp    │   │  SPOKE: Online  │   │ SPOKE: DevTest│ │   │
-│   │    │   10.101.0.0/16   │   │  10.102.0.0/16  │   │ 10.103.0.0/16 │ │   │
-│   │    │                   │   │                 │   │               │ │   │
-│   │    │ • ERP App         │   │ • Public Web    │   │ • Dev VMs     │ │   │
-│   │    │ • HR System       │   │ • API Gateway   │   │ • Test envs   │ │   │
-│   │    │ • Internal Apps   │   │ • CDN Origin    │   │               │ │   │
-│   │    └───────────────────┘   └─────────────────┘   └───────────────┘ │   │
+│   │    ┌─────────┴─────────┐   ┌────────┴────────┐   ┌─────────┴─────┐  │   │
+│   │    │    SPOKE: Corp    │   │  SPOKE: Online  │   │ SPOKE: DevTest│  │   │
+│   │    │   10.101.0.0/16   │   │  10.102.0.0/16  │   │ 10.103.0.0/16 │  │   │
+│   │    │                   │   │                 │   │               │  │   │
+│   │    │ • ERP App         │   │ • Public Web    │   │ • Dev VMs     │  │   │
+│   │    │ • HR System       │   │ • API Gateway   │   │ • Test envs   │  │   │
+│   │    │ • Internal Apps   │   │ • CDN Origin    │   │               │  │   │
+│   │    └───────────────────┘   └─────────────────┘   └───────────────┘  │   │
 │   │                                                                     │   │
 │   └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
