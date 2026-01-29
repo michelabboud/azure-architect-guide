@@ -13,7 +13,7 @@ Chapter 01: Identity                    Chapter 02: Security
 
 ┌─────────────────────┐                 ┌─────────────────────┐
 │    Entra ID         │                 │    Defender for     │
-│    Conditional      │───────────────→│    Cloud (CNAPP)    │
+│    Conditional      │───────────────→│    Cloud (CNAPP)     │
 │    Access           │                 │                     │
 └─────────────────────┘                 └─────────────────────┘
                                                   │
@@ -54,38 +54,38 @@ Chapter 01: Identity                    Chapter 02: Security
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                     MICROSOFT DEFENDER ECOSYSTEM                             │
+│                     MICROSOFT DEFENDER ECOSYSTEM                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────────────────────────────────────────────────────────────┐│
 │  │                    DEFENDER FOR CLOUD (CNAPP)                           ││
 │  │    Cloud Security Posture Management (CSPM) + Cloud Workload Protection ││
-│  │                                                                          ││
+│  │                                                                         ││
 │  │    Coverage: Azure + AWS + GCP + On-premises                            ││
 │  └─────────────────────────────────────────────────────────────────────────┘│
-│                                                                              │
+│                                                                             │
 │  WORKLOAD-SPECIFIC DEFENDERS:                                               │
-│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐               │
-│  │ Defender for    │ │ Defender for    │ │ Defender for    │               │
-│  │ Servers         │ │ Containers      │ │ App Service     │               │
-│  │ (VMs)           │ │ (AKS, K8s)      │ │ (Web apps)      │               │
-│  └─────────────────┘ └─────────────────┘ └─────────────────┘               │
-│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐               │
-│  │ Defender for    │ │ Defender for    │ │ Defender for    │               │
-│  │ Storage         │ │ SQL             │ │ Key Vault       │               │
-│  └─────────────────┘ └─────────────────┘ └─────────────────┘               │
-│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐               │
-│  │ Defender for    │ │ Defender for    │ │ Defender for    │               │
-│  │ DNS             │ │ ARM             │ │ APIs            │               │
-│  └─────────────────┘ └─────────────────┘ └─────────────────┘               │
-│                                                                              │
+│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐                │
+│  │ Defender for    │ │ Defender for    │ │ Defender for    │                │
+│  │ Servers         │ │ Containers      │ │ App Service     │                │
+│  │ (VMs)           │ │ (AKS, K8s)      │ │ (Web apps)      │                │
+│  └─────────────────┘ └─────────────────┘ └─────────────────┘                │
+│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐                │
+│  │ Defender for    │ │ Defender for    │ │ Defender for    │                │
+│  │ Storage         │ │ SQL             │ │ Key Vault       │                │
+│  └─────────────────┘ └─────────────────┘ └─────────────────┘                │
+│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐                │
+│  │ Defender for    │ │ Defender for    │ │ Defender for    │                │
+│  │ DNS             │ │ ARM             │ │ APIs            │                │
+│  └─────────────────┘ └─────────────────┘ └─────────────────┘                │
+│                                                                             │
 │  IDENTITY + ENDPOINT:                                                       │
-│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐               │
-│  │ Defender for    │ │ Defender for    │ │ Defender for    │               │
-│  │ Identity        │ │ Endpoint        │ │ Cloud Apps      │               │
-│  │ (AD threats)    │ │ (EDR)           │ │ (CASB)          │               │
-│  └─────────────────┘ └─────────────────┘ └─────────────────┘               │
-│                                                                              │
+│  ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐                │
+│  │ Defender for    │ │ Defender for    │ │ Defender for    │                │
+│  │ Identity        │ │ Endpoint        │ │ Cloud Apps      │                │
+│  │ (AD threats)    │ │ (EDR)           │ │ (CASB)          │                │
+│  └─────────────────┘ └─────────────────┘ └─────────────────┘                │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -93,30 +93,30 @@ Chapter 01: Identity                    Chapter 02: Security
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                        ZERO TRUST PILLARS                                    │
+│                        ZERO TRUST PILLARS                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│   1. VERIFY EXPLICITLY                                                       │
+│                                                                             │
+│   1. VERIFY EXPLICITLY                                                      │
 │      Always authenticate and authorize based on all available data          │
 │      • User identity (Entra ID)                                             │
 │      • Device health (Intune)                                               │
 │      • Location (Named locations)                                           │
 │      • Service/workload (Managed Identity)                                  │
-│                                                                              │
+│                                                                             │
 │   2. USE LEAST PRIVILEGE ACCESS                                             │
-│      Limit user access with Just-In-Time and Just-Enough-Access            │
+│      Limit user access with Just-In-Time and Just-Enough-Access             │
 │      • PIM for admin access                                                 │
 │      • RBAC with minimal scopes                                             │
-│      • Access reviews                                                        │
+│      • Access reviews                                                       │
 │      • Time-limited access                                                  │
-│                                                                              │
-│   3. ASSUME BREACH                                                           │
+│                                                                             │
+│   3. ASSUME BREACH                                                          │
 │      Minimize blast radius and segment access                               │
 │      • Network microsegmentation                                            │
 │      • End-to-end encryption                                                │
 │      • Continuous monitoring                                                │
 │      • Automated threat detection                                           │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 Applied to Azure:
