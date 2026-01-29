@@ -6,23 +6,23 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                           ENTRA ID TENANT                                    │
+│                           ENTRA ID TENANT                                   │
 │  (Your identity boundary - like AWS Organization but for identity)          │
-│                                                                              │
+│                                                                             │
 │  ┌───────────────────────────────────────────────────────────────────────┐  │
-│  │                      MANAGEMENT GROUPS                                 │  │
+│  │                      MANAGEMENT GROUPS                                │  │
 │  │  (Organize subscriptions - like AWS OUs)                              │  │
-│  │                                                                        │  │
+│  │                                                                       │  │
 │  │  ┌─────────────────────────────────────────────────────────────────┐  │  │
-│  │  │                     SUBSCRIPTIONS                                │  │  │
+│  │  │                     SUBSCRIPTIONS                               │  │  │
 │  │  │  (Billing + access boundary - like AWS Accounts)                │  │  │
-│  │  │                                                                  │  │  │
+│  │  │                                                                 │  │  │
 │  │  │  ┌───────────────────────────────────────────────────────────┐  │  │  │
-│  │  │  │                 RESOURCE GROUPS                            │  │  │  │
-│  │  │  │  (Logical containers - NO AWS equivalent)                  │  │  │  │
-│  │  │  │                                                            │  │  │  │
+│  │  │  │                 RESOURCE GROUPS                           │  │  │  │
+│  │  │  │  (Logical containers - NO AWS equivalent)                 │  │  │  │
+│  │  │  │                                                           │  │  │  │
 │  │  │  │  ┌─────────────────────────────────────────────────────┐  │  │  │  │
-│  │  │  │  │                   RESOURCES                          │  │  │  │  │
+│  │  │  │  │                   RESOURCES                         │  │  │  │  │
 │  │  │  │  │  (VMs, Storage, Databases, etc.)                    │  │  │  │  │
 │  │  │  │  └─────────────────────────────────────────────────────┘  │  │  │  │
 │  │  │  └───────────────────────────────────────────────────────────┘  │  │  │
@@ -51,10 +51,10 @@
 
 ```
 ┌────────────────────────────────────────────────────────────────────────────┐
-│                                                                             │
+│                                                                            │
 │   WHO ARE YOU?              CAN YOU COME IN?           WHAT CAN YOU DO?    │
-│   ─────────────             ────────────────           ─────────────────    │
-│                                                                             │
+│   ─────────────             ────────────────           ─────────────────   │
+│                                                                            │
 │   ┌─────────────┐          ┌─────────────────┐        ┌─────────────────┐  │
 │   │  Entra ID   │    →     │  Conditional    │   →    │      RBAC       │  │
 │   │             │          │  Access         │        │                 │  │
@@ -65,9 +65,9 @@
 │   │ • Managed   │          │ • App           │        │ • Scopes        │  │
 │   │   Identities│          │ • MFA required  │        │                 │  │
 │   └─────────────┘          └─────────────────┘        └─────────────────┘  │
-│                                                                             │
-│   AUTHENTICATION            CONDITIONAL AUTH          AUTHORIZATION         │
-│                                                                             │
+│                                                                            │
+│   AUTHENTICATION            CONDITIONAL AUTH          AUTHORIZATION        │
+│                                                                            │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -110,19 +110,19 @@ Role Assignment = Security Principal + Role Definition + Scope
 
 ```
                     Management Group
-                          │
-                          ↓
-                    ┌─────────────┐
-                    │ Subscription│
-                    └──────┬──────┘
+                           │
                            ↓
-                    ┌─────────────┐
-                    │Resource Group│
-                    └──────┬──────┘
+                    ┌────────────────┐
+                    │ Subscription   │
+                    └──────┬─────────┘
                            ↓
-                    ┌─────────────┐
-                    │  Resource   │
-                    └─────────────┘
+                    ┌────────────────┐
+                    │ Resource Group │
+                    └──────┬─────────┘
+                           ↓
+                    ┌────────────────┐
+                    │  Resource      │
+                    └────────────────┘
 
 Inheritance: Permissions assigned at a higher scope are inherited by lower scopes
 ```
