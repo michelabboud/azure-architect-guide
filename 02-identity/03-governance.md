@@ -29,9 +29,9 @@ Manual processes + 3rd party tools      Native Entra ID Governance
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                        ENTRA ID GOVERNANCE                                   │
+│                        ENTRA ID GOVERNANCE                                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────────┐  ┌─────────────────────┐  ┌─────────────────────┐  │
 │  │  ACCESS REVIEWS     │  │    ENTITLEMENT      │  │    LIFECYCLE        │  │
 │  │                     │  │    MANAGEMENT       │  │    WORKFLOWS        │  │
@@ -44,12 +44,12 @@ Manual processes + 3rd party tools      Native Entra ID Governance
 │  │  • Audit trail      │  │  • Time-limited     │  │  • Auto-update      │  │
 │  │                     │  │  • Self-service     │  │  • Auto-deprovision │  │
 │  └─────────────────────┘  └─────────────────────┘  └─────────────────────┘  │
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────────────────────────────────────────────────────────┐    │
-│  │              PRIVILEGED IDENTITY MANAGEMENT (PIM)                    │    │
+│  │              PRIVILEGED IDENTITY MANAGEMENT (PIM)                   │    │
 │  │              "Just-in-time privileged access"                       │    │
 │  └─────────────────────────────────────────────────────────────────────┘    │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -123,18 +123,18 @@ SETTINGS
 **Reviewer Experience**:
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ Access Review: Marketing-Team Security Group                                 │
+│ Access Review: Marketing-Team Security Group                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │ User                    Last Sign-in    Recommendation    Your Decision     │
 │ ─────────────────────────────────────────────────────────────────────────── │
 │ john.doe@contoso.com    2 days ago      Approve           [Approve]         │
 │ jane.smith@contoso.com  45 days ago     Review needed     [Approve] [Deny]  │
 │ guest@partner.com       180 days ago    Deny              [Deny]            │
 │ sarah.jones@contoso.com Never           Deny              [Deny]            │
-│                                                                              │
-│ Bulk actions: [Accept all recommendations]                                   │
-│                                                                              │
+│                                                                             │
+│ Bulk actions: [Accept all recommendations]                                  │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -201,26 +201,26 @@ Automatic provisioning (immediate)
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         ACCESS PACKAGE                                       │
-│                    "Project Alpha Full Access"                               │
+│                         ACCESS PACKAGE                                      │
+│                    "Project Alpha Full Access"                              │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  RESOURCE ROLES INCLUDED:                                                   │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────────────┐ │   │
-│  │ │ Entra ID Group  │ │ SharePoint Site │ │ Azure Resource Group    │ │   │
-│  │ │ "Project-Alpha" │ │ "Alpha Docs"    │ │ "rg-project-alpha"      │ │   │
-│  │ │                 │ │                 │ │                         │ │   │
-│  │ │ Role: Member    │ │ Role: Contribute│ │ Role: Contributor       │ │   │
-│  │ └─────────────────┘ └─────────────────┘ └─────────────────────────┘ │   │
-│  │ ┌─────────────────┐ ┌─────────────────┐                             │   │
-│  │ │ Teams Channel   │ │ Enterprise App  │                             │   │
-│  │ │ "Alpha Team"    │ │ "Alpha Dashboard"                             │   │
-│  │ │                 │ │                 │                             │   │
-│  │ │ Role: Member    │ │ Role: User      │                             │   │
-│  │ └─────────────────┘ └─────────────────┘                             │   │
+│  │ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────────────┐  │   │
+│  │ │ Entra ID Group  │ │ SharePoint Site │ │ Azure Resource Group    │  │   │
+│  │ │ "Project-Alpha" │ │ "Alpha Docs"    │ │ "rg-project-alpha"      │  │   │
+│  │ │                 │ │                 │ │                         │  │   │
+│  │ │ Role: Member    │ │ Role: Contribute│ │ Role: Contributor       │  │   │
+│  │ └─────────────────┘ └─────────────────┘ └─────────────────────────┘  │   │
+│  │ ┌─────────────────┐ ┌─────────────────┐                              │   │
+│  │ │ Teams Channel   │ │ Enterprise App  │                              │   │
+│  │ │ "Alpha Team"    │ │ "Alpha Dashboard"                              │   │
+│  │ │                 │ │                 │                              │   │
+│  │ │ Role: Member    │ │ Role: User      │                              │   │
+│  │ └─────────────────┘ └─────────────────┘                              │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 │  POLICIES:                                                                  │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
 │  │ Policy 1: Internal Employees                                         │   │
@@ -241,7 +241,7 @@ Automatic provisioning (immediate)
 │  │ ├── Assignment duration: 30 days                                     │   │
 │  │ └── Access review: Monthly by Internal sponsor                       │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -322,29 +322,29 @@ Risk: Time-limited privilege = minimal attack surface
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         PIM ROLE SETTINGS                                    │
-│                    "Global Administrator"                                    │
+│                         PIM ROLE SETTINGS                                   │
+│                    "Global Administrator"                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ACTIVATION SETTINGS                                                        │
 │  ├── Maximum activation duration: 8 hours                                   │
-│  ├── Require justification: Yes                                            │
+│  ├── Require justification: Yes                                             │
 │  ├── Require ticket information: Yes                                        │
-│  ├── Require MFA on activation: Yes                                        │
+│  ├── Require MFA on activation: Yes                                         │
 │  └── Require approval: Yes                                                  │
-│      └── Approvers: Security Operations Team                               │
-│                                                                              │
+│      └── Approvers: Security Operations Team                                │
+│                                                                             │
 │  ASSIGNMENT SETTINGS                                                        │
-│  ├── Allow permanent eligible assignment: No                               │
-│  ├── Maximum eligible assignment duration: 365 days                        │
-│  ├── Allow permanent active assignment: No                                 │
-│  └── Maximum active assignment duration: 8 hours                           │
-│                                                                              │
+│  ├── Allow permanent eligible assignment: No                                │
+│  ├── Maximum eligible assignment duration: 365 days                         │
+│  ├── Allow permanent active assignment: No                                  │
+│  └── Maximum active assignment duration: 8 hours                            │
+│                                                                             │
 │  NOTIFICATION SETTINGS                                                      │
-│  ├── Send notifications when eligible: Yes → Admins                        │
-│  ├── Send notifications when activated: Yes → Admins + Security            │
-│  └── Send notifications when assigned: Yes → Admins + User                 │
-│                                                                              │
+│  ├── Send notifications when eligible: Yes → Admins                         │
+│  ├── Send notifications when activated: Yes → Admins + Security             │
+│  └── Send notifications when assigned: Yes → Admins + User                  │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -475,16 +475,16 @@ Trigger: employeeHireDate = today + 7 days (one week before start)
 Actions:
 ┌─────────────────────────────────────────────────────────────────────┐
 │ 1. Create user account (disabled)                                   │
-│    └── Set: mail, displayName, department, manager                 │
+│    └── Set: mail, displayName, department, manager                  │
 ├─────────────────────────────────────────────────────────────────────┤
 │ 2. Add to groups based on rules:                                    │
-│    └── IF department = "Engineering" THEN add to "Engineers" group │
+│    └── IF department = "Engineering" THEN add to "Engineers" group  │
 ├─────────────────────────────────────────────────────────────────────┤
 │ 3. Assign licenses:                                                 │
-│    └── Microsoft 365 E5                                            │
+│    └── Microsoft 365 E5                                             │
 ├─────────────────────────────────────────────────────────────────────┤
 │ 4. Send email to manager:                                           │
-│    └── "New team member {displayName} starts on {hireDate}"        │
+│    └── "New team member {displayName} starts on {hireDate}"         │
 └─────────────────────────────────────────────────────────────────────┘
 
 Trigger: employeeHireDate = today (start date)
@@ -494,10 +494,10 @@ Actions:
 │ 1. Enable user account                                              │
 ├─────────────────────────────────────────────────────────────────────┤
 │ 2. Generate Temporary Access Pass                                   │
-│    └── Valid for 24 hours, one-time use                            │
+│    └── Valid for 24 hours, one-time use                             │
 ├─────────────────────────────────────────────────────────────────────┤
 │ 3. Send welcome email to user                                       │
-│    └── Include: TAP, links to onboarding, IT support contact       │
+│    └── Include: TAP, links to onboarding, IT support contact        │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
