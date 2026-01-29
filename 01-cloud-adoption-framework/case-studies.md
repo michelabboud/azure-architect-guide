@@ -50,48 +50,48 @@ Month 6:  "We're 'done' but..."
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    THE RIGHT WAY: CAF PHASES                                 │
+│                    THE RIGHT WAY: CAF PHASES                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  WEEK 1-2: STRATEGY                                                         │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
 │  │  ✓ Define business outcomes (not just "move to Azure")               │   │
-│  │  ✓ Identify stakeholders and RACI matrix                            │   │
-│  │  ✓ Create business case with TCO analysis                           │   │
-│  │  ✓ Get executive sponsorship (not just mandate)                     │   │
+│  │  ✓ Identify stakeholders and RACI matrix                             │   │
+│  │  ✓ Create business case with TCO analysis                            │   │
+│  │  ✓ Get executive sponsorship (not just mandate)                      │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 │  WEEK 3-4: PLAN                                                             │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │  ✓ Digital estate assessment (what do we actually have?)            │   │
-│  │  ✓ Rationalization: Rehost/Refactor/Rearchitect/Rebuild/Replace     │   │
-│  │  ✓ Skills readiness plan                                            │   │
-│  │  ✓ Migration waves (don't boil the ocean)                           │   │
+│  │  ✓ Digital estate assessment (what do we actually have?)             │   │
+│  │  ✓ Rationalization: Rehost/Refactor/Rearchitect/Rebuild/Replace      │   │
+│  │  ✓ Skills readiness plan                                             │   │
+│  │  ✓ Migration waves (don't boil the ocean)                            │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 │  WEEK 5-6: READY (Landing Zone)                                             │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
 │  │  ✓ Management group hierarchy                                        │   │
 │  │  ✓ Subscription vending                                              │   │
 │  │  ✓ Hub-spoke networking                                              │   │
 │  │  ✓ Identity and RBAC foundation                                      │   │
-│  │  ✓ Policy guardrails (prevent disasters, not just detect them)      │   │
+│  │  ✓ Policy guardrails (prevent disasters, not just detect them)       │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 │  MONTH 2-5: ADOPT (Migrate + Innovate)                                      │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
-│  │  ✓ Wave-based migration with clear success criteria                 │   │
-│  │  ✓ Parallel innovation track for cloud-native opportunities         │   │
+│  │  ✓ Wave-based migration with clear success criteria                  │   │
+│  │  ✓ Parallel innovation track for cloud-native opportunities          │   │
 │  │  ✓ Automated testing and validation                                  │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 │  ONGOING: GOVERN + MANAGE                                                   │
 │  ┌──────────────────────────────────────────────────────────────────────┐   │
 │  │  ✓ Cost management and FinOps practices                              │   │
 │  │  ✓ Security baseline enforcement                                     │   │
 │  │  ✓ Operational monitoring and alerting                               │   │
 │  └──────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -277,40 +277,40 @@ BEFORE:                                    AFTER:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    SUBSCRIPTION VENDING MACHINE                              │
+│                    SUBSCRIPTION VENDING MACHINE                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│   Developer Request                                                          │
-│         │                                                                    │
-│         ▼                                                                    │
+│                                                                             │
+│   Developer Request                                                         │
+│         │                                                                   │
+│         ▼                                                                   │
 │   ┌─────────────────┐                                                       │
 │   │ ServiceNow Form │  ← Business justification                             │
 │   │ • Project code  │  ← Cost center                                        │
 │   │ • Environment   │  ← Dev/Test/Prod                                      │
 │   │ • Owner         │  ← Someone accountable                                │
 │   └────────┬────────┘                                                       │
-│            │                                                                 │
-│            ▼                                                                 │
+│            │                                                                │
+│            ▼                                                                │
 │   ┌─────────────────┐                                                       │
-│   │ Auto-Approval   │  Dev/Test < $5K/month                                │
+│   │ Auto-Approval   │  Dev/Test < $5K/month                                 │
 │   │ or              │                                                       │
-│   │ Manager Review  │  Prod or > $5K/month                                 │
+│   │ Manager Review  │  Prod or > $5K/month                                  │
 │   └────────┬────────┘                                                       │
-│            │                                                                 │
-│            ▼                                                                 │
+│            │                                                                │
+│            ▼                                                                │
 │   ┌─────────────────┐                                                       │
-│   │ Bicep Pipeline  │  Creates subscription with:                          │
-│   │                 │  • Correct management group                          │
-│   │                 │  • RBAC assignments                                  │
-│   │                 │  • Policy assignments                                │
-│   │                 │  • Budget alerts                                     │
-│   │                 │  • Networking (if needed)                            │
+│   │ Bicep Pipeline  │  Creates subscription with:                           │
+│   │                 │  • Correct management group                           │
+│   │                 │  • RBAC assignments                                   │
+│   │                 │  • Policy assignments                                 │
+│   │                 │  • Budget alerts                                      │
+│   │                 │  • Networking (if needed)                             │
 │   └────────┬────────┘                                                       │
-│            │                                                                 │
-│            ▼                                                                 │
+│            │                                                                │
+│            ▼                                                                │
 │   Subscription Ready in 15 minutes                                          │
 │   (Previously: 2-3 weeks + tickets)                                         │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -339,22 +339,22 @@ BEFORE:                                    AFTER:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    THE MULTI-CLOUD REALITY                                   │
+│                    THE MULTI-CLOUD REALITY                                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   What they imagined:          What they got:                               │
 │   ──────────────────           ──────────────                               │
-│                                                                              │
-│   ┌─────────────────┐          ┌─────────────────┐                         │
-│   │  Unified Cloud  │          │ AWS    Azure GCP│                         │
-│   │    Platform     │          │  ↕      ↕     ↕ │                         │
-│   │                 │          │ 3 identity systems                        │
-│   │ "Write once,    │          │ 3 networking models                       │
-│   │  run anywhere"  │          │ 3 security tools                          │
-│   │                 │          │ 3 billing systems                         │
-│   └─────────────────┘          │ 1 exhausted team                          │
-│                                └─────────────────┘                         │
-│                                                                              │
+│                                                                             │
+│   ┌─────────────────┐          ┌─────────────────────┐                      │
+│   │  Unified Cloud  │          │ AWS    Azure GCP    │                      │
+│   │    Platform     │          │  ↕      ↕     ↕     │                      │
+│   │                 │          │ 3 identity systems  │                      │
+│   │ "Write once,    │          │ 3 networking models │                      │
+│   │  run anywhere"  │          │ 3 security tools    │                      │
+│   │                 │          │ 3 billing systems   │                      │
+│   └─────────────────┘          │ 1 exhausted team    │                      │
+│                                └─────────────────────┘                      │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -365,22 +365,22 @@ Instead of fighting multi-cloud, they embraced it strategically:
 **Azure as Identity Hub:**
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                                                                              │
+│                                                                             │
 │                         Entra ID (Primary Identity)                         │
-│                                   │                                          │
+│                                   │                                         │
 │                    ┌──────────────┼──────────────┐                          │
 │                    │              │              │                          │
 │                    ▼              ▼              ▼                          │
-│              ┌─────────┐    ┌─────────┐    ┌─────────┐                     │
-│              │   AWS   │    │  Azure  │    │   GCP   │                     │
-│              │         │    │         │    │         │                     │
-│              │ SAML/   │    │ Native  │    │ Workload│                     │
-│              │ OIDC    │    │ Auth    │    │ Identity│                     │
-│              │ Fed     │    │         │    │ Fed     │                     │
-│              └─────────┘    └─────────┘    └─────────┘                     │
-│                                                                              │
+│              ┌─────────┐    ┌─────────┐    ┌─────────┐                      │
+│              │   AWS   │    │  Azure  │    │   GCP   │                      │
+│              │         │    │         │    │         │                      │
+│              │ SAML/   │    │ Native  │    │ Workload│                      │
+│              │ OIDC    │    │ Auth    │    │ Identity│                      │
+│              │ Fed     │    │         │    │ Fed     │                      │
+│              └─────────┘    └─────────┘    └─────────┘                      │
+│                                                                             │
 │  Result: Single identity source, federated everywhere                       │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
