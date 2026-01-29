@@ -16,24 +16,24 @@
 ### Identity Types
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│                         ENTRA ID IDENTITIES                            │
-├────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│  USERS                           WORKLOAD IDENTITIES                   │
-│  ─────                           ──────────────────                    │
-│  ┌─────────────┐                 ┌─────────────────────────────────┐   │
-│  │ Member User │                 │ Service Principal               │   │
-│  │ (Internal)  │                 │ • App Registration creates one  │   │
-│  └─────────────┘                 │ • Has credentials (secret/cert) │   │
-│                                  └─────────────────────────────────┘   │
-│  ┌─────────────┐                 ┌─────────────────────────────────┐   │
-│  │ Guest User  │                 │ Managed Identity                │   │
-│  │ (External)  │                 │ • System-assigned (tied to resource)│
-│  └─────────────┘                 │ • User-assigned (standalone)    │   │
-│                                  │ • NO credentials to manage      │   │
-│                                  └─────────────────────────────────┘   │
-└────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────┐
+│                         ENTRA ID IDENTITIES                                │
+├────────────────────────────────────────────────────────────────────────────┤
+│                                                                            │
+│  USERS                           WORKLOAD IDENTITIES                       │
+│  ─────                           ──────────────────                        │
+│  ┌─────────────┐                 ┌─────────────────────────────────────┐   │ 
+│  │ Member User │                 │ Service Principal                   │   │
+│  │ (Internal)  │                 │ • App Registration creates one      │   │
+│  └─────────────┘                 │ • Has credentials (secret/cert)     │   │
+│                                  └─────────────────────────────────────┘   │
+│  ┌─────────────┐                 ┌─────────────────────────────────────┐   │
+│  │ Guest User  │                 │ Managed Identity                    │   │
+│  │ (External)  │                 │ • System-assigned (tied to resource)│   │
+│  └─────────────┘                 │ • User-assigned (standalone)        │   │
+│                                  │ • NO credentials to manage          │   │
+│                                  └─────────────────────────────────────┘   │
+└────────────────────────────────────────────────────────────────────────────┘
 ```
 
 ### When to Use What
@@ -55,9 +55,9 @@
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
-│                     CONDITIONAL ACCESS POLICY                         │
+│                     CONDITIONAL ACCESS POLICY                        │
 ├──────────────────────────────────────────────────────────────────────┤
-│                                                                       │
+│                                                                      │
 │  ASSIGNMENTS (WHO + WHAT)                                            │
 │  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐       │
 │  │ Users & Groups  │  │  Cloud Apps     │  │  Conditions     │       │
@@ -66,17 +66,17 @@
 │  └─────────────────┘  └─────────────────┘  │  • Risk levels  │       │
 │                                            │  • Client apps  │       │
 │                                            └─────────────────┘       │
-│                              ↓                                        │
+│                              ↓                                       │
 │  ACCESS CONTROLS (THEN WHAT)                                         │
-│  ┌─────────────────────────────────────────────────────────────┐     │
-│  │ Grant                           │ Session                    │     │
-│  │ • Block access                  │ • App enforced restrictions│     │
-│  │ • Grant access                  │ • Sign-in frequency        │     │
-│  │   - Require MFA                 │ • Persistent browser       │     │
-│  │   - Require compliant device    │ • Disable resilience defaults   │
-│  │   - Require Hybrid Azure AD Join│                            │     │
-│  │   - Require approved client app │                            │     │
-│  └─────────────────────────────────────────────────────────────┘     │
+│  ┌─────────────────────────────────────────────────────────────────┐ │
+│  │ Grant                           │ Session                       │ │
+│  │ • Block access                  │ • App enforced restrictions   │ │
+│  │ • Grant access                  │ • Sign-in frequency           │ │
+│  │   - Require MFA                 │ • Persistent browser          │ │
+│  │   - Require compliant device    │ • Disable resilience defaults │ │
+│  │   - Require Hybrid Azure AD Join│                               │ │
+│  │   - Require approved client app │                               │ │
+│  └─────────────────────────────────────────────────────────────────┘ │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -265,17 +265,17 @@ var blobServiceClient = new BlobServiceClient(
 ```
 Access Package Structure:
 ┌─────────────────────────────────────────────────────────────────────┐
-│                        ACCESS PACKAGE                                │
+│                        ACCESS PACKAGE                               │
 ├─────────────────────────────────────────────────────────────────────┤
-│  Name: "Project Alpha Access"                                        │
-│                                                                      │
-│  RESOURCES INCLUDED:                                                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐              │
-│  │ Azure AD     │  │ SharePoint   │  │ Azure        │              │
-│  │ Group        │  │ Site         │  │ Subscription │              │
-│  │ (Member)     │  │ (Contribute) │  │ (Reader)     │              │
-│  └──────────────┘  └──────────────┘  └──────────────┘              │
-│                                                                      │
+│  Name: "Project Alpha Access"                                       │
+│                                                                     │
+│  RESOURCES INCLUDED:                                                │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐               │
+│  │ Azure AD     │  │ SharePoint   │  │ Azure        │               │
+│  │ Group        │  │ Site         │  │ Subscription │               │
+│  │ (Member)     │  │ (Contribute) │  │ (Reader)     │               │
+│  └──────────────┘  └──────────────┘  └──────────────┘               │
+│                                                                     │
 │  POLICIES:                                                          │
 │  • Who can request: Users in directory + specific external orgs     │
 │  • Approval: Manager → Project Owner (2-stage)                      │
