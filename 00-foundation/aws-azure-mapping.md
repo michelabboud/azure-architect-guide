@@ -34,13 +34,13 @@ AWS Model:                              Azure Model:
 │   │  IAM Policies │ │                │   │  Managed Identities       │ │
 │   └───────────────┘ │                │   │  App Registrations        │ │
 │          ↓          │                │   └───────────────────────────┘ │
-│   Resources get     │                │              ↓                   │
+│   Resources get     │                │              ↓                  │
 │   permissions via   │                │   Conditional Access decides    │
 │   attached policies │                │   IF you can authenticate       │
-└─────────────────────┘                │              ↓                   │
+└─────────────────────┘                │              ↓                  │
                                        │   RBAC decides WHAT you         │
                                        │   can do on resources           │
-                                       │              ↓                   │
+                                       │              ↓                  │
                                        │   Azure Policy enforces         │
                                        │   HOW resources behave          │
                                        └─────────────────────────────────┘
@@ -202,28 +202,28 @@ AWS S3:                          Azure Blob:
 
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│                         Cosmos DB                                   │
+│                         Cosmos DB                                  │
 ├────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌───────────┐ │
-│  │  NoSQL API  │  │ MongoDB API │  │ Gremlin API │  │ Table API │ │
-│  │  (Native)   │  │             │  │  (Graph)    │  │           │ │
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘  └─────┬─────┘ │
+│                                                                    │
+│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  ┌───────────┐  │
+│  │  NoSQL API  │  │ MongoDB API │  │ Gremlin API │  │ Table API │  │
+│  │  (Native)   │  │             │  │  (Graph)    │  │           │  │
+│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘  └─────┬─────┘  │
 │         │                │                │               │        │
 │         └────────────────┼────────────────┼───────────────┘        │
-│                          ↓                                          │
+│                          ↓                                         │
 │              ┌───────────────────────┐                             │
 │              │  Global Distribution  │                             │
 │              │  Multi-Region Writes  │                             │
 │              │  Automatic Failover   │                             │
 │              └───────────────────────┘                             │
-│                                                                     │
+│                                                                    │
 │  AWS Equivalents:                                                  │
 │  • NoSQL API ≈ DynamoDB                                            │
 │  • MongoDB API ≈ DocumentDB                                        │
 │  • Gremlin API ≈ Neptune                                           │
 │  • Table API ≈ DynamoDB (simple key-value)                         │
-│                                                                     │
+│                                                                    │
 └────────────────────────────────────────────────────────────────────┘
 ```
 
