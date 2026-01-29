@@ -19,39 +19,39 @@ Real-world scenarios with architectural decisions explained.
 │                        OPTION A: Hybrid Identity                            │
 │                        (Keep AD, sync to Entra ID)                          │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────┐         ┌─────────────────┐         ┌──────────────┐   │
 │  │  On-Premises    │  Sync   │   Entra ID      │  Auth   │  Cloud Apps  │   │
 │  │  Active         │ ──────→ │   Connect       │ ──────→ │  M365        │   │
 │  │  Directory      │         │                 │         │  Azure       │   │
 │  └─────────────────┘         └─────────────────┘         └──────────────┘   │
-│                                                                              │
+│                                                                             │
 │  PROS:                              CONS:                                   │
-│  • Gradual migration               • Complexity (two directories)          │
-│  • Familiar for IT team            • Sync issues possible                  │
-│  • Legacy app support              • On-prem infrastructure required       │
-│  • Password hash sync for DR       • Dual management overhead              │
-│                                                                              │
+│  • Gradual migration               • Complexity (two directories)           │
+│  • Familiar for IT team            • Sync issues possible                   │
+│  • Legacy app support              • On-prem infrastructure required        │
+│  • Password hash sync for DR       • Dual management overhead               │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                        OPTION B: Cloud-Only Identity                        │
 │                        (Migrate fully to Entra ID)                          │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────┐         ┌─────────────────┐                            │
 │  │   Entra ID      │  Auth   │  All Apps       │                            │
 │  │   (Source of    │ ──────→ │  • M365         │                            │
 │  │    Truth)       │         │  • Azure        │                            │
 │  └─────────────────┘         │  • SaaS         │                            │
 │                              └─────────────────┘                            │
-│                                                                              │
+│                                                                             │
 │  PROS:                              CONS:                                   │
-│  • Single identity source          • Legacy app compatibility              │
-│  • No on-prem dependency           • Big-bang migration risk              │
-│  • Full Entra ID features          • Retraining required                  │
-│  • Lower TCO long-term             • Domain-joined devices?               │
-│                                                                              │
+│  • Single identity source          • Legacy app compatibility               │
+│  • No on-prem dependency           • Big-bang migration risk                │
+│  • Full Entra ID features          • Retraining required                    │
+│  • Lower TCO long-term             • Domain-joined devices?                 │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -121,29 +121,29 @@ If this company were AWS-focused:
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    OPTION A: Strict Device Compliance                       │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Policy: Only corporate-managed, compliant devices can access anything     │
-│                                                                              │
+│                                                                             │
+│  Policy: Only corporate-managed, compliant devices can access anything      │
+│                                                                             │
 │  PROS:                              CONS:                                   │
-│  • Maximum security                 • Blocks BYOD completely              │
-│  • Full device control              • Consultant laptops?                 │
-│  • Consistent security posture      • Partner access blocked              │
-│  • Easy to audit                    • Productivity impact HIGH            │
-│                                                                              │
+│  • Maximum security                 • Blocks BYOD completely                │
+│  • Full device control              • Consultant laptops?                   │
+│  • Consistent security posture      • Partner access blocked                │
+│  • Easy to audit                    • Productivity impact HIGH              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    OPTION B: Risk-Based Adaptive Access                     │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Policy: Access controls vary based on risk signals and data sensitivity   │
-│                                                                              │
+│                                                                             │
+│  Policy: Access controls vary based on risk signals and data sensitivity    │
+│                                                                             │
 │  PROS:                              CONS:                                   │
-│  • Flexible for business needs      • More complex to implement           │
-│  • Supports BYOD with controls      • Requires data classification        │
-│  • Better user experience           • Multiple policies to manage         │
-│  • Balances security/productivity   • Needs continuous tuning             │
-│                                                                              │
+│  • Flexible for business needs      • More complex to implement             │
+│  • Supports BYOD with controls      • Requires data classification          │
+│  • Better user experience           • Multiple policies to manage           │
+│  • Balances security/productivity   • Needs continuous tuning               │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -161,51 +161,51 @@ If this company were AWS-focused:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      ZERO TRUST ARCHITECTURE                                 │
+│                      ZERO TRUST ARCHITECTURE                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  DATA CLASSIFICATION:                                                        │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                │
-│  │ PUBLIC         │  │ INTERNAL       │  │ CONFIDENTIAL   │                │
-│  │ • Marketing    │  │ • HR policies  │  │ • Client data  │                │
-│  │ • Published    │  │ • Internal     │  │ • Financial    │                │
-│  │   content      │  │   comms        │  │ • Strategy     │                │
-│  └────────────────┘  └────────────────┘  └────────────────┘                │
+│                                                                             │
+│  DATA CLASSIFICATION:                                                       │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                 │
+│  │ PUBLIC         │  │ INTERNAL       │  │ CONFIDENTIAL   │                 │
+│  │ • Marketing    │  │ • HR policies  │  │ • Client data  │                 │
+│  │ • Published    │  │ • Internal     │  │ • Financial    │                 │
+│  │   content      │  │   comms        │  │ • Strategy     │                 │
+│  └────────────────┘  └────────────────┘  └────────────────┘                 │
 │         │                   │                   │                           │
 │         ▼                   ▼                   ▼                           │
-│  ┌────────────────────────────────────────────────────────────────────┐    │
-│  │                    CONDITIONAL ACCESS POLICIES                      │    │
-│  ├────────────────────────────────────────────────────────────────────┤    │
-│  │                                                                      │    │
-│  │  BASELINE (All apps):                                               │    │
-│  │  • Require MFA                                                       │    │
-│  │  • Block legacy auth                                                 │    │
-│  │                                                                      │    │
-│  │  INTERNAL DATA:                                                     │    │
-│  │  • MFA + Entra registered device OR compliant device                │    │
-│  │  • Session: 12 hours                                                │    │
-│  │                                                                      │    │
-│  │  CONFIDENTIAL DATA:                                                 │    │
-│  │  • MFA + Compliant device only                                      │    │
-│  │  • Location: Named locations only                                   │    │
-│  │  • Session: 4 hours                                                 │    │
-│  │  • App protection policy required                                   │    │
-│  │                                                                      │    │
-│  │  HIGH RISK SIGNALS:                                                 │    │
-│  │  • Any sign-in risk = High → Block                                  │    │
-│  │  • User risk = High → Password change + MFA                         │    │
-│  │                                                                      │    │
-│  └────────────────────────────────────────────────────────────────────┘    │
-│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────┐     │
+│  │                    CONDITIONAL ACCESS POLICIES                     │     │
+│  ├────────────────────────────────────────────────────────────────────┤     │
+│  │                                                                    │     │
+│  │  BASELINE (All apps):                                              │     │
+│  │  • Require MFA                                                     │     │
+│  │  • Block legacy auth                                               │     │
+│  │                                                                    │     │
+│  │  INTERNAL DATA:                                                    │     │
+│  │  • MFA + Entra registered device OR compliant device               │     │
+│  │  • Session: 12 hours                                               │     │
+│  │                                                                    │     │
+│  │  CONFIDENTIAL DATA:                                                │     │
+│  │  • MFA + Compliant device only                                     │     │
+│  │  • Location: Named locations only                                  │     │
+│  │  • Session: 4 hours                                                │     │
+│  │  • App protection policy required                                  │     │
+│  │                                                                    │     │
+│  │  HIGH RISK SIGNALS:                                                │     │
+│  │  • Any sign-in risk = High → Block                                 │     │
+│  │  • User risk = High → Password change + MFA                        │     │
+│  │                                                                    │     │
+│  └────────────────────────────────────────────────────────────────────┘     │
+│                                                                             │
 │  DEVICE TIERS:                                                              │
-│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                │
-│  │ COMPLIANT      │  │ REGISTERED     │  │ UNMANAGED      │                │
-│  │ (Intune MDM)   │  │ (Entra Join)   │  │ (BYOD)         │                │
-│  │                │  │                │  │                │                │
-│  │ Full access    │  │ Internal data  │  │ Public data    │                │
-│  │ to all data    │  │ via web only   │  │ + web M365     │                │
-│  └────────────────┘  └────────────────┘  └────────────────┘                │
-│                                                                              │
+│  ┌────────────────┐  ┌────────────────┐  ┌────────────────┐                 │
+│  │ COMPLIANT      │  │ REGISTERED     │  │ UNMANAGED      │                 │
+│  │ (Intune MDM)   │  │ (Entra Join)   │  │ (BYOD)         │                 │
+│  │                │  │                │  │                │                 │
+│  │ Full access    │  │ Internal data  │  │ Public data    │                 │
+│  │ to all data    │  │ via web only   │  │ + web M365     │                 │
+│  └────────────────┘  └────────────────┘  └────────────────┘                 │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -285,84 +285,84 @@ AWS equivalent would require:
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    OPTION A: Single Tenant, B2B Guests                      │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────┐                                                        │
 │  │ SaaS Provider   │                                                        │
 │  │ Entra ID Tenant │                                                        │
 │  │                 │                                                        │
-│  │ ┌─────────────┐ │     ┌─────────────┐                                   │
-│  │ │ Guest users │◄├─────│ Customer A  │                                   │
-│  │ │ from        │ │     │ Entra ID    │                                   │
-│  │ │ Customer A  │ │     └─────────────┘                                   │
-│  │ └─────────────┘ │     ┌─────────────┐                                   │
-│  │ ┌─────────────┐ │     │ Customer B  │                                   │
-│  │ │ Guest users │◄├─────│ Okta        │                                   │
-│  │ │ from        │ │     └─────────────┘                                   │
+│  │ ┌─────────────┐ │     ┌─────────────┐                                    │
+│  │ │ Guest users │◄├─────│ Customer A  │                                    │
+│  │ │ from        │ │     │ Entra ID    │                                    │
+│  │ │ Customer A  │ │     └─────────────┘                                    │
+│  │ └─────────────┘ │     ┌─────────────┐                                    │
+│  │ ┌─────────────┐ │     │ Customer B  │                                    │
+│  │ │ Guest users │◄├─────│ Okta        │                                    │
+│  │ │ from        │ │     └─────────────┘                                    │
 │  │ │ Customer B  │ │                                                        │
 │  │ └─────────────┘ │                                                        │
 │  └─────────────────┘                                                        │
-│                                                                              │
+│                                                                             │
 │  PROS:                              CONS:                                   │
-│  • Simple architecture             • All users in one directory            │
-│  • Native Entra ID features        • Customer data isolation concerns      │
-│  • Built-in B2B federation         • Scaling limits                        │
-│                                    • Customer can't manage own users       │
-│                                                                              │
+│  • Simple architecture             • All users in one directory             │
+│  • Native Entra ID features        • Customer data isolation concerns       │
+│  • Built-in B2B federation         • Scaling limits                         │
+│                                    • Customer can't manage own users        │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    OPTION B: Entra ID B2C                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │                         B2C Tenant                                   │   │
-│  │  ┌─────────────────────────────────────────────────────────────┐    │   │
-│  │  │              Custom Policies (Identity Experience)           │    │   │
-│  │  └─────────────────────────────────────────────────────────────┘    │   │
-│  │           │                    │                    │                │   │
-│  │           ▼                    ▼                    ▼                │   │
-│  │  ┌─────────────┐      ┌─────────────┐      ┌─────────────┐         │   │
-│  │  │ Customer A  │      │ Customer B  │      │ Customer C  │         │   │
-│  │  │ (SAML IdP)  │      │ (OIDC IdP)  │      │ (Local)     │         │   │
-│  │  └─────────────┘      └─────────────┘      └─────────────┘         │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │                         B2C Tenant                                  │    │
+│  │  ┌─────────────────────────────────────────────────────────────┐    │    │
+│  │  │              Custom Policies (Identity Experience)          │    │    │
+│  │  └─────────────────────────────────────────────────────────────┘    │    │
+│  │           │                    │                    │               │    │
+│  │           ▼                    ▼                    ▼               │    │
+│  │  ┌─────────────┐      ┌─────────────┐      ┌─────────────┐          │    │
+│  │  │ Customer A  │      │ Customer B  │      │ Customer C  │          │    │
+│  │  │ (SAML IdP)  │      │ (OIDC IdP)  │      │ (Local)     │          │    │
+│  │  └─────────────┘      └─────────────┘      └─────────────┘          │    │
+│  └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
 │  PROS:                              CONS:                                   │
-│  • Designed for this scenario      • Separate from workforce identity     │
-│  • Custom branding per customer    • Complex custom policies              │
-│  • Federation flexibility          • No Conditional Access (limited)      │
-│  • Massive scale                   • Different feature set than Entra ID  │
-│                                                                              │
+│  • Designed for this scenario      • Separate from workforce identity       │
+│  • Custom branding per customer    • Complex custom policies                │
+│  • Federation flexibility          • No Conditional Access (limited)        │
+│  • Massive scale                   • Different feature set than Entra ID    │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                    OPTION C: External Identities + Tenant Isolation         │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
+│                                                                             │
+│  ┌──────────────────────────────────────────────────────────────────────┐   │
 │  │                    Multi-Tenant Application                          │   │
-│  │                                                                       │   │
-│  │  App registration configured for "Any Azure AD directory + personal"│   │
-│  │                                                                       │   │
-│  └───────────────────────────────┬───────────────────────────────────────┘   │
+│  │                                                                      │   │
+│  │  App registration configured for "Any Azure AD directory + personal" │   │
+│  │                                                                      │   │
+│  └───────────────────────────────┬──────────────────────────────────────┘   │
 │                                  │                                          │
-│         ┌────────────────────────┼────────────────────────┐                │
-│         ▼                        ▼                        ▼                │
-│  ┌─────────────┐          ┌─────────────┐          ┌─────────────┐        │
-│  │ Customer A  │          │ Customer B  │          │ Customer C  │        │
-│  │ Tenant      │          │ Tenant      │          │ Tenant      │        │
-│  │             │          │             │          │             │        │
-│  │ Users auth  │          │ Users auth  │          │ Users auth  │        │
-│  │ in their    │          │ in their    │          │ in their    │        │
-│  │ own tenant  │          │ own tenant  │          │ own tenant  │        │
-│  └─────────────┘          └─────────────┘          └─────────────┘        │
-│                                                                              │
+│         ┌────────────────────────┼────────────────────────┐                 │
+│         ▼                        ▼                        ▼                 │
+│  ┌─────────────┐          ┌─────────────┐          ┌─────────────┐          │
+│  │ Customer A  │          │ Customer B  │          │ Customer C  │          │
+│  │ Tenant      │          │ Tenant      │          │ Tenant      │          │
+│  │             │          │             │          │             │          │
+│  │ Users auth  │          │ Users auth  │          │ Users auth  │          │
+│  │ in their    │          │ in their    │          │ in their    │          │
+│  │ own tenant  │          │ own tenant  │          │ own tenant  │          │
+│  └─────────────┘          └─────────────┘          └─────────────┘          │
+│                                                                             │
 │  PROS:                              CONS:                                   │
-│  • Full tenant isolation           • Customers need Entra ID               │
-│  • Customer controls their users   • App consent required per tenant       │
-│  • Each customer's CA applies      • More complex app architecture         │
-│  • Enterprise-ready                • Some customers won't have Entra ID    │
-│                                                                              │
+│  • Full tenant isolation           • Customers need Entra ID                │
+│  • Customer controls their users   • App consent required per tenant        │
+│  • Each customer's CA applies      • More complex app architecture          │
+│  • Enterprise-ready                • Some customers won't have Entra ID     │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -380,29 +380,29 @@ AWS equivalent would require:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    HYBRID IDENTITY ARCHITECTURE                              │
+│                    HYBRID IDENTITY ARCHITECTURE                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                         ┌───────────────────────┐                           │
 │                         │    SaaS Application   │                           │
 │                         │    (Multi-tenant)     │                           │
 │                         └───────────┬───────────┘                           │
-│                                     │                                        │
+│                                     │                                       │
 │              ┌──────────────────────┼──────────────────────┐                │
 │              │                      │                      │                │
 │              ▼                      ▼                      ▼                │
-│  ┌─────────────────────┐  ┌─────────────────┐  ┌─────────────────────────┐ │
-│  │   Enterprise Path   │  │    SMB Path     │  │   Self-Service Path     │ │
-│  │   (Multi-tenant     │  │    (B2C with    │  │   (B2C Local            │ │
-│  │    Entra ID)        │  │     SAML/OIDC)  │  │    Accounts)            │ │
-│  └──────────┬──────────┘  └────────┬────────┘  └────────────┬────────────┘ │
+│  ┌─────────────────────┐  ┌─────────────────┐  ┌─────────────────────────┐  │
+│  │   Enterprise Path   │  │    SMB Path     │  │   Self-Service Path     │  │
+│  │   (Multi-tenant     │  │    (B2C with    │  │   (B2C Local            │  │
+│  │    Entra ID)        │  │     SAML/OIDC)  │  │    Accounts)            │  │
+│  └──────────┬──────────┘  └────────┬────────┘  └────────────┬────────────┘  │
 │             │                      │                         │              │
 │             ▼                      ▼                         ▼              │
-│  Customer's Entra ID       Customer's IdP          B2C Local Directory    │
-│  - Full CA policies        - Federation only       - Self-service signup  │
-│  - Customer-managed        - Limited policies      - Email verification   │
-│  - Audit in their tenant   - SaaS manages         - Password policies     │
-│                                                                              │
+│  Customer's Entra ID       Customer's IdP          B2C Local Directory      │
+│  - Full CA policies        - Federation only       - Self-service signup    │
+│  - Customer-managed        - Limited policies      - Email verification     │
+│  - Audit in their tenant   - SaaS manages         - Password policies       │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
