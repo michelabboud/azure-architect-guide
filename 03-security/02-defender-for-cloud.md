@@ -10,36 +10,36 @@ Microsoft Defender for Cloud is a **Cloud-Native Application Protection Platform
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    DEFENDER FOR CLOUD vs AWS SECURITY                        │
+│                    DEFENDER FOR CLOUD vs AWS SECURITY                       │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  AWS (Multiple Services):                Azure (Unified):                   │
 │  ─────────────────────────               ─────────────────                  │
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────────┐                ┌─────────────────────────────────┐ │
-│  │   Security Hub     │                │                                  │ │
-│  │   (Aggregation)    │                │     DEFENDER FOR CLOUD           │ │
-│  └─────────────────────┘                │                                  │ │
+│  │   Security Hub      │                │                                 │ │
+│  │   (Aggregation)     │                │     DEFENDER FOR CLOUD          │ │
+│  └─────────────────────┘                │                                 │ │
 │  ┌─────────────────────┐                │  ┌─────────────────────────┐    │ │
-│  │   GuardDuty        │                │  │  Threat Detection       │    │ │
-│  │   (Threat Detection│                │  │  (All workloads)        │    │ │
+│  │   GuardDuty         │                │  │  Threat Detection       │    │ │
+│  │   (Threat Detection │                │  │  (All workloads)        │    │ │
 │  └─────────────────────┘                │  └─────────────────────────┘    │ │
 │  ┌─────────────────────┐                │  ┌─────────────────────────┐    │ │
-│  │   Inspector        │                │  │  Vulnerability          │    │ │
-│  │   (Vulnerability)  │                │  │  Assessment             │    │ │
+│  │   Inspector         │                │  │  Vulnerability          │    │ │
+│  │   (Vulnerability)   │                │  │  Assessment             │    │ │
 │  └─────────────────────┘                │  └─────────────────────────┘    │ │
 │  ┌─────────────────────┐                │  ┌─────────────────────────┐    │ │
-│  │   Config Rules     │                │  │  Secure Score &         │    │ │
-│  │   (Compliance)     │                │  │  Recommendations        │    │ │
+│  │   Config Rules      │                │  │  Secure Score &         │    │ │
+│  │   (Compliance)      │                │  │  Recommendations        │    │ │
 │  └─────────────────────┘                │  └─────────────────────────┘    │ │
 │  ┌─────────────────────┐                │  ┌─────────────────────────┐    │ │
-│  │   Trusted Advisor  │                │  │  Regulatory             │    │ │
-│  │   (Best Practices) │                │  │  Compliance             │    │ │
+│  │   Trusted Advisor   │                │  │  Regulatory             │    │ │
+│  │   (Best Practices)  │                │  │  Compliance             │    │ │
 │  └─────────────────────┘                └──┴─────────────────────────┴────┘ │
-│                                                                              │
+│                                                                             │
 │  Integration: Manual/Custom                Integration: Native, unified     │
-│  Learning curve: High (many consoles)     Learning curve: Medium (one)     │
-│                                                                              │
+│  Learning curve: High (many consoles)     Learning curve: Medium (one)      │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -49,24 +49,24 @@ Microsoft Defender for Cloud is a **Cloud-Native Application Protection Platform
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         CSPM TIER COMPARISON                                 │
+│                         CSPM TIER COMPARISON                                │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  FREE CSPM (Foundational)              DEFENDER CSPM (Enhanced)             │
 │  ─────────────────────────             ────────────────────────             │
-│                                                                              │
-│  ✓ Secure Score                        ✓ Everything in Free                 │
-│  ✓ Basic recommendations               ✓ Attack path analysis               │
+│                                                                             │
+│  ✓ Secure Score                        ✓ Everything in Free                │
+│  ✓ Basic recommendations               ✓ Attack path analysis              │
 │  ✓ Azure Security Benchmark            ✓ Cloud security explorer           │
 │  ✓ Asset inventory                     ✓ Agentless scanning                │
 │  ✓ Multi-cloud (basic)                 ✓ Governance rules                  │
-│                                        ✓ Risk prioritization               │
-│  Cost: Free                            ✓ Data-aware security posture       │
-│                                        ✓ External attack surface           │
-│                                                                              │
+│                                        ✓ Risk prioritization                │
+│  Cost: Free                            ✓ Data-aware security posture        │
+│                                        ✓ External attack surface            │
+│                                                                             │
 │                                        Cost: ~$5/server/month               │
 │                                              (varies by workload)           │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -122,35 +122,35 @@ az security pricing list --output table
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│              DEFENDER FOR CLOUD: MULTI-CLOUD ARCHITECTURE                    │
+│              DEFENDER FOR CLOUD: MULTI-CLOUD ARCHITECTURE                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                    ┌──────────────────────────────────┐                     │
 │                    │   DEFENDER FOR CLOUD             │                     │
 │                    │   (Azure Portal - Single Pane)   │                     │
 │                    └───────────────┬──────────────────┘                     │
-│                                    │                                         │
+│                                    │                                        │
 │                    ┌───────────────┼───────────────┐                        │
 │                    │               │               │                        │
 │                    ▼               ▼               ▼                        │
-│          ┌─────────────────┐ ┌─────────────┐ ┌─────────────────┐           │
-│          │     AZURE       │ │    AWS      │ │     GCP         │           │
-│          │                 │ │             │ │                 │           │
-│          │ Native          │ │ Connector   │ │ Connector       │           │
-│          │ Integration     │ │ via Arc     │ │ via Arc         │           │
-│          │                 │ │             │ │                 │           │
-│          │ • VMs           │ │ • EC2       │ │ • Compute       │           │
-│          │ • AKS           │ │ • EKS       │ │ • GKE           │           │
-│          │ • SQL           │ │ • RDS       │ │ • Cloud SQL     │           │
-│          │ • Storage       │ │ • S3        │ │ • GCS           │           │
-│          └─────────────────┘ └─────────────┘ └─────────────────┘           │
-│                                                                              │
+│          ┌─────────────────┐ ┌─────────────┐ ┌─────────────────┐            │
+│          │     AZURE       │ │    AWS      │ │     GCP         │            │
+│          │                 │ │             │ │                 │            │
+│          │ Native          │ │ Connector   │ │ Connector       │            │
+│          │ Integration     │ │ via Arc     │ │ via Arc         │            │
+│          │                 │ │             │ │                 │            │
+│          │ • VMs           │ │ • EC2       │ │ • Compute       │            │
+│          │ • AKS           │ │ • EKS       │ │ • GKE           │            │
+│          │ • SQL           │ │ • RDS       │ │ • Cloud SQL     │            │
+│          │ • Storage       │ │ • S3        │ │ • GCS           │            │
+│          └─────────────────┘ └─────────────┘ └─────────────────┘            │
+│                                                                             │
 │  UNIFIED CAPABILITIES:                                                      │
 │  • Single Secure Score across all clouds                                    │
 │  • Consistent recommendations                                               │
 │  • Unified alerts and incidents                                             │
 │  • Cross-cloud attack path analysis                                         │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -187,33 +187,33 @@ Step 4: Select Plans
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    MULTI-CLOUD SECURITY DASHBOARD                            │
+│                    MULTI-CLOUD SECURITY DASHBOARD                           │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  SECURE SCORE:                                                              │
-│  ┌────────────────────────────────────────────────────────────────────┐    │
-│  │ Overall: 72%                                                        │    │
-│  │ ████████████████████████████████░░░░░░░░░░░░                        │    │
-│  ├────────────────────────────────────────────────────────────────────┤    │
-│  │ Azure:  78%  ██████████████████████████████████░░░░░░░             │    │
-│  │ AWS:    65%  ██████████████████████████░░░░░░░░░░░░░░░             │    │
-│  │ GCP:    71%  █████████████████████████████░░░░░░░░░░░░             │    │
-│  └────────────────────────────────────────────────────────────────────┘    │
-│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────┐     │
+│  │ Overall: 72%                                                       │     │
+│  │ ████████████████████████████████░░░░░░░░░░░░                       │     │
+│  ├────────────────────────────────────────────────────────────────────┤     │
+│  │ Azure:  78%  ██████████████████████████████████░░░░░░░             │     │
+│  │ AWS:    65%  ██████████████████████████░░░░░░░░░░░░░░░             │     │
+│  │ GCP:    71%  █████████████████████████████░░░░░░░░░░░░             │     │
+│  └────────────────────────────────────────────────────────────────────┘     │
+│                                                                             │
 │  TOP RECOMMENDATIONS:                                                       │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │ 1. [AWS] Enable MFA for root account          Impact: +5%    High  │   │
-│  │ 2. [Azure] Enable encryption for SQL DBs      Impact: +3%    High  │   │
-│  │ 3. [AWS] Restrict S3 bucket public access     Impact: +4%    High  │   │
-│  │ 4. [GCP] Enable VPC flow logs                 Impact: +2%    Med   │   │
-│  │ 5. [Azure] Enable Defender for Storage        Impact: +3%    Med   │   │
-│  └─────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
-│  ACTIVE ALERTS (Last 7 Days):                                              │
-│  Azure: 12 (3 High, 5 Medium, 4 Low)                                       │
-│  AWS:   8  (2 High, 4 Medium, 2 Low)                                       │
-│  GCP:   3  (0 High, 2 Medium, 1 Low)                                       │
-│                                                                              │
+│  ┌─────────────────────────────────────────────────────────────────────┐    │
+│  │ 1. [AWS] Enable MFA for root account          Impact: +5%    High   │    │
+│  │ 2. [Azure] Enable encryption for SQL DBs      Impact: +3%    High   │    │
+│  │ 3. [AWS] Restrict S3 bucket public access     Impact: +4%    High   │    │
+│  │ 4. [GCP] Enable VPC flow logs                 Impact: +2%    Med    │    │
+│  │ 5. [Azure] Enable Defender for Storage        Impact: +3%    Med    │    │
+│  └─────────────────────────────────────────────────────────────────────┘    │
+│                                                                             │
+│  ACTIVE ALERTS (Last 7 Days):                                               │
+│  Azure: 12 (3 High, 5 Medium, 4 Low)                                        │
+│  AWS:   8  (2 High, 4 Medium, 2 Low)                                        │
+│  GCP:   3  (0 High, 2 Medium, 1 Low)                                        │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -230,9 +230,9 @@ EXAMPLE ATTACK PATH:
 ────────────────────
 
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                                                                              │
-│  INTERNET                                                                    │
-│      │                                                                       │
+│                                                                             │
+│  INTERNET                                                                   │
+│      │                                                                      │
 │      │ 1. Internet-facing VM with public IP                                 │
 │      ▼    (HIGH RISK: exposed to internet)                                  │
 │  ┌───────────────────────────────────────────────────────────┐              │
@@ -240,28 +240,28 @@ EXAMPLE ATTACK PATH:
 │  │  Risk: Has vulnerabilities (CVE-2023-xxxx)                │              │
 │  │  Risk: Running as admin                                   │              │
 │  └───────────────────────┬───────────────────────────────────┘              │
-│                          │                                                   │
+│                          │                                                  │
 │                          │ 2. VM has access to Key Vault                    │
 │                          │    (via overly permissive RBAC)                  │
-│                          ▼                                                   │
+│                          ▼                                                  │
 │  ┌───────────────────────────────────────────────────────────┐              │
 │  │  Key Vault: kv-secrets-prod                               │              │
 │  │  Contains: Database connection strings                    │              │
 │  │  Contains: API keys for payment gateway                   │              │
 │  └───────────────────────┬───────────────────────────────────┘              │
-│                          │                                                   │
+│                          │                                                  │
 │                          │ 3. Connection string provides access to          │
 │                          │    production database                           │
-│                          ▼                                                   │
+│                          ▼                                                  │
 │  ┌───────────────────────────────────────────────────────────┐              │
 │  │  SQL Database: sqldb-customers-prod                       │              │
 │  │  Contains: 500K customer records (PII)                    │              │
 │  │  CRITICAL ASSET                                           │              │
 │  └───────────────────────────────────────────────────────────┘              │
-│                                                                              │
-│  RECOMMENDATION: Fix vulnerabilities on VM, restrict Key Vault access,     │
-│                  remove public IP, use Private Endpoint                    │
-│                                                                              │
+│                                                                             │
+│  RECOMMENDATION: Fix vulnerabilities on VM, restrict Key Vault access,      │
+│                  remove public IP, use Private Endpoint                     │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
