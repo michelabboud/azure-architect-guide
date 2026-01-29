@@ -35,50 +35,50 @@ Attack: Get in once = Free access            Assumption: Breach may exist
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         ZERO TRUST PRINCIPLES                                │
+│                         ZERO TRUST PRINCIPLES                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  1. VERIFY EXPLICITLY                                                        │
-│     ───────────────────                                                      │
+│                                                                             │
+│  1. VERIFY EXPLICITLY                                                       │
+│     ───────────────────                                                     │
 │     "Don't assume—verify every time"                                        │
-│                                                                              │
-│     Check ALL signals:                                                       │
+│                                                                             │
+│     Check ALL signals:                                                      │
 │     • User identity (who)                                                   │
 │     • Device health (from what)                                             │
 │     • Location (where)                                                      │
 │     • Resource requested (what)                                             │
 │     • Time/behavior anomalies (when/how)                                    │
-│                                                                              │
+│                                                                             │
 │     Azure: Entra ID + Conditional Access + Device Compliance                │
 │     AWS: IAM + (limited to policy conditions)                               │
-│                                                                              │
+│                                                                             │
 │  2. USE LEAST PRIVILEGE ACCESS                                              │
 │     ──────────────────────────                                              │
 │     "Grant minimum access for minimum time"                                 │
-│                                                                              │
-│     Implementation:                                                          │
+│                                                                             │
+│     Implementation:                                                         │
 │     • Just-In-Time access (PIM)                                             │
 │     • Just-Enough-Access (minimal RBAC)                                     │
 │     • Risk-based adaptive policies                                          │
 │     • Time-bound permissions                                                │
-│                                                                              │
+│                                                                             │
 │     Azure: PIM + RBAC + Access Reviews + Entitlement Management             │
 │     AWS: IAM Roles + (no native JIT)                                        │
-│                                                                              │
-│  3. ASSUME BREACH                                                            │
+│                                                                             │
+│  3. ASSUME BREACH                                                           │
 │     ─────────────────                                                       │
 │     "Act as if attackers are already inside"                                │
-│                                                                              │
-│     Implementation:                                                          │
+│                                                                             │
+│     Implementation:                                                         │
 │     • Microsegmentation                                                     │
 │     • End-to-end encryption                                                 │
 │     • Continuous monitoring                                                 │
 │     • Anomaly detection                                                     │
 │     • Minimize blast radius                                                 │
-│                                                                              │
+│                                                                             │
 │     Azure: NSGs + Private Link + Defender + Sentinel                        │
-│     AWS: Security Groups + PrivateLink + GuardDuty + (SIEM needed)         │
-│                                                                              │
+│     AWS: Security Groups + PrivateLink + GuardDuty + (SIEM needed)          │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -90,66 +90,66 @@ Attack: Get in once = Free access            Assumption: Breach may exist
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    AZURE ZERO TRUST REFERENCE ARCHITECTURE                   │
+│                    AZURE ZERO TRUST REFERENCE ARCHITECTURE                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │                              ┌─────────────────┐                            │
 │                              │    USER         │                            │
 │                              │    (Any Device) │                            │
 │                              └────────┬────────┘                            │
-│                                       │                                      │
+│                                       │                                     │
 │  ┌────────────────────────────────────┼────────────────────────────────────┐│
-│  │                          IDENTITY LAYER                                  ││
+│  │                          IDENTITY LAYER                                 ││
 │  │  ┌─────────────┐    ┌─────────────────────┐    ┌──────────────────────┐ ││
-│  │  │  Entra ID   │───▶│ Conditional Access  │───▶│  MFA / Passwordless  │ ││
+│  │  │  Entra ID   │───▶│ Conditional Access  │───▶│  MFA / Passwordless │ ││
 │  │  │  (AuthN)    │    │ (Policy Engine)     │    │  (Strong Auth)       │ ││
 │  │  └─────────────┘    └─────────────────────┘    └──────────────────────┘ ││
 │  └────────────────────────────────────┼────────────────────────────────────┘│
-│                                       │ (Token with claims)                  │
+│                                       │ (Token with claims)                 │
 │  ┌────────────────────────────────────┼────────────────────────────────────┐│
-│  │                          ENDPOINT LAYER                                  ││
+│  │                          ENDPOINT LAYER                                 ││
 │  │  ┌─────────────────┐    ┌─────────────────────┐    ┌─────────────────┐  ││
-│  │  │ Intune (MDM)    │───▶│ Compliance Check    │───▶│ Defender for    │  ││
+│  │  │ Intune (MDM)    │───▶│ Compliance Check    │───▶│ Defender for   │  ││
 │  │  │ Device Mgmt     │    │ (Is device healthy?)│    │ Endpoint (EDR)  │  ││
 │  │  └─────────────────┘    └─────────────────────┘    └─────────────────┘  ││
 │  └────────────────────────────────────┼────────────────────────────────────┘│
-│                                       │ (Device state in token)              │
+│                                       │ (Device state in token)             │
 │  ┌────────────────────────────────────┼────────────────────────────────────┐│
-│  │                          NETWORK LAYER                                   ││
-│  │                                                                          ││
-│  │     ┌─────────────┐      ┌─────────────┐      ┌─────────────┐          ││
-│  │     │   Azure     │      │  Private    │      │    NSG      │          ││
-│  │     │   Firewall  │─────▶│  Endpoints  │─────▶│  (Micro-    │          ││
-│  │     │   / WAF     │      │             │      │  segmented) │          ││
-│  │     └─────────────┘      └─────────────┘      └─────────────┘          ││
-│  │                                                                          ││
+│  │                          NETWORK LAYER                                  ││
+│  │                                                                         ││
+│  │     ┌─────────────┐      ┌─────────────┐      ┌─────────────┐           ││
+│  │     │   Azure     │      │  Private    │      │    NSG      │           ││
+│  │     │   Firewall  │────▶│  Endpoints  │─────▶│  (Micro-    │           ││
+│  │     │   / WAF     │      │             │      │  segmented) │           ││
+│  │     └─────────────┘      └─────────────┘      └─────────────┘           ││
+│  │                                                                         ││
 │  └────────────────────────────────────┼────────────────────────────────────┘│
-│                                       │                                      │
+│                                       │                                     │
 │  ┌────────────────────────────────────┼────────────────────────────────────┐│
-│  │                        APPLICATION LAYER                                 ││
+│  │                        APPLICATION LAYER                                ││
 │  │  ┌─────────────────┐    ┌─────────────────────┐    ┌─────────────────┐  ││
-│  │  │  Managed        │───▶│  RBAC               │───▶│  App-level      │  ││
+│  │  │  Managed        │──▶│  RBAC               │───▶│  App-level      │  ││
 │  │  │  Identity       │    │  (Authorization)    │    │  AuthZ          │  ││
 │  │  └─────────────────┘    └─────────────────────┘    └─────────────────┘  ││
 │  └────────────────────────────────────┼────────────────────────────────────┘│
-│                                       │                                      │
+│                                       │                                     │
 │  ┌────────────────────────────────────┼────────────────────────────────────┐│
-│  │                           DATA LAYER                                     ││
+│  │                           DATA LAYER                                    ││
 │  │  ┌─────────────────┐    ┌─────────────────────┐    ┌─────────────────┐  ││
-│  │  │  Purview        │───▶│  Key Vault          │───▶│  Encryption     │  ││
+│  │  │  Purview        │───▶│  Key Vault          │─▶│  Encryption      │  ││
 │  │  │  Classification │    │  (Secrets/Keys)     │    │  (At rest/      │  ││
 │  │  │  + DLP          │    │                     │    │   In transit)   │  ││
 │  │  └─────────────────┘    └─────────────────────┘    └─────────────────┘  ││
 │  └─────────────────────────────────────────────────────────────────────────┘│
-│                                                                              │
+│                                                                             │
 │  ┌─────────────────────────────────────────────────────────────────────────┐│
-│  │                     VISIBILITY & ANALYTICS                               ││
-│  │  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐               ││
-│  │  │ Defender for  │  │   Sentinel    │  │ Azure Monitor │               ││
-│  │  │ Cloud         │  │   (SIEM)      │  │ (Telemetry)   │               ││
-│  │  └───────────────┘  └───────────────┘  └───────────────┘               ││
+│  │                     VISIBILITY & ANALYTICS                              ││
+│  │  ┌───────────────┐  ┌───────────────┐  ┌───────────────┐                ││
+│  │  │ Defender for  │  │   Sentinel    │  │ Azure Monitor │                ││
+│  │  │ Cloud         │  │   (SIEM)      │  │ (Telemetry)   │                ││
+│  │  └───────────────┘  └───────────────┘  └───────────────┘                ││
 │  └─────────────────────────────────────────────────────────────────────────┘│
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -170,38 +170,38 @@ Attack: Get in once = Free access            Assumption: Breach may exist
 **Target State**:
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      BASIC ZERO TRUST WEB APP                                │
+│                      BASIC ZERO TRUST WEB APP                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  USERS                                                                       │
-│    │                                                                         │
+│                                                                             │
+│  USERS                                                                      │
+│    │                                                                        │
 │    │ 1. Authenticate to Entra ID                                            │
 │    │ 2. Conditional Access: Require MFA                                     │
 │    │ 3. Get token with identity claims                                      │
-│    │                                                                         │
-│    ▼                                                                         │
+│    │                                                                        │
+│    ▼                                                                        │
 │  ┌─────────────────────────────────────────────────────────────────────┐    │
-│  │                      APP SERVICE                                     │    │
+│  │                      APP SERVICE                                    │    │
 │  │  • Entra ID authentication enabled                                  │    │
 │  │  • Managed Identity assigned                                        │    │
 │  │  • HTTPS only, TLS 1.2                                              │    │
 │  └───────────────────────────────┬─────────────────────────────────────┘    │
-│                                  │                                           │
-│                    4. App uses Managed Identity                              │
-│                       (no stored credentials)                                │
-│                                  │                                           │
+│                                  │                                          │
+│                    4. App uses Managed Identity                             │
+│                       (no stored credentials)                               │
+│                                  │                                          │
 │         ┌────────────────────────┼────────────────────────────┐             │
 │         │                        │                            │             │
 │         ▼                        ▼                            ▼             │
-│  ┌─────────────┐         ┌─────────────┐         ┌─────────────────┐       │
-│  │ SQL Database│         │ Key Vault   │         │ Blob Storage    │       │
-│  │             │         │             │         │                 │       │
-│  │ • Entra auth│         │ • RBAC      │         │ • RBAC          │       │
-│  │ • MI access │         │ • MI access │         │ • MI access     │       │
-│  │ • TLS       │         │ • Private   │         │ • Private       │       │
-│  │             │         │   endpoint  │         │   endpoint      │       │
-│  └─────────────┘         └─────────────┘         └─────────────────┘       │
-│                                                                              │
+│  ┌─────────────┐         ┌─────────────┐         ┌─────────────────┐        │
+│  │ SQL Database│         │ Key Vault   │         │ Blob Storage    │        │
+│  │             │         │             │         │                 │        │
+│  │ • Entra auth│         │ • RBAC      │         │ • RBAC          │        │
+│  │ • MI access │         │ • MI access │         │ • MI access     │        │
+│  │ • TLS       │         │ • Private   │         │ • Private       │        │
+│  │             │         │   endpoint  │         │   endpoint      │        │
+│  └─────────────┘         └─────────────┘         └─────────────────┘        │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -266,57 +266,57 @@ Grant: Require MFA
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      MICROSEGMENTED WEB APPLICATION                          │
+│                      MICROSEGMENTED WEB APPLICATION                         │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│                              INTERNET                                        │
-│                                  │                                           │
-│                                  ▼                                           │
+│                                                                             │
+│                              INTERNET                                       │
+│                                  │                                          │
+│                                  ▼                                          │
 │                    ┌─────────────────────────────┐                          │
-│                    │    Application Gateway     │                          │
-│                    │    + WAF                   │                          │
-│                    │    (NSG: Allow 443 from *) │                          │
+│                    │    Application Gateway     │                           │
+│                    │    + WAF                   │                           │
+│                    │    (NSG: Allow 443 from *) │                           │
 │                    └─────────────┬───────────────┘                          │
-│                                  │                                           │
+│                                  │                                          │
 │  ┌───────────────────────────────┼───────────────────────────────────────┐  │
-│  │                     WEB TIER SUBNET                                    │  │
-│  │  NSG Rules:                                                            │  │
+│  │                     WEB TIER SUBNET                                   │  │
+│  │  NSG Rules:                                                           │  │
 │  │  • Inbound: Allow 443 from AppGateway only                            │  │
 │  │  • Outbound: Allow 443 to API Tier only                               │  │
-│  │  • Deny all else                                                       │  │
-│  │                                                                        │  │
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                   │  │
-│  │  │   Web VM 1  │  │   Web VM 2  │  │   Web VM 3  │                   │  │
-│  │  └─────────────┘  └─────────────┘  └─────────────┘                   │  │
+│  │  • Deny all else                                                      │  │
+│  │                                                                       │  │
+│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐                    │  │
+│  │  │   Web VM 1  │  │   Web VM 2  │  │   Web VM 3  │                    │  │
+│  │  └─────────────┘  └─────────────┘  └─────────────┘                    │  │
 │  └───────────────────────────────┬───────────────────────────────────────┘  │
-│                                  │                                           │
+│                                  │                                          │
 │  ┌───────────────────────────────┼───────────────────────────────────────┐  │
-│  │                     API TIER SUBNET                                    │  │
-│  │  NSG Rules:                                                            │  │
+│  │                     API TIER SUBNET                                   │  │
+│  │  NSG Rules:                                                           │  │
 │  │  • Inbound: Allow 8080 from Web Tier only                             │  │
 │  │  • Outbound: Allow 1433 to Data Tier only                             │  │
-│  │  • Deny all else                                                       │  │
-│  │                                                                        │  │
+│  │  • Deny all else                                                      │  │
+│  │                                                                       │  │
 │  │  ┌─────────────┐  ┌─────────────┐                                     │  │
 │  │  │   API VM 1  │  │   API VM 2  │                                     │  │
 │  │  └─────────────┘  └─────────────┘                                     │  │
 │  └───────────────────────────────┬───────────────────────────────────────┘  │
-│                                  │                                           │
+│                                  │                                          │
 │  ┌───────────────────────────────┼───────────────────────────────────────┐  │
-│  │                    DATA TIER SUBNET                                    │  │
-│  │  NSG Rules:                                                            │  │
+│  │                    DATA TIER SUBNET                                   │  │
+│  │  NSG Rules:                                                           │  │
 │  │  • Inbound: Allow 1433 from API Tier only                             │  │
 │  │  • Outbound: Deny all (or specific Azure services)                    │  │
-│  │                                                                        │  │
+│  │                                                                       │  │
 │  │  ┌─────────────────────────────┐                                      │  │
-│  │  │     SQL Server               │                                      │  │
-│  │  │     (Private Endpoint)       │                                      │  │
+│  │  │     SQL Server               │                                     │  │
+│  │  │     (Private Endpoint)       │                                     │  │
 │  │  └─────────────────────────────┘                                      │  │
 │  └───────────────────────────────────────────────────────────────────────┘  │
-│                                                                              │
-│  RESULT: Attacker compromising Web tier CANNOT directly reach Data tier    │
-│          Must pivot through API tier (which can have additional controls)  │
-│                                                                              │
+│                                                                             │
+│  RESULT: Attacker compromising Web tier CANNOT directly reach Data tier     │
+│          Must pivot through API tier (which can have additional controls)   │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -368,46 +368,46 @@ az network nsg rule create \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│              ZERO TRUST WITH INLINE SESSION CONTROL                          │
+│              ZERO TRUST WITH INLINE SESSION CONTROL                         │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │  USER ACCESSES SHAREPOINT:                                                  │
-│                                                                              │
+│                                                                             │
 │  ┌─────────────┐      ┌─────────────────────────────────────────────────┐   │
-│  │    User     │─────▶│                 ENTRA ID                         │   │
-│  │             │      │  1. Authenticate                                 │   │
+│  │    User     │─────▶│                 ENTRA ID                       │   │
+│  │             │      │  1. Authenticate                                │   │
 │  └─────────────┘      │  2. Conditional Access: Session Control         │   │
 │                       │     "Use Conditional Access App Control"        │   │
 │                       └───────────────────────────┬─────────────────────┘   │
-│                                                   │                          │
-│                                                   ▼                          │
+│                                                   │                         │
+│                                                   ▼                         │
 │                       ┌─────────────────────────────────────────────────┐   │
-│                       │         DEFENDER FOR CLOUD APPS                  │   │
-│                       │         (Reverse Proxy)                          │   │
-│                       │                                                   │   │
+│                       │         DEFENDER FOR CLOUD APPS                 │   │
+│                       │         (Reverse Proxy)                         │   │
+│                       │                                                 │   │
 │                       │  Session Policy: "Block download of             │   │
 │                       │                   files labeled Confidential    │   │
 │                       │                   from unmanaged devices"       │   │
-│                       │                                                   │   │
-│                       │  Actions:                                        │   │
-│                       │  • Monitor all file access                       │   │
-│                       │  • Block download of labeled files               │   │
+│                       │                                                 │   │
+│                       │  Actions:                                       │   │
+│                       │  • Monitor all file access                      │   │
+│                       │  • Block download of labeled files              │   │
 │                       │  • Block copy/paste of sensitive content        │   │
 │                       │  • Block print of sensitive documents           │   │
 │                       │  • Watermark downloaded files                   │   │
 │                       └───────────────────────────┬─────────────────────┘   │
-│                                                   │                          │
-│                                                   ▼                          │
+│                                                   │                         │
+│                                                   ▼                         │
 │                       ┌─────────────────────────────────────────────────┐   │
-│                       │               SHAREPOINT                         │   │
-│                       │                                                   │   │
+│                       │               SHAREPOINT                        │   │
+│                       │                                                 │   │
 │                       │  File: Financial_Report.xlsx                    │   │
 │                       │  Label: Confidential                            │   │
-│                       │                                                   │   │
+│                       │                                                 │   │
 │                       │  User CAN: View in browser                      │   │
 │                       │  User CANNOT: Download, copy content            │   │
 │                       └─────────────────────────────────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
