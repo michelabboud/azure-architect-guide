@@ -67,33 +67,33 @@
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      ENTRA ID TENANT (Top Level)                    │
 │                   (Your organization identity)                      │
-│                                                                      │
+│                                                                     │
 │  ┌────────────────────────────────────────────────────────────────┐ │
 │  │              MANAGEMENT GROUPS (Optional Layer)                │ │
 │  │         (Organize subscriptions by business need)              │ │
 │  │                                                                │ │
-│  │  ┌─────────────────────────────────────────────────────────┐  │ │
-│  │  │  Management Group: "Production"                         │  │ │
-│  │  │  ├─ Subscription: "Prod-Americas"                       │  │ │
-│  │  │  └─ Subscription: "Prod-EMEA"                           │  │ │
-│  │  └─────────────────────────────────────────────────────────┘  │ │
+│  │  ┌─────────────────────────────────────────────────────────┐   │ │
+│  │  │  Management Group: "Production"                         │   │ │
+│  │  │  ├─ Subscription: "Prod-Americas"                       │   │ │
+│  │  │  └─ Subscription: "Prod-EMEA"                           │   │ │
+│  │  └─────────────────────────────────────────────────────────┘   │ │
 │  │                                                                │ │
-│  │  ┌─────────────────────────────────────────────────────────┐  │ │
-│  │  │  Management Group: "Non-Production"                     │  │ │
-│  │  │  ├─ Subscription: "Dev"                                 │  │ │
-│  │  │  └─ Subscription: "Test"                                │  │ │
-│  │  └─────────────────────────────────────────────────────────┘  │ │
+│  │  ┌─────────────────────────────────────────────────────────┐   │ │
+│  │  │  Management Group: "Non-Production"                     │   │ │
+│  │  │  ├─ Subscription: "Dev"                                 │   │ │
+│  │  │  └─ Subscription: "Test"                                │   │ │
+│  │  └─────────────────────────────────────────────────────────┘   │ │
 │  │                                                                │ │
-│  │  └─ Policy applied at MG level cascades to all subscriptions  │ │
+│  │  └─ Policy applied at MG level cascades to all subscriptions   │ │
 │  └────────────────────────────────────────────────────────────────┘ │
-│                                                                      │
-│  ┌─ SUBSCRIPTIONS (Billing + Resource Boundary)                    │
-│  │  └─ Each subscription has its own resources, quotas, billing   │
-│  │                                                                 │
-│  └─ RESOURCE GROUPS (Logical Grouping)                            │
-│     └─ Within each subscription, organize resources by RG         │
-│        • RG determines region, access controls, RBAC              │
-│        • Resources in same RG = easier management                 │
+│                                                                     │
+│  ┌─ SUBSCRIPTIONS (Billing + Resource Boundary)                     │
+│  │  └─ Each subscription has its own resources, quotas, billing     │
+│  │                                                                  │
+│  └─ RESOURCE GROUPS (Logical Grouping)                              │
+│     └─ Within each subscription, organize resources by RG           │
+│        • RG determines region, access controls, RBAC                │
+│        • Resources in same RG = easier management                   │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
