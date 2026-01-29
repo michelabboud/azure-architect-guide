@@ -33,20 +33,20 @@ Only applies to specific API calls.
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                                                                              │
+│                                                                             │
 │  USER ATTEMPTS TO ACCESS RESOURCE                                           │
 │  ─────────────────────────────────                                          │
-│                                                                              │
+│                                                                             │
 │  ┌──────────────┐     ┌──────────────────────────────────────────────────┐  │
 │  │ 1. User      │     │ 2. Entra ID Authentication                       │  │
 │  │    provides  │────→│    • Validates credentials                       │  │
 │  │    credentials     │    • Checks password, MFA if configured          │  │
 │  └──────────────┘     └────────────────────┬─────────────────────────────┘  │
-│                                            │                                 │
-│                                            ▼                                 │
+│                                            │                                │
+│                                            ▼                                │
 │                       ┌──────────────────────────────────────────────────┐  │
 │                       │ 3. CONDITIONAL ACCESS EVALUATION                 │  │
-│                       │                                                   │  │
+│                       │                                                  │  │
 │                       │    Evaluates ALL applicable policies:            │  │
 │                       │    • Who is this user?                           │  │
 │                       │    • What app are they accessing?                │  │
@@ -54,16 +54,16 @@ Only applies to specific API calls.
 │                       │    • What device? (compliant? managed?)          │  │
 │                       │    • What's the risk level?                      │  │
 │                       │    • What client app? (browser? mobile?)         │  │
-│                       │                                                   │  │
+│                       │                                                  │  │
 │                       │    ┌────────────────────────────────────────┐    │  │
-│                       │    │ Policy 1: Require MFA for all users   │    │  │
-│                       │    │ Policy 2: Block legacy auth           │    │  │
-│                       │    │ Policy 3: Require compliant device    │    │  │
-│                       │    │           for sensitive apps          │    │  │
+│                       │    │ Policy 1: Require MFA for all users    │    │  │
+│                       │    │ Policy 2: Block legacy auth            │    │  │
+│                       │    │ Policy 3: Require compliant device     │    │  │
+│                       │    │           for sensitive apps           │    │  │
 │                       │    └────────────────────────────────────────┘    │  │
-│                       │                                                   │  │
+│                       │                                                  │  │
 │                       └────────────────────┬─────────────────────────────┘  │
-│                                            │                                 │
+│                                            │                                │
 │                          ┌─────────────────┴─────────────────┐              │
 │                          │                                   │              │
 │                          ▼                                   ▼              │
@@ -74,7 +74,7 @@ Only applies to specific API calls.
 │              │  • Session limited    │          │     REQUIRED          │   │
 │              │  • Download restricted│          │                       │   │
 │              └───────────────────────┘          └───────────────────────┘   │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -119,13 +119,13 @@ Actions (Preview):
 #### Conditions
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│ User Risk        │ Sign-in Risk     │ Device Platform   │ Location     │
-│ • High           │ • High           │ • Android         │ • All        │
-│ • Medium         │ • Medium         │ • iOS             │ • Named      │
-│ • Low            │ • Low            │ • Windows         │   locations  │
-│ • No risk        │ • No risk        │ • macOS           │ • Trusted    │
-│                  │                  │ • Linux           │ • MFA trusted│
-├──────────────────┴──────────────────┴───────────────────┴──────────────┤
+│ User Risk        │ Sign-in Risk     │ Device Platform   │ Location      │
+│ • High           │ • High           │ • Android         │ • All         │
+│ • Medium         │ • Medium         │ • iOS             │ • Named       │
+│ • Low            │ • Low            │ • Windows         │   locations   │
+│ • No risk        │ • No risk        │ • macOS           │ • Trusted     │
+│                  │                  │ • Linux           │ • MFA trusted │
+├──────────────────┴──────────────────┴───────────────────┴───────────────┤
 │ Client Apps                         │ Device State                      │
 │ • Browser                           │ • Device marked as compliant      │
 │ • Mobile apps and desktop clients   │ • Hybrid Azure AD joined          │
@@ -257,10 +257,10 @@ State: On
 **Architecture**:
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                                                                          │
+│                                                                         │
 │  COMPLIANT DEVICE (Intune-managed)          NON-COMPLIANT DEVICE        │
 │  ──────────────────────────────────         ────────────────────        │
-│                                                                          │
+│                                                                         │
 │  ┌──────────────────────┐                   ┌──────────────────────┐    │
 │  │ • BitLocker enabled  │                   │ • Personal laptop    │    │
 │  │ • AV up to date      │                   │ • No MDM             │    │
@@ -268,16 +268,16 @@ State: On
 │  │ • Firewall on        │                   │   status             │    │
 │  │ • Enrolled in Intune │                   │                      │    │
 │  └──────────────────────┘                   └──────────────────────┘    │
-│           │                                           │                  │
-│           ▼                                           ▼                  │
+│           │                                           │                 │
+│           ▼                                           ▼                 │
 │  ┌──────────────────────┐                   ┌──────────────────────┐    │
-│  │ ✓ Access to HR       │                   │ ✗ Blocked from HR    │    │
-│  │ ✓ Access to Finance  │                   │ ✗ Blocked from       │    │
+│  │ ✓ Access to HR       │                   │ ✗ Blocked from HR   │    │
+│  │ ✓ Access to Finance  │                   │ ✗ Blocked from      │    │
 │  │ ✓ Full Office 365    │                   │   Finance            │    │
 │  └──────────────────────┘                   │ ○ Basic Office 365   │    │
 │                                             │   (web only)         │    │
 │                                             └──────────────────────┘    │
-│                                                                          │
+│                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -309,25 +309,25 @@ State: On
 ```
 Intune Compliance Policy defines "compliant":
 ┌─────────────────────────────────────────────────────────────────────┐
-│ Windows Compliance Policy                                            │
+│ Windows Compliance Policy                                           │
 ├─────────────────────────────────────────────────────────────────────┤
-│ System Security:                                                     │
+│ System Security:                                                    │
 │ ├── Require BitLocker: Yes                                          │
 │ ├── Require Secure Boot: Yes                                        │
 │ └── Require TPM: Yes                                                │
-│                                                                      │
-│ Device Health:                                                       │
-│ ├── Require device to be at or under threat level: Low             │
+│                                                                     │
+│ Device Health:                                                      │
+│ ├── Require device to be at or under threat level: Low              │
 │ └── Windows health attestation: Required                            │
-│                                                                      │
-│ Device Properties:                                                   │
+│                                                                     │
+│ Device Properties:                                                  │
 │ ├── Minimum OS version: 10.0.19045                                  │
 │ └── Maximum OS version: (blank)                                     │
-│                                                                      │
+│                                                                     │
 │ Actions for noncompliance:                                          │
 │ ├── Mark device noncompliant: Immediately                           │
-│ ├── Send email to user: After 1 day                                │
-│ └── Retire device: After 30 days                                   │
+│ ├── Send email to user: After 1 day                                 │
+│ └── Retire device: After 30 days                                    │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -358,30 +358,30 @@ Sign-in Risk:                          User Risk:
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                        RISK-BASED POLICY SET                            │
 ├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
+│                                                                         │
 │  ┌────────────────────────────────────────────────────────────────────┐ │
 │  │ POLICY 1: Baseline - All users get MFA                             │ │
 │  │ Users: All  |  Apps: All  |  Grant: Require MFA                    │ │
 │  └────────────────────────────────────────────────────────────────────┘ │
-│                                                                          │
+│                                                                         │
 │  ┌────────────────────────────────────────────────────────────────────┐ │
 │  │ POLICY 2: Medium Sign-in Risk - Additional verification            │ │
-│  │ Users: All  |  Apps: All  |  Condition: Sign-in risk = Medium     │ │
+│  │ Users: All  |  Apps: All  |  Condition: Sign-in risk = Medium      │ │
 │  │ Grant: Require MFA + Require compliant device                      │ │
 │  └────────────────────────────────────────────────────────────────────┘ │
-│                                                                          │
+│                                                                         │
 │  ┌────────────────────────────────────────────────────────────────────┐ │
 │  │ POLICY 3: High Sign-in Risk - Block and investigate                │ │
-│  │ Users: All  |  Apps: All  |  Condition: Sign-in risk = High       │ │
-│  │ Grant: Block access                                                 │ │
+│  │ Users: All  |  Apps: All  |  Condition: Sign-in risk = High        │ │
+│  │ Grant: Block access                                                │ │
 │  └────────────────────────────────────────────────────────────────────┘ │
-│                                                                          │
+│                                                                         │
 │  ┌────────────────────────────────────────────────────────────────────┐ │
 │  │ POLICY 4: High User Risk - Force password change                   │ │
-│  │ Users: All  |  Apps: All  |  Condition: User risk = High          │ │
+│  │ Users: All  |  Apps: All  |  Condition: User risk = High           │ │
 │  │ Grant: Require MFA + Require password change                       │ │
 │  └────────────────────────────────────────────────────────────────────┘ │
-│                                                                          │
+│                                                                         │
 └─────────────────────────────────────────────────────────────────────────┘
 
 Result:
