@@ -12,9 +12,9 @@ The Cloud Adoption Framework provides a structured approach to cloud adoption th
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      CLOUD ADOPTION MOTIVATIONS                              │
+│                      CLOUD ADOPTION MOTIVATIONS                             │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   CRITICAL BUSINESS EVENTS                                                  │
 │   ─────────────────────────                                                 │
 │   • Datacenter exit/lease expiration                                        │
@@ -22,15 +22,15 @@ The Cloud Adoption Framework provides a structured approach to cloud adoption th
 │   • End of support for existing systems                                     │
 │   • Regulatory compliance requirements                                      │
 │   • Business continuity requirements                                        │
-│                                                                              │
+│                                                                             │
 │   MIGRATION MOTIVATIONS                                                     │
 │   ──────────────────────                                                    │
-│   • Cost savings (CAPEX → OPEX)                                            │
+│   • Cost savings (CAPEX → OPEX)                                             │
 │   • Reduction in complexity                                                 │
 │   • Operational optimization                                                │
-│   • Agility and speed to market                                            │
+│   • Agility and speed to market                                             │
 │   • Global reach                                                            │
-│                                                                              │
+│                                                                             │
 │   INNOVATION MOTIVATIONS                                                    │
 │   ──────────────────────                                                    │
 │   • AI/ML capabilities                                                      │
@@ -38,7 +38,7 @@ The Cloud Adoption Framework provides a structured approach to cloud adoption th
 │   • New application development                                             │
 │   • Customer experience improvements                                        │
 │   • Product/service differentiation                                         │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -116,30 +116,30 @@ az migrate assessment create \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         SKILLS ASSESSMENT MATRIX                             │
+│                         SKILLS ASSESSMENT MATRIX                            │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Role                  Current Skills         Azure Skills Needed          │
-│   ────                  ──────────────         ────────────────────          │
-│                                                                              │
-│   Infrastructure        VMware, Windows        Azure IaaS, ARM, Bicep        │
-│   Admin                 Server, Active         Entra ID, Azure AD DS         │
-│                         Directory                                            │
-│                                                                              │
-│   Database Admin        SQL Server,            Azure SQL, Cosmos DB,         │
-│                         Oracle                 Data Migration                │
-│                                                                              │
-│   Developer             .NET, Java             Azure PaaS, Functions,        │
-│                         On-prem                Container Apps                │
-│                                                                              │
-│   Security              Firewall, VPN,         Defender, Sentinel,           │
-│                         On-prem SIEM           Entra ID Security             │
-│                                                                              │
-│   Network               Cisco, routing         Azure Networking, VPN,        │
-│                         On-prem                ExpressRoute, NSG             │
-│                                                                              │
-│   Training Path: Microsoft Learn → AZ-104 → AZ-305 → Specialty             │
-│                                                                              │
+│   ────                  ──────────────         ────────────────────         │
+│                                                                             │
+│   Infrastructure        VMware, Windows        Azure IaaS, ARM, Bicep       │
+│   Admin                 Server, Active         Entra ID, Azure AD DS        │
+│                         Directory                                           │
+│                                                                             │
+│   Database Admin        SQL Server,            Azure SQL, Cosmos DB,        │
+│                         Oracle                 Data Migration               │
+│                                                                             │
+│   Developer             .NET, Java             Azure PaaS, Functions,       │
+│                         On-prem                Container Apps               │
+│                                                                             │
+│   Security              Firewall, VPN,         Defender, Sentinel,          │
+│                         On-prem SIEM           Entra ID Security            │
+│                                                                             │
+│   Network               Cisco, routing         Azure Networking, VPN,       │
+│                         On-prem                ExpressRoute, NSG            │
+│                                                                             │
+│   Training Path: Microsoft Learn → AZ-104 → AZ-305 → Specialty              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -149,47 +149,47 @@ az migrate assessment create \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                    MANAGEMENT GROUP HIERARCHY                                │
+│                    MANAGEMENT GROUP HIERARCHY                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Tenant Root Group                                                         │
 │   └── Contoso (Intermediate Root)                                           │
-│       │                                                                      │
+│       │                                                                     │
 │       ├── Platform                                                          │
 │       │   ├── Management                                                    │
-│       │   │   └── Sub: Management-Prod                                     │
-│       │   │       ├── Log Analytics workspace                              │
-│       │   │       ├── Automation account                                   │
-│       │   │       └── Azure Monitor resources                              │
+│       │   │   └── Sub: Management-Prod                                      │
+│       │   │       ├── Log Analytics workspace                               │
+│       │   │       ├── Automation account                                    │
+│       │   │       └── Azure Monitor resources                               │
 │       │   │                                                                 │
 │       │   ├── Connectivity                                                  │
-│       │   │   └── Sub: Connectivity-Prod                                   │
-│       │   │       ├── Hub VNet                                             │
-│       │   │       ├── Azure Firewall                                       │
-│       │   │       ├── ExpressRoute/VPN                                     │
-│       │   │       └── Azure DNS zones                                      │
+│       │   │   └── Sub: Connectivity-Prod                                    │
+│       │   │       ├── Hub VNet                                              │
+│       │   │       ├── Azure Firewall                                        │
+│       │   │       ├── ExpressRoute/VPN                                      │
+│       │   │       └── Azure DNS zones                                       │
 │       │   │                                                                 │
 │       │   └── Identity                                                      │
-│       │       └── Sub: Identity-Prod                                       │
-│       │           ├── Azure AD DS (if needed)                              │
-│       │           └── Domain controllers                                   │
+│       │       └── Sub: Identity-Prod                                        │
+│       │           ├── Azure AD DS (if needed)                               │
+│       │           └── Domain controllers                                    │
 │       │                                                                     │
 │       ├── Landing Zones                                                     │
 │       │   ├── Corp                                                          │
-│       │   │   ├── Sub: HR-Prod                                             │
-│       │   │   ├── Sub: Finance-Prod                                        │
-│       │   │   └── Sub: ERP-Prod                                            │
+│       │   │   ├── Sub: HR-Prod                                              │
+│       │   │   ├── Sub: Finance-Prod                                         │
+│       │   │   └── Sub: ERP-Prod                                             │
 │       │   │                                                                 │
 │       │   └── Online                                                        │
-│       │       ├── Sub: PublicWeb-Prod                                      │
-│       │       └── Sub: CustomerPortal-Prod                                 │
+│       │       ├── Sub: PublicWeb-Prod                                       │
+│       │       └── Sub: CustomerPortal-Prod                                  │
 │       │                                                                     │
 │       ├── Sandbox                                                           │
-│       │   └── Sub: Sandbox-Dev                                             │
+│       │   └── Sub: Sandbox-Dev                                              │
 │       │                                                                     │
 │       └── Decommissioned                                                    │
 │           └── (Retired subscriptions)                                       │
-│                                                                              │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -221,37 +221,37 @@ az account management-group subscription add \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                         MIGRATION METHODOLOGY                                │
+│                         MIGRATION METHODOLOGY                               │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   1. DISCOVER                                                               │
 │   ───────────                                                               │
 │   • Deploy Azure Migrate appliance                                          │
 │   • Discover servers, databases, web apps                                   │
 │   • Collect performance data (30+ days recommended)                         │
 │   • Map dependencies                                                        │
-│                                                                              │
+│                                                                             │
 │   2. ASSESS                                                                 │
 │   ────────                                                                  │
 │   • Generate Azure readiness reports                                        │
 │   • Right-size recommendations                                              │
 │   • Cost estimates                                                          │
 │   • Identify migration blockers                                             │
-│                                                                              │
+│                                                                             │
 │   3. MIGRATE                                                                │
 │   ────────                                                                  │
-│   • Replicate workloads to Azure                                           │
+│   • Replicate workloads to Azure                                            │
 │   • Test migrations                                                         │
-│   • Cutover with minimal downtime                                          │
+│   • Cutover with minimal downtime                                           │
 │   • Validate functionality                                                  │
-│                                                                              │
+│                                                                             │
 │   4. OPTIMIZE                                                               │
 │   ──────────                                                                │
-│   • Right-size post-migration                                              │
-│   • Implement reserved instances                                           │
+│   • Right-size post-migration                                               │
+│   • Implement reserved instances                                            │
 │   • Enable monitoring                                                       │
-│   • Modernize incrementally                                                │
-│                                                                              │
+│   • Modernize incrementally                                                 │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -271,37 +271,37 @@ az account management-group subscription add \
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                      CLOUD-NATIVE PATTERNS                                   │
+│                      CLOUD-NATIVE PATTERNS                                  │
 ├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
+│                                                                             │
 │   Pattern: Microservices                                                    │
 │   ─────────────────────                                                     │
 │   Services: Azure Kubernetes Service (AKS)                                  │
 │            Azure Container Apps                                             │
 │            API Management                                                   │
 │   Benefits: Independent scaling, deployment, technology choices             │
-│                                                                              │
+│                                                                             │
 │   Pattern: Event-Driven Architecture                                        │
 │   ──────────────────────────────────                                        │
 │   Services: Azure Event Grid                                                │
 │            Azure Event Hubs                                                 │
 │            Azure Functions                                                  │
-│   Benefits: Loose coupling, scalability, real-time processing              │
-│                                                                              │
+│   Benefits: Loose coupling, scalability, real-time processing               │
+│                                                                             │
 │   Pattern: Serverless                                                       │
 │   ───────────────────                                                       │
 │   Services: Azure Functions                                                 │
 │            Logic Apps                                                       │
 │            Durable Functions                                                │
-│   Benefits: No infrastructure management, pay-per-execution                │
-│                                                                              │
+│   Benefits: No infrastructure management, pay-per-execution                 │
+│                                                                             │
 │   Pattern: Data Lakehouse                                                   │
 │   ────────────────────────                                                  │
 │   Services: Azure Synapse Analytics                                         │
 │            Azure Databricks                                                 │
 │            Data Lake Storage                                                │
-│   Benefits: Unified analytics, AI/ML integration                           │
-│                                                                              │
+│   Benefits: Unified analytics, AI/ML integration                            │
+│                                                                             │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
